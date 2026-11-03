@@ -1,0 +1,50 @@
+  :root { --bg: #16110E; --panel: #2B2420; --cream: #FAEEC4; --red: #A3231A; --red-hi: #E0443A; --muted: #B8A58A; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--cream); font-family: "Inter", system-ui, sans-serif; }
+  main { max-width: 560px; margin: 0 auto; padding: 22px 16px 60px; }
+  h1 { font-size: 30px; line-height: 1.1; font-weight: 800; margin: 6px 0 8px; letter-spacing: -0.02em; }
+  h1 b { color: var(--red-hi); }
+  h2 { font-size: 21px; font-weight: 800; margin: 34px 0 10px; letter-spacing: -0.01em; }
+  p, li { font-size: 16px; line-height: 1.5; color: var(--cream); }
+  .sub { color: var(--muted); margin: 0 0 16px; }
+  .game { position: relative; width: 100%; aspect-ratio: 3 / 4; border-radius: 16px; overflow: hidden; background: #1c1512; border: 2px solid var(--panel); }
+  .game iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .row { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+  .btn { display: inline-block; background: var(--red); color: var(--cream); text-decoration: none; font-weight: 800; padding: 12px 16px; border-radius: 12px; border: 0; font-size: 15px; cursor: pointer; }
+  .btn.ghost { background: transparent; border: 2px solid var(--panel); color: var(--cream); }
+  .note { background: var(--panel); border-radius: 14px; padding: 14px 16px; margin-top: 14px; }
+  .note b { color: var(--red-hi); }
+  ol.rules { padding-left: 20px; }
+  ol.rules li { margin: 8px 0; }
+  ol.rules b { color: var(--cream); }
+  pre { white-space: pre-wrap; background: #0f0b09; border: 2px solid var(--panel); border-radius: 12px; padding: 14px; font: 500 14px/1.5 ui-monospace, Consolas, monospace; color: var(--cream); margin: 8px 0; }
+  details { background: var(--panel); border-radius: 12px; padding: 12px 14px; margin: 10px 0; }
+  summary { font-weight: 800; cursor: pointer; }
+  .copy { margin-top: 4px; font-size: 13px; padding: 8px 12px; }
+  img.board { width: 100%; border-radius: 12px; border: 2px solid var(--panel); }
+  ul.inside { padding-left: 18px; margin: 10px 0 4px; }
+  ul.inside li { margin: 8px 0; font-size: 15px; }
+  .small { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+  footer { color: var(--muted); font-size: 13px; margin-top: 40px; line-height: 1.5; }
+  footer a { color: var(--cream); font-weight: 700; }
+  /* the middle section: the system video + the big community card */
+  .system { margin-top: 42px; padding-top: 30px; border-top: 2px solid var(--panel); }
+  .system h2 { font-size: 26px; line-height: 1.15; margin: 0 0 10px; }
+  .vid { display: block; width: min(100%, 360px); aspect-ratio: 9 / 16; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 2px solid var(--panel); object-fit: cover; }
+  .vid-note { text-align: center; color: var(--muted); font-size: 13px; margin: 0; }
+  .join { background: var(--cream); color: #16110E; border-radius: 18px; padding: 22px 18px 18px; margin-top: 22px; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+  .join h3 { font-size: 27px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 6px; color: #16110E; }
+  .join p { color: #2B2420; margin: 0 0 10px; font-size: 16px; }
+  .join ul { list-style: none; padding: 0; margin: 12px 0 18px; }
+  .join li { color: #16110E; font-size: 15.5px; line-height: 1.45; margin: 10px 0; padding-left: 28px; position: relative; }
+  .join li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--red); font-weight: 800; font-size: 18px; }
+  .join li b { color: #16110E; }
+  .bigbtn { display: block; text-align: center; background: var(--red); color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 21px; letter-spacing: -0.01em;
+    padding: 20px 16px; border-radius: 14px; box-shadow: 0 8px 0 #6E1610, 0 14px 28px rgba(163,35,26,.35); }
+  .bigbtn:active { transform: translateY(4px); box-shadow: 0 4px 0 #6E1610; }
+  .join .small { color: #5A4E44; text-align: center; margin-top: 14px; }
+  ul { padding-left: 20px; } ul li { margin: 8px 0; }
+  code { font: 500 14px ui-monospace, Consolas, monospace; background: #0f0b09; border: 1px solid var(--panel); border-radius: 6px; padding: 1px 5px; word-break: break-word; }
+  pre code { border: 0; padding: 0; background: none; }
+  img.thumb { display: block; width: 100%; border-radius: 14px; border: 2px solid var(--panel); margin: 14px 0 4px; }
+  .vid { max-width: 100%; }
