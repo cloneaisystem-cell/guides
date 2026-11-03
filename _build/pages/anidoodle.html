@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>anidoodle for Claude Code: free install + my prompts</title>
+<meta name="description" content="A free Claude Code plugin with 32 art styles. Every picture draws itself. The 2-line install, my tested prompt and the fixes I needed.">
+<meta property="og:title" content="anidoodle for Claude Code: free install + my prompts">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/anidoodle/cover.jpg">
+{{HEAD}}
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="A wall of drawings in 32 different art styles, with the words: 32 styles that draw themselves." width="1280" height="720"></div>
+  <span class="kicker">Free guide · 0 credits</span>
+  <h1>anidoodle for Claude Code: <em>free install</em> + my prompts</h1>
+  <p class="sub">A free Claude Code plugin with 32 art styles, and every picture draws itself, mark by mark. Describe a film; it draws it, writes the music and renders an MP4 on your computer.</p>
+  <div class="chips"><span class="chip">✏️ 32 art styles</span><span class="chip">🎵 writes its own music</span><span class="chip">💻 runs on your computer</span></div>
+  <video class="vid tall" src="01-video.mp4" poster="01-poster.jpg" controls playsinline preload="none"></video>
+  <div class="note">On your phone? <b>Send yourself this link</b> and open it on your computer. Claude Code doesn't run on a phone.</div>
+
+  <h2>What you need</h2>
+  <ul class="clean">
+    <li><b>Claude Code</b> (it needs a paid Claude plan).</li>
+    <li><b>anidoodle:</b> free, open source (Apache-2.0), by Alex Greenshpun.</li>
+    <li><b>Node 20+ and ffmpeg</b> for the renders. Check with <code>node -v</code> and <code>ffmpeg -version</code>.</li>
+  </ul>
+
+  <h2>4 steps</h2>
+  <ol class="steps">
+    <li><h3>Install</h3>In Claude Code, one line at a time:
+      <pre id="install">/plugin marketplace add alexgreensh/anidoodle
+/plugin install anidoodle@alexgreensh-anidoodle</pre>
+      <button class="btn copy" data-copy="install">Copy the 2 lines</button></li>
+    <li><h3>Pick a style</h3>Crayon, watercolour, pixel art, woodblock, a 1930s cartoon, charcoal, chalkboard… 32 in total. Name it in your prompt.</li>
+    <li><h3>Describe the film in one sentence</h3>Subject, what happens, seconds, format (9:16 for Reels), music mood.</li>
+    <li><h3>Let it render</h3>If it stops to show a still or 8 s of music, say "go". If it offers a 233 MB piano pack, you can say no.</li>
+  </ol>
+
+  <h2>My prompt <em>(tested)</em></h2>
+  <pre id="prompt">Make a 12-second 9:16 film in the crayon style: a red-and-cream striped hot-air balloon draws itself on paper, mark by mark, then drifts up and out of the frame. Compose a short, warm score for it. Render it as an MP4.</pre>
+  <button class="btn copy" data-copy="prompt">Copy the prompt</button>
+  <p>First try on my Windows PC: about 13 minutes in total, the render itself 75 seconds. This is what came out:</p>
+  <video class="vid tall" src="02-crayon-test.mp4" poster="02-poster.jpg" controls playsinline preload="none"></video>
+  <p><b>Swap:</b> the style, the subject, the ending, the seconds, the format, the music mood. Ideas: a watercolour flower that blooms as it's drawn, a pixel-art cat that blinks, herons in the rain as a woodblock print.</p>
+
+{{COMMUNITY}}
+
+  <h2>3 mistakes to skip</h2>
+  <ul class="clean">
+    <li><b>Windows: "can't find a browser".</b> Tell Claude: <i>"Install Chromium with <code>npx playwright-core install chromium</code>, set <code>PLAYWRIGHT_BROWSERS_PATH</code> to <code>%LOCALAPPDATA%\ms-playwright</code> and render again."</i></li>
+    <li><b>A new ffmpeg breaks the final check</b> (mine is 9). Tell Claude: <i>"In the export check, replace <code>-vsync 0</code> with <code>-fps_mode passthrough</code>."</i> The film itself is fine.</li>
+    <li><b>Expecting it to copy your doodle.</b> In my reel Claude drew the balloon from scratch. Describe it in words.</li>
+  </ul>
+
+  <footer>The style clips in the reel are anidoodle's own demo films (Apache-2.0). Not affiliated with Anthropic or anidoodle. Questions? DM @clone.creatives</footer>
+</main>
+{{STICKY}}
+</body>
+</html>

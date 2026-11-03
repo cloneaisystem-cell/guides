@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>5 Claude Code skills for making videos: install all in one paste</title>
+<meta name="description" content="The 5 skills I use to make videos with Claude Code, installed with one paste. Free, 0 credits.">
+<meta property="og:title" content="5 Claude Code skills for making videos">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/skills/cover.jpg">
+{{HEAD}}
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="5 Claude skills I use to make videos, free, 0 credits." width="1080" height="1350"></div>
+  <span class="kicker">Free guide · 0 credits</span>
+  <h1>5 Claude Code skills for making videos: <em>one paste</em></h1>
+  <p class="sub">The 5 skills I use to make videos with Claude Code, installed with one paste. Claude shows you every command before it runs it, so nothing happens without your OK.</p>
+  <div class="chips"><span class="chip">🎞️ animations</span><span class="chip">✂️ edits in code</span><span class="chip">👀 Claude watches video</span><span class="chip">🧩 your own skills</span></div>
+  <div class="note">You need a <b>Mac or Windows computer</b> with Claude Code (it comes with Claude Pro and Max), plus Node 18+, git, Python 3.10+ and ffmpeg. Missing one? The prompt below checks and tells you how to install it. <b>On your phone?</b> Send yourself this link and open it on your computer.</div>
+
+  <h2>1. Install all 5</h2>
+  <ol class="steps">
+    <li><h3>Open Claude Code in any folder</h3>Desktop app: <b>Code</b> tab → <b>Local</b> → <b>Open folder…</b>, or type <code>claude</code> in a terminal.</li>
+    <li><h3>Paste this and approve each command</h3>Claude shows every command before it runs it. Read it, then approve.
+  <pre id="install">Install these 5 Claude Code skills for making videos. Show me each command before you run it.
+First check that I have Node 18+, git, Python 3.10+ and ffmpeg. If something is missing, tell me how to install it and wait.
+1. claude-animation-styles: git clone https://github.com/cloneaisystem-cell/claude-animation-styles into ~/.claude/skills/animation-styles (on Windows: C:\Users\&lt;me&gt;\.claude\skills\animation-styles). Copy its commands/*.md files into ~/.claude/commands/, then run npm install in its template folder.
+2. Remotion skills: npx skills add remotion-dev/skills --skill '*' -g -a claude-code -y
+3. HyperFrames: npx skills add heygen-com/hyperframes --skill '*' -g -a claude-code -y
+4. claude-real-video: pip install "claude-real-video[whisper]" then npx skills add HUANGCHIHHUNGLeo/claude-real-video --skill '*' -g -a claude-code -y
+5. skill-creator: claude plugin marketplace add anthropics/skills then claude plugin install example-skills@anthropic-agent-skills
+When everything is installed, list what was added and tell me to restart Claude Code.</pre>
+  <button class="btn copy" data-copy="install">Copy the install prompt</button></li>
+    <li><h3>Restart Claude Code</h3>Close and reopen it, then type <code>/</code> to see the new commands and skills.</li>
+  </ol>
+
+{{COMMUNITY}}
+
+  <h2>2. What each one does</h2>
+  <details><summary>1 · claude-animation-styles: 9 animations, one command each</summary>
+    <p>Our free skill. Type <code>/neon POST every day</code>, <code>/particles me.jpg</code> or <code>/flight-path Paris to New York</code> and Claude renders a 9:16 animation with your words, on your computer.</p>
+    <p>Repo: <a href="https://github.com/cloneaisystem-cell/claude-animation-styles">github.com/cloneaisystem-cell/claude-animation-styles</a> (MIT)</p></details>
+  <details><summary>2 · Remotion skills: Claude edits video in code</summary>
+    <p>Teaches Claude how to build and edit videos with Remotion (React). Ask for cuts, captions, effects or a full edit and it writes the code and renders it.</p>
+    <p>Repo: <a href="https://github.com/remotion-dev/skills">github.com/remotion-dev/skills</a> · install by hand: <code>npx skills add remotion-dev/skills</code> · Remotion is free for individuals and teams of up to 3 (<a href="https://www.remotion.dev/license">licence</a>).</p></details>
+  <details><summary>3 · HyperFrames: HTML → animated scenes</summary>
+    <p>Write a scene as HTML (charts, text, 3D) and render it as a video. Great for explainer and motion-graphics shots.</p>
+    <p>Repo: <a href="https://github.com/heygen-com/hyperframes">github.com/heygen-com/hyperframes</a> · install by hand: <code>npx skills add heygen-com/hyperframes</code> (pick Core Skills when it asks)</p></details>
+  <details><summary>4 · claude-real-video: lets Claude watch a video</summary>
+    <p>Claude can't watch video on its own. This pulls scene-aware keyframes and a transcript from any clip, so Claude can break down a reference reel second by second.</p>
+    <p>Repo: <a href="https://github.com/HUANGCHIHHUNGLeo/claude-real-video">github.com/HUANGCHIHHUNGLeo/claude-real-video</a> · install by hand: <code>pip install "claude-real-video[whisper]"</code> then <code>npx skills add HUANGCHIHHUNGLeo/claude-real-video</code></p></details>
+  <details><summary>5 · skill-creator: turn any workflow into a skill</summary>
+    <p>Describe something you do every week ("cut the silences, add captions, export 9:16") and Claude writes it as a reusable skill you call with one command.</p>
+    <p>Repo: <a href="https://github.com/anthropics/skills">github.com/anthropics/skills</a> · install by hand, inside Claude Code: <code>/plugin marketplace add anthropics/skills</code> then <code>/plugin install example-skills@anthropic-agent-skills</code></p></details>
+
+  <h2>3. If something goes wrong</h2>
+  <ul class="clean">
+    <li><b>A command isn't found</b> (node, git, pip, ffmpeg): install it, reopen Claude Code, paste the prompt again. It skips what is already there.</li>
+    <li><b>The new commands don't show up:</b> restart Claude Code and make sure the session is Local.</li>
+    <li><b>Anything else:</b> paste the error into Claude Code and ask it to fix it. Still stuck? DM me @clone.creatives.</li>
+  </ul>
+
+  <footer>All five are free and made by their authors (MIT or their own licences); not affiliated with Anthropic, Remotion or HeyGen. "Claude" is a trademark of Anthropic.</footer>
+</main>
+{{STICKY}}
+</body>
+</html>

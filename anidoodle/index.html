@@ -6,73 +6,124 @@
 <meta name="robots" content="noindex, nofollow">
 <title>anidoodle for Claude Code: free install + my prompts</title>
 <meta name="description" content="A free Claude Code plugin with 32 art styles. Every picture draws itself. The 2-line install, my tested prompt and the fixes I needed.">
+<meta property="og:title" content="anidoodle for Claude Code: free install + my prompts">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/anidoodle/cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Serif:ital@1&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../shared/guide.css">
+<script src="../shared/copy.js" defer></script>
 </head>
 <body>
 <main>
-  <h1>anidoodle for Claude Code: <b>free install</b> + my prompts</h1>
+  <div class="hero"><img src="cover.jpg" alt="A wall of drawings in 32 different art styles, with the words: 32 styles that draw themselves." width="1280" height="720"></div>
+  <span class="kicker">Free guide · 0 credits</span>
+  <h1>anidoodle for Claude Code: <em>free install</em> + my prompts</h1>
   <p class="sub">A free Claude Code plugin with 32 art styles, and every picture draws itself, mark by mark. Describe a film; it draws it, writes the music and renders an MP4 on your computer.</p>
-  <video class="vid" src="01-video.mp4" poster="01-poster.jpg" controls playsinline preload="metadata"></video>
+  <div class="chips"><span class="chip">✏️ 32 art styles</span><span class="chip">🎵 writes its own music</span><span class="chip">💻 runs on your computer</span></div>
+  <video class="vid tall" src="01-video.mp4" poster="01-poster.jpg" controls playsinline preload="none"></video>
   <div class="note">On your phone? <b>Send yourself this link</b> and open it on your computer. Claude Code doesn't run on a phone.</div>
 
   <h2>What you need</h2>
-  <ul>
+  <ul class="clean">
     <li><b>Claude Code</b> (it needs a paid Claude plan).</li>
     <li><b>anidoodle:</b> free, open source (Apache-2.0), by Alex Greenshpun.</li>
     <li><b>Node 20+ and ffmpeg</b> for the renders. Check with <code>node -v</code> and <code>ffmpeg -version</code>.</li>
   </ul>
 
   <h2>4 steps</h2>
-  <ol class="rules">
-    <li><b>Install.</b> In Claude Code, one line at a time:
+  <ol class="steps">
+    <li><h3>Install</h3>In Claude Code, one line at a time:
       <pre id="install">/plugin marketplace add alexgreensh/anidoodle
 /plugin install anidoodle@alexgreensh-anidoodle</pre>
-      <button class="btn copy" data-copy="install">Copy</button></li>
-    <li><b>Pick a style.</b> Crayon, watercolour, pixel art, woodblock, a 1930s cartoon, charcoal, chalkboard… 32 in total. Name it in your prompt.</li>
-    <li><b>Describe the film in one sentence:</b> subject, what happens, seconds, format (9:16 for Reels), music mood.</li>
-    <li><b>Let it render.</b> If it stops to show a still or 8 s of music, say "go". If it offers a 233 MB piano pack, you can say no.</li>
+      <button class="btn copy" data-copy="install">Copy the 2 lines</button></li>
+    <li><h3>Pick a style</h3>Crayon, watercolour, pixel art, woodblock, a 1930s cartoon, charcoal, chalkboard… 32 in total. Name it in your prompt.</li>
+    <li><h3>Describe the film in one sentence</h3>Subject, what happens, seconds, format (9:16 for Reels), music mood.</li>
+    <li><h3>Let it render</h3>If it stops to show a still or 8 s of music, say "go". If it offers a 233 MB piano pack, you can say no.</li>
   </ol>
 
-  <h2>My prompt (tested)</h2>
+  <h2>My prompt <em>(tested)</em></h2>
   <pre id="prompt">Make a 12-second 9:16 film in the crayon style: a red-and-cream striped hot-air balloon draws itself on paper, mark by mark, then drifts up and out of the frame. Compose a short, warm score for it. Render it as an MP4.</pre>
   <button class="btn copy" data-copy="prompt">Copy the prompt</button>
   <p>First try on my Windows PC: about 13 minutes in total, the render itself 75 seconds. This is what came out:</p>
-  <video class="vid" src="02-crayon-test.mp4" poster="02-poster.jpg" controls playsinline preload="metadata"></video>
+  <video class="vid tall" src="02-crayon-test.mp4" poster="02-poster.jpg" controls playsinline preload="none"></video>
   <p><b>Swap:</b> the style, the subject, the ending, the seconds, the format, the music mood. Ideas: a watercolour flower that blooms as it's drawn, a pixel-art cat that blinks, herons in the rain as a woodblock print.</p>
 
-  <section class="system">
-    <h2>You have the drawings. Here's the system around them.</h2>
+  <section class="system" id="community">
+    <p class="eyebrow">The next step</p>
+    <h2>You have the drawings. Here's the <em>system</em> around them.</h2>
     <p>anidoodle gives you the pictures, the motion and a score. A reel people watch to the end also needs a story with a turn, voices and a sound on every hit. I don't build that part by hand anymore: Claude Code runs my content every day, from the morning idea list to the edit, the posting and the DMs. Even the DM that sent you here went out by itself. Here it is running:</p>
-    <img class="thumb" src="../shared/system-thumb.jpg" alt="My AI clone next to Claude Code sending DMs on its own, with the words I didn't do this.">
-    <video class="vid" src="../shared/system-video.mp4" poster="../shared/system-poster.jpg" controls playsinline preload="metadata"></video>
-    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone.</p>
+    <video class="vid wide" src="../shared/system-video-169.mp4" poster="../shared/system-poster-169.jpg" controls playsinline preload="none"></video>
+    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone, made with the methods taught inside.</p>
+
+    <h2>What you get inside</h2>
+    <div class="benefits">
+      <div class="benefit"><span class="ico">🧭</span><h3>A path for complete beginners</h3><p>START HERE takes you from zero to your first consistent AI character, lesson by lesson. Then Go Viral: 8 short lessons and cheat sheets for Reels and TikTok.</p></div>
+      <div class="benefit"><span class="ico">🎬</span><h3>Every reel I post, taken apart</h3><p>The prompts, the edit choices and what each shot cost in credits. You copy what already worked instead of guessing.</p></div>
+      <div class="benefit"><span class="ico">🤖</span><h3>Claude Code, in plain English</h3><p>Master Claude Code: real builds with every file included. Claude writes the code; you say what you want and approve each step.</p></div>
+      <div class="benefit"><span class="ico">🧰</span><h3>30+ courses on today's tools</h3><p>Kling 3.0, Veo 3.1, Nano Banana Pro, ElevenLabs voices, UGC and cinematic ads, prompt systems, 4K upscaling.</p></div>
+      <div class="benefit"><span class="ico">💬</span><h3>Feedback from me</h3><p>Post your video and I tell you what I'd change. A real person reads it and replies.</p></div>
+      <div class="benefit"><span class="ico">💼</span><h3>From skill to client work</h3><p>Modules on finding your first clients, pricing what you make and delivering it like a pro.</p></div>
+    </div>
+
+    <h2>Your first week</h2>
+    <ol class="week">
+      <li><b>Day 1.</b> Say hi and tell me what you make. I point you to the module that fits you.</li>
+      <li><b>Days 2–4.</b> Follow START HERE or Master Claude Code, one short lesson an evening.</li>
+      <li><b>Days 5–6.</b> Open the breakdown of a reel you liked and use its structure for your own idea.</li>
+      <li><b>Day 7.</b> Post your first video in the community and get my feedback on it.</li>
+    </ol>
 
     <div class="join">
-      <h3>Skip building it from zero.</h3>
-      <p>Inside AI Virality Creators, my Skool community, you get the real files behind it:</p>
+      <h3>Stop saving tutorials. Start posting.</h3>
+      <p>AI Virality Creators is my Skool community. Everything above sits in one place, in order, with someone who answers you.</p>
       <ul>
-        <li><b>The Early Potato breakdown.</b> The script that turned a plugin demo into a roast, the two free voices I ran on my own computer, and the free pro sound pack with where every sound sits.</li>
-        <li><b>Go Viral, the Social Media System module.</b> The system I use for Reels and TikTok.</li>
-        <li><b>Breakdowns of my other reels.</b> Every prompt, every edit choice and what it cost in credits.</li>
-        <li><b>A reply on your own work.</b> Post your first anidoodle film and I'll tell you what I'd change.</li>
+        <li><b>The Early Potato breakdown:</b> the script that turned a plugin demo into a roast, the two free voices I ran on my own computer, and where every sound sits.</li>
+        <li><b>30+ step-by-step courses</b> on AI characters, video, voices, ads and Claude Code.</li>
+        <li><b>The breakdown of every reel,</b> with the prompts and the credit cost.</li>
+        <li><b>Personal feedback</b> on what you post.</li>
+        <li><b>120+ creators</b> building the same skills next to you.</li>
       </ul>
-      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=potato">Join the community &rarr;</a>
-      <p class="small">120+ creators are already inside.</p>
+      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=potato">Join AI Virality Creators &rarr;</a>
+      <p class="small">$9/month today; the Skool page shows the current price before you pay. Cancel anytime from your Skool settings. Publish your first AI video within 30 days or get your money back.</p>
     </div>
+
+    <div class="faq">
+      <h2>Before you join</h2>
+      <details><summary>I'm a complete beginner. Is this too advanced?</summary>
+        <p>No. START HERE assumes zero experience and goes in order: your first image, your first video, then a character that looks the same in every shot. If you can type a sentence, you can follow it.</p></details>
+      <details><summary>I can't code. Do I need to?</summary>
+        <p>No. For the Claude Code lessons you describe what you want in plain English, Claude writes the code, and you approve each step. Every lesson shows the exact clicks.</p></details>
+      <details><summary>I don't have much time.</summary>
+        <p>The lessons are short and numbered, so you always know which one is next. One lesson an evening keeps you moving, and the community keeps you posting.</p></details>
+      <details><summary>Can't I learn all of this free on YouTube?</summary>
+        <p>You can start there, and free guides like this one are made for exactly that. What you won't find for free: the right order, my real project files, the credit cost of every shot, and someone who looks at your video and tells you what to fix.</p></details>
+      <details><summary>AI tools change every month. Won't it be outdated?</summary>
+        <p>New tools get their own modules: Kling 3.0, Veo 3.1 and Nano Banana Pro are already in. The breakdowns teach how a reel is built, and that carries over to whatever tool comes next.</p></details>
+      <details><summary>AI credits get expensive. What will I spend?</summary>
+        <p>Every breakdown shows what each shot cost, so you know before you start. A lot of what I teach costs 0 credits, like the guide you're reading now.</p></details>
+      <details><summary>Is the person in the video real?</summary>
+        <p>The presenter is my AI clone, built with the same methods taught inside. I say so every time. The community is run by me, and I answer you myself.</p></details>
+      <details><summary>Will this make me money?</summary>
+        <p>I can't promise income, and nobody honest can. You get the skill, a portfolio of finished videos, and modules on finding clients and pricing your work. What you do with it is up to you.</p></details>
+      <details><summary>Is it only about video?</summary>
+        <p>Video is the core. The other half is Claude Code: ideas, editing, scheduling and DMs that run while you work on the next video. Prompting, voices and client work are in there too.</p></details>
+      <details><summary>What if it's not for me?</summary>
+        <p>Cancel anytime from your Skool settings. And if you don't publish your first AI video within 30 days, ask me for your money back.</p></details>
+    </div>
+    <a class="bigbtn" style="margin-top:22px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=potato&amp;utm_content=faq">Join the community &rarr;</a>
   </section>
 
+
   <h2>3 mistakes to skip</h2>
-  <ul>
+  <ul class="clean">
     <li><b>Windows: "can't find a browser".</b> Tell Claude: <i>"Install Chromium with <code>npx playwright-core install chromium</code>, set <code>PLAYWRIGHT_BROWSERS_PATH</code> to <code>%LOCALAPPDATA%\ms-playwright</code> and render again."</i></li>
     <li><b>A new ffmpeg breaks the final check</b> (mine is 9). Tell Claude: <i>"In the export check, replace <code>-vsync 0</code> with <code>-fps_mode passthrough</code>."</i> The film itself is fine.</li>
     <li><b>Expecting it to copy your doodle.</b> In my reel Claude drew the balloon from scratch. Describe it in words.</li>
   </ul>
 
-  <footer>The style clips in the reel are anidoodle's own demo films (Apache-2.0). Not affiliated with Anthropic or anidoodle. Questions? DM @clone.creatives<br>
-    <a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=potato&amp;utm_content=footer">AI Virality Creators on Skool &rarr;</a></footer>
+  <footer>The style clips in the reel are anidoodle's own demo films (Apache-2.0). Not affiliated with Anthropic or anidoodle. Questions? DM @clone.creatives</footer>
 </main>
-<script src="../shared/copy.js"></script>
+<div class="sticky"><span>AI Virality Creators · 120+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=potato&amp;utm_content=sticky">Join the community &rarr;</a></div>
 </body>
 </html>
