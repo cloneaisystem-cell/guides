@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>5 Claude Code skills for making videos: install all in one paste</title>
+<meta name="description" content="The 5 skills I use to make videos with Claude Code, installed with one paste. Free, 0 credits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+</head>
+<body>
+<main>
+  <h1>5 Claude Code skills for making videos: <b>install all in one paste</b></h1>
+  <p class="sub">The 5 skills I use to make videos with Claude Code, installed with one paste. Claude shows you every command before it runs it, so nothing happens without your OK. All free, 0 credits. A guide by @clone.creatives.</p>
+  <div class="note">You need a <b>Mac or Windows computer</b> with Claude Code (it comes with Claude Pro and Max), plus Node 18+, git, Python 3.10+ and ffmpeg. Missing one? The prompt below checks and tells you how to install it. <b>On your phone?</b> Send yourself this link and open it on your computer.</div>
+
+  <h2>1. Install all 5 (one paste)</h2>
+  <p>Open Claude Code in any folder (Desktop app: <b>Code</b> tab → <b>Local</b> → <b>Open folder…</b>, or type <code>claude</code> in a terminal). Paste this. Claude shows each command before it runs it: read it, then approve.</p>
+  <pre id="install">Install these 5 Claude Code skills for making videos. Show me each command before you run it.
+First check that I have Node 18+, git, Python 3.10+ and ffmpeg. If something is missing, tell me how to install it and wait.
+1. claude-animation-styles: git clone https://github.com/cloneaisystem-cell/claude-animation-styles into ~/.claude/skills/animation-styles (on Windows: C:\Users\&lt;me&gt;\.claude\skills\animation-styles). Copy its commands/*.md files into ~/.claude/commands/, then run npm install in its template folder.
+2. Remotion skills: npx skills add remotion-dev/skills --skill '*' -g -a claude-code -y
+3. HyperFrames: npx skills add heygen-com/hyperframes --skill '*' -g -a claude-code -y
+4. claude-real-video: pip install "claude-real-video[whisper]" then npx skills add HUANGCHIHHUNGLeo/claude-real-video --skill '*' -g -a claude-code -y
+5. skill-creator: claude plugin marketplace add anthropics/skills then claude plugin install example-skills@anthropic-agent-skills
+When everything is installed, list what was added and tell me to restart Claude Code.</pre>
+  <button class="btn copy" data-copy="install">Copy the install prompt</button>
+  <p>Done? Close and reopen Claude Code. Type <code>/</code> to see the new commands and skills.</p>
+
+  <section class="system">
+    <h2>Installed. Now make them work for you.</h2>
+    <p>On their own, the 5 skills wait for you to type. This is the system I run on top of them every day: it brings me ideas and script drafts each morning, edits in plain English, schedules the posts and answers the DMs. Even the DM that sent you here went out by itself. No code, and I approve every step.</p>
+    <img class="thumb" src="../shared/system-thumb.jpg" alt="My AI clone next to Claude Code sending DMs on its own, with the words I didn't do this.">
+    <video class="vid" src="../shared/system-video.mp4" poster="../shared/system-poster.jpg" controls playsinline preload="metadata"></video>
+    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone.</p>
+
+    <div class="join">
+      <h3>I teach this system step by step.</h3>
+      <p>Inside AI Virality Creators, my Skool community:</p>
+      <ul>
+        <li><b>Claude Code for Creators.</b> The course for the whole system: ideas, edit, posting and DMs.</li>
+        <li><b>Full breakdowns of my reels.</b> Every prompt, every edit decision and the credit cost.</li>
+        <li><b>Feedback on your own posts,</b> from me.</li>
+      </ul>
+      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=skills">Join the community &rarr;</a>
+      <p class="small">120+ creators are already inside.</p>
+    </div>
+  </section>
+
+  <h2>2. What each one does</h2>
+  <details><summary>1 · claude-animation-styles: 9 animations, one command each</summary>
+    <p>Our free skill. Type <code>/neon POST every day</code>, <code>/particles me.jpg</code> or <code>/flight-path Paris to New York</code> and Claude renders a 9:16 animation with your words, on your computer.</p>
+    <p>Repo: <a href="https://github.com/cloneaisystem-cell/claude-animation-styles">github.com/cloneaisystem-cell/claude-animation-styles</a> (MIT)</p></details>
+  <details><summary>2 · Remotion skills: Claude edits video in code</summary>
+    <p>Teaches Claude how to build and edit videos with Remotion (React). Ask for cuts, captions, effects or a full edit and it writes the code and renders it.</p>
+    <p>Repo: <a href="https://github.com/remotion-dev/skills">github.com/remotion-dev/skills</a> · install by hand: <code>npx skills add remotion-dev/skills</code> · Remotion is free for individuals and teams of up to 3 (<a href="https://www.remotion.dev/license">licence</a>).</p></details>
+  <details><summary>3 · HyperFrames: HTML → animated scenes</summary>
+    <p>Write a scene as HTML (charts, text, 3D) and render it as a video. Great for explainer and motion-graphics shots.</p>
+    <p>Repo: <a href="https://github.com/heygen-com/hyperframes">github.com/heygen-com/hyperframes</a> · install by hand: <code>npx skills add heygen-com/hyperframes</code> (pick Core Skills when it asks)</p></details>
+  <details><summary>4 · claude-real-video: lets Claude watch a video</summary>
+    <p>Claude can't watch video on its own. This pulls scene-aware keyframes and a transcript from any clip, so Claude can break down a reference reel second by second.</p>
+    <p>Repo: <a href="https://github.com/HUANGCHIHHUNGLeo/claude-real-video">github.com/HUANGCHIHHUNGLeo/claude-real-video</a> · install by hand: <code>pip install "claude-real-video[whisper]"</code> then <code>npx skills add HUANGCHIHHUNGLeo/claude-real-video</code></p></details>
+  <details><summary>5 · skill-creator: turn any workflow into a skill</summary>
+    <p>Describe something you do every week ("cut the silences, add captions, export 9:16") and Claude writes it as a reusable skill you call with one command.</p>
+    <p>Repo: <a href="https://github.com/anthropics/skills">github.com/anthropics/skills</a> · install by hand, inside Claude Code: <code>/plugin marketplace add anthropics/skills</code> then <code>/plugin install example-skills@anthropic-agent-skills</code></p></details>
+
+  <h2>3. If something goes wrong</h2>
+  <ul>
+    <li><b>A command isn't found</b> (node, git, pip, ffmpeg): install it, reopen Claude Code, paste the prompt again. It skips what is already there.</li>
+    <li><b>The new commands don't show up:</b> restart Claude Code and make sure the session is Local.</li>
+    <li><b>Anything else:</b> paste the error into Claude Code and ask it to fix it. Still stuck? DM me @clone.creatives.</li>
+  </ul>
+
+  <footer>All five are free and made by their authors (MIT or their own licences); not affiliated with Anthropic, Remotion or HeyGen. "Claude" is a trademark of Anthropic.<br>
+    <a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=skills&amp;utm_content=footer">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+<script src="../shared/copy.js"></script>
+</body>
+</html>
