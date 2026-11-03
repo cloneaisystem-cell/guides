@@ -24,7 +24,7 @@ pre { white-space: pre-wrap; background: #0d0a08; border: 1px solid #3a3029; bor
 /* chips + notes */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
 .chip { background: var(--panel); border: 1px solid #3a3029; color: var(--cream); font-weight: 700; font-size: 13.5px; padding: 8px 11px; border-radius: 999px; }
-.note { background: var(--panel); border-left: 4px solid var(--red); border-radius: 12px; padding: 14px 16px; margin: 16px 0; font-size: 15.5px; line-height: 1.5; }
+.note { background: linear-gradient(180deg, #33201a, var(--panel)); border: 1px solid #4a3029; border-radius: 14px; padding: 14px 16px; margin: 16px 0; font-size: 15.5px; line-height: 1.5; }
 
 /* buttons */
 .btn { display: inline-block; background: var(--red); color: var(--cream); text-decoration: none; font-weight: 800; padding: 12px 16px; border-radius: 12px; border: 0; font-size: 15px; cursor: pointer; font-family: inherit; }
@@ -52,12 +52,13 @@ details p { margin: 10px 0 0; }
 
 /* ===== the community section (middle of every guide) ===== */
 .system { margin: 48px -16px 0; padding: 34px 16px 30px; background: linear-gradient(180deg, #221a15 0%, #1a1411 100%); border-top: 1px solid #3a3029; border-bottom: 1px solid #3a3029; }
-.system > h2 { margin-top: 0; font-size: 31px; }
+.system > h2 { font-size: 31px; }
+.system > h2:first-child { margin-top: 0; }
 .eyebrow { color: var(--red-hi); font-weight: 800; font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 8px; }
 .benefits { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 18px 0 8px; }
 @media (min-width: 520px) { .benefits { grid-template-columns: 1fr 1fr; } }
 .benefit { background: var(--panel); border: 1px solid #3a3029; border-radius: 14px; padding: 14px 14px 12px; }
-.benefit .ico { font-size: 22px; line-height: 1; display: block; margin-bottom: 8px; }
+.benefit .ico { width: 26px; height: 26px; display: block; margin-bottom: 10px; fill: none; stroke: var(--red-hi); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .benefit h3 { font-size: 16px; margin: 0 0 4px; }
 .benefit p { font-size: 14.5px; line-height: 1.45; margin: 0; color: #e8dcb4; }
 .week { list-style: none; padding: 0; margin: 14px 0 0; border-left: 2px solid #4a3e36; }
@@ -72,7 +73,7 @@ details p { margin: 10px 0 0; }
 .join li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--red); font-weight: 800; font-size: 18px; }
 .bigbtn { display: block; text-align: center; background: var(--red); color: #FFF; text-decoration: none; font-weight: 800; font-size: 21px; padding: 20px 16px; border-radius: 14px; box-shadow: 0 8px 0 #6E1610, 0 14px 28px rgba(163,35,26,.35); }
 .bigbtn:active { transform: translateY(4px); box-shadow: 0 4px 0 #6E1610; }
-.join .small { color: #5A4E44; text-align: center; margin: 14px 0 0; }
+.join .price { color: #5A1A12; }
 .faq h2 { font-size: 26px; margin-top: 34px; }
 .faq details { background: var(--panel); }
 
@@ -84,3 +85,61 @@ details p { margin: 10px 0 0; }
 
 footer { color: var(--muted); font-size: 13.5px; margin-top: 44px; line-height: 1.55; }
 footer a { color: var(--cream); font-weight: 700; }
+
+/* price line under every join button */
+.price { text-align: center; font-weight: 700; font-size: 15px; color: var(--cream); margin: 14px 0 0; }
+.chip.hot { background: var(--red); border-color: var(--red); }
+
+/* browser surfaces */
+::selection { background: var(--red); color: var(--cream); }
+:focus-visible { outline: 2px solid var(--red-hi); outline-offset: 3px; border-radius: 6px; }
+html { scrollbar-color: #4a3e36 var(--bg); }
+summary:focus-visible, .bigbtn:focus-visible { outline-color: var(--cream); }
+
+/* ===== Safelight motion (only with html.motion; off for reduced motion) ===== */
+/* 1. the room light: a warm red glow that drifts down with the reader and brightens in the community section */
+body::before { content: ""; position: fixed; inset: -20vh -30vw; pointer-events: none; z-index: -1;
+  background: radial-gradient(60vmax 45vmax at 50% calc(10% + var(--scroll, 0) * 80%), rgba(163,35,26, calc(.10 + var(--safelight, 0) * .22)), transparent 70%); }
+main { position: relative; z-index: 0; }
+
+/* 2. every lit surface catches the light as it passes the middle of the screen */
+.lit { position: relative; }
+.motion .lit { transform: perspective(900px) rotateX(calc(var(--v, 0) * 7deg + var(--py, 0) * -6deg)) rotateY(calc(var(--px, 0) * 8deg)) translateZ(0);
+  transition: transform .5s cubic-bezier(.16,1,.3,1); transform-origin: 50% 50%; will-change: transform; }
+.motion .lit::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(calc(100deg + var(--px, 0) * 40deg), transparent 30%, rgba(250,238,196, calc(.10 - (var(--v, 0) * var(--v, 0)) * .10)) 50%, transparent 70%);
+  background-size: 260% 100%; background-position: calc(50% - var(--v, 0) * 60%) 0; mix-blend-mode: screen; }
+.motion .join.lit::after { mix-blend-mode: soft-light; }
+.motion .vwrap.lit::after { display: none; }
+.vwrap { position: relative; margin: 14px auto 6px; border-radius: 16px; }
+.vwrap.tall { width: min(100%, 380px); }
+.vwrap .vid { margin: 0; }
+.playbtn { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 64px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(163,35,26,.92); box-shadow: 0 10px 30px rgba(0,0,0,.5), 0 0 0 8px rgba(250,238,196,.14); display: grid; place-items: center; transition: transform .15s ease; }
+.playbtn svg { width: 26px; height: 26px; fill: var(--cream); margin-left: 4px; }
+.playbtn:hover { transform: scale(1.06); }
+.vwrap.playing .playbtn { display: none; }
+.motion .hero { transform: perspective(1100px) rotateX(calc(max(var(--v, 0), 0) * 14deg)) scale(calc(1 - max(var(--v, 0), 0) * .06)); transform-origin: 50% 100%; }
+.motion .hero img { box-shadow: 0 calc(18px + max(var(--v,0),0) * 30px) 60px rgba(0,0,0,.55), 0 0 calc(var(--safelight,0) * 0px) transparent; }
+
+/* 3. the step wire fills as you read the steps */
+ol.steps { position: relative; }
+.motion ol.steps::before { content: ""; position: absolute; left: 30px; top: 30px; bottom: 30px; width: 2px; background: #3a3029; z-index: 0; }
+.motion ol.steps::after { content: ""; position: absolute; left: 30px; top: 30px; width: 2px; height: calc((100% - 60px) * var(--fill, 0)); background: linear-gradient(var(--red), var(--red-hi)); box-shadow: 0 0 12px rgba(224,68,58,.6); z-index: 0; }
+.motion ol.steps > li { z-index: 1; }
+
+/* 4. one sheen across the join card when it arrives */
+.join { overflow: hidden; }
+.join .sheen { display: none; }
+.motion .join.shine::before { content: ""; position: absolute; top: -20%; bottom: -20%; width: 40%; left: -60%; z-index: 2; pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent); transform: skewX(-18deg);
+  animation: sheen 1.2s cubic-bezier(.16,1,.3,1) .15s 1 forwards; }
+@keyframes sheen { to { left: 130%; } }
+.bigbtn { transition: transform .15s ease, box-shadow .15s ease, filter .2s ease; }
+.bigbtn:hover { filter: brightness(1.08); }
+
+@media (prefers-reduced-motion: reduce) {
+  .lit, .hero { transform: none !important; transition: none !important; }
+  .sticky { transition: none; }
+}
+.bigbtn + .price { margin-top: 24px; }
