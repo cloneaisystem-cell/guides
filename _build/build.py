@@ -15,7 +15,7 @@ HEAD = """<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="../shared/guide.css">
 <script src="../shared/copy.js" defer></script>"""
 
-STICKY = """<div class="sticky"><span>AI Virality Creators · 120+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign={{CAMPAIGN}}&amp;utm_content=sticky">Join the community &rarr;</a></div>"""
+STICKY = """<div class="sticky"><span>AI Virality Creators · 125+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign={{CAMPAIGN}}&amp;utm_content=sticky">Join the community &rarr;</a></div>"""
 
 PAGES = {
     "anidoodle": dict(
@@ -29,7 +29,7 @@ PAGES = {
         CAMPAIGN="skills",
         EYEBROW="Installed? Here's what's next",
         H2="Now make them work <em>for you</em>.",
-        P="On their own, the 5 skills wait for you to type. This is the system I run on top of them every day: it brings me ideas and script drafts each morning, edits in plain English, schedules the posts and answers the DMs. Even the DM that sent you here went out by itself. No code, and I approve every step:",
+        P="On their own, the 5 skills wait for you to type. This is the system I run on top of them every day: it brings me ideas and script drafts each morning, edits in plain English, schedules the posts and answers the DMs. Even the DM that sent you here went out by itself. You never write code, and I approve every step:",
         SPECIAL_LI="<li><b>Master Claude Code:</b> real builds with every file included, starting with the Night Shift experiment.</li>",
     ),
 }
