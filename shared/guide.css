@@ -114,9 +114,9 @@ main { position: relative; z-index: 0; }
 .vwrap { position: relative; margin: 14px auto 6px; border-radius: 16px; }
 .vwrap.tall { width: min(100%, 380px); }
 .vwrap .vid { margin: 0; }
-.playbtn { position: absolute; right: 14px; bottom: 14px; width: 64px; height: 64px; border-radius: 50%; border: 0; cursor: pointer;
+.playbtn { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%; border: 0; cursor: pointer;
   background: rgba(163,35,26,.92); box-shadow: 0 10px 30px rgba(0,0,0,.5), 0 0 0 8px rgba(250,238,196,.14); display: grid; place-items: center; transition: transform .15s ease; }
-.playbtn svg { width: 26px; height: 26px; fill: var(--cream); margin-left: 4px; }
+.playbtn svg { width: 30px; height: 30px; fill: var(--cream); margin-left: 4px; }
 .playbtn:hover { transform: scale(1.06); }
 .vwrap.playing .playbtn { display: none; }
 .motion .hero { transform: perspective(1100px) rotateX(calc(max(var(--v, 0), 0) * 14deg)) scale(calc(1 - max(var(--v, 0), 0) * .06)); transform-origin: 50% 100%; }
