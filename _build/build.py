@@ -37,6 +37,12 @@ PAGES = {
         P="A page that no longer looks AI-made still needs visitors, and they come from a reel that gets watched to the end. I don't build mine by hand anymore: Claude Code runs my content every day, from the morning idea list to the edit, the posting and the DMs. Even the DM that sent you here went out by itself. Under a minute:",
         SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons and cheat sheets for the Reel or TikTok that sends people to your page.</li><li><b>Master Claude Code:</b> the same Claude Code you just used, with real builds and every file included.</li>",
     ),
+    "pinocchio": dict(
+        CAMPAIGN="pinocchio",
+        H2="You made one Pinocchio. Next, make the <em>series</em>.",
+        P="One character reel gets you a visit. A series gives people a reason to come back: the same face, a new crime each time, and a plan for which reel to repeat. I don't run that by hand anymore: Claude Code handles my content every day, from the morning idea list to the edit, the posting and the DMs. Even the DM that sent you here went out by itself. Under a minute:",
+        SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok, so the next episode is planned instead of guessed.</li><li><b>Master Claude Code:</b> real builds with every file included. Claude writes the code, you say what you want and approve each step.</li>",
+    ),
 }
 
 community = io.open(os.path.join(B, "community.html"), encoding="utf-8").read()
