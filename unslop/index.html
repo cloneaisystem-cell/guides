@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>unslop for Claude Code: remove the AI look from your page (free)</title>
+<meta name="description" content="A free Claude Code skill that finds what makes your page look AI-made and fixes it, one layer at a time. The 2-line install, how to run it and all 26 tells we found on one Claude-built page.">
+<meta property="og:title" content="unslop for Claude Code: remove the AI look from your page">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/unslop/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Serif:ital@1&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+<script src="../shared/copy.js" defer></script>
+<script src="../shared/motion.js" defer></script>
+<style>
+/* page-level additions for this guide (the shared guide.css is untouched) */
+.sqbox .vwrap.tall { width: min(100%, 460px); }
+.sqbox .vwrap .vid.tall { width: 100%; aspect-ratio: 1 / 1; }
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 6px; }
+.ba figure { margin: 0; }
+.ba img { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+.ba .after img { border: 2px solid var(--cream); }
+.ba figcaption { text-align: center; font-weight: 800; font-size: 14px; color: var(--muted); margin-top: 8px; }
+.ba .after figcaption { color: var(--cream); }
+.tells h3 { font-size: 18px; margin: 26px 0 4px; color: var(--cream); }
+.tells h3 span { color: var(--muted); font-weight: 700; font-size: 14px; margin-left: 6px; }
+.tells ul { list-style: none; padding: 0; margin: 0; }
+.tells li { margin: 0; }
+.tally { position: sticky; top: 10px; z-index: 5; width: fit-content; max-width: 100%; margin: 14px 0 0; padding: 9px 16px; border-radius: 999px; background: rgba(22,17,14,.94); border: 1px solid #4a3e36; backdrop-filter: blur(8px); font-weight: 800; font-size: 14.5px; }
+.tally b { color: var(--cream); }
+.tell { position: relative; display: flex; gap: 12px; align-items: flex-start; background: var(--panel-2); border: 1px solid #332a24; border-radius: 14px; padding: 12px 14px; margin: 8px 0; cursor: pointer; }
+.tell input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.tell .box { flex: 0 0 24px; width: 24px; height: 24px; border-radius: 7px; border: 2px solid #6b5a4d; margin-top: 1px; display: grid; place-items: center; transition: background .15s ease, border-color .15s ease; }
+.tell .box svg { width: 15px; height: 15px; stroke: var(--cream); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+.tell input:checked + .box { background: var(--red); border-color: var(--red); }
+.tell input:checked + .box svg { opacity: 1; }
+.tell input:focus-visible + .box { outline: 2px solid var(--cream); outline-offset: 2px; }
+.tell .txt { font-size: 15.5px; line-height: 1.45; }
+.tell .txt b { color: var(--cream); }
+.tell .fix { display: block; margin-top: 4px; color: var(--muted); font-size: 14.5px; }
+.tell .fix::before { content: "Fix: "; font-weight: 800; color: #e8dcb4; }
+.passes { margin: 10px 0 0; padding-left: 22px; }
+.passes li { margin: 6px 0; font-size: 15.5px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="A purple, glowing landing page next to the same page after unslop, plain and calm, with the words: Remove the AI look from your page." width="1280" height="720"></div>
+  <h1>Remove the AI look from your Claude page: <em>free skill</em> + the 26 tells</h1>
+  <p class="sub">unslop is a free Claude Code skill that finds what makes a page look AI-made and fixes it, one layer at a time. It shows you the audit and waits for your OK before it changes a line.</p>
+  <div class="chips"><span class="chip hot">Free guide · 0 credits</span><span class="chip">2-line install</span><span class="chip">26 tells, one fix each</span><span class="chip">asks you first</span></div>
+  <div class="sqbox"><video class="vid tall" src="01-story.mp4" poster="01-poster.jpg" controls playsinline preload="none"></video></div>
+  <p class="vid-note">The skill's own story video, rendered on my test page. unslop by @heydamir (CC BY 4.0).</p>
+  <div class="note">On your phone? <b>Send yourself this link</b> and open it on your computer. Claude Code doesn't run on a phone.</div>
+
+  <h2>What you need</h2>
+  <ul class="clean">
+    <li><b>Claude Code</b> (it needs a paid Claude plan).</li>
+    <li><b>git</b>, to download the skill. Check with <code>git --version</code>.</li>
+    <li><b>unslop:</b> free, by Damir Sokolovsky (<a href="https://x.com/heydamir">@heydamir</a>), licence CC BY 4.0.</li>
+    <li><b>Only for the story video:</b> Playwright and ffmpeg. You can skip both.</li>
+  </ul>
+
+  <h2>4 steps</h2>
+  <ol class="steps">
+    <li><h3>Install</h3>In a terminal (not inside Claude Code), one line at a time:
+      <pre id="install">git clone https://github.com/heydamir/unslop
+mkdir -p ~/.claude/skills &amp;&amp; cp -r unslop/skills/unslop ~/.claude/skills/</pre>
+      <button class="btn copy" data-copy="install">Copy the 2 lines</button>
+      <details><summary>On Windows PowerShell</summary>
+        <p>Same thing, written for PowerShell:</p>
+        <pre id="installps">git clone https://github.com/heydamir/unslop
+New-Item -ItemType Directory -Force "$HOME\.claude\skills"
+Copy-Item -Recurse unslop\skills\unslop "$HOME\.claude\skills\"</pre>
+        <button class="btn copy" data-copy="installps">Copy the 3 lines</button></details>
+      <details><summary>For one project only</summary>
+        <p>Copy the <code>skills/unslop</code> folder into <code>.claude/skills/</code> inside that project instead of <code>~/.claude/skills/</code>. The skill then works only there.</p></details>
+      <details><summary>Prefer to let Claude do it?</summary>
+        <p>Open Claude Code in any folder and paste this. Claude shows every command before it runs it.</p>
+        <pre id="installai">Install the unslop skill for me. Show me each command before you run it.
+Clone https://github.com/heydamir/unslop into a temporary folder, copy its skills/unslop folder into ~/.claude/skills/ (on Windows: C:\Users\&lt;me&gt;\.claude\skills\), check that SKILL.md is in the new unslop folder, then tell me to restart Claude Code.</pre>
+        <button class="btn copy" data-copy="installai">Copy the prompt</button></details></li>
+    <li><h3>Restart Claude Code</h3>Close and reopen it so it loads the skill. Type <code>/</code> and look for <code>unslop</code>.</li>
+    <li><h3>Run it on your page</h3>Open Claude Code in your page's folder and type:
+      <pre id="run">/unslop my landing page</pre>
+      <button class="btn copy" data-copy="run">Copy</button>
+      <p>Only have a link? Type <code>/unslop the hero of https://your-site.com</code>. unslop saves a copy of the page and works on that, so you get a redesigned page in code to hand to whoever owns the site.</p></li>
+    <li><h3>Answer its questions</h3>unslop stops after the audit and a five-line direction (product, character, world, moments, signature) and waits for you. Read it, change a line if it's off, or say "go". It also asks you to confirm any claim it can't check, like "10x faster". The ones that aren't true get removed.</li>
+  </ol>
+
+  <h2>What it does</h2>
+  <p><b>1. Audit.</b> It lists every sign of the AI look it finds, one line each, with where it lives in your code. <b>2. It asks you first.</b> The direction comes from your product, not from a trend, and nothing is edited until you answer. <b>3. Nine passes, in this order:</b></p>
+  <ol class="passes">
+    <li>Spacing</li><li>Color</li><li>Icons</li><li>Copy</li><li>Type</li><li>Layout</li><li>Details</li><li>Visuals</li><li>Motion</li>
+  </ol>
+  <p>Spacing comes first because everything else reads differently once the rhythm is right. Your features, your content and the order of your sections stay, and it doesn't rename the product. If your page is already well designed, it says so, suggests two or three small refinements at most, and stops.</p>
+  <details><summary>Optional: the story video (the clip at the top)</summary>
+    <p>Add "and make the story video" to your command: <code>/unslop my landing page and make the story video so I can post it</code>. It builds a short square clip where the page cleans itself up, with red measurement lines. For that it needs Playwright and ffmpeg:</p>
+    <pre id="story">npm install -D playwright
+npx playwright install chromium</pre>
+    <button class="btn copy" data-copy="story">Copy the 2 lines</button>
+    <p>ffmpeg has to be on your PATH too. On my slow PC the square render took 16 minutes, so ask for the video only when you want to post it.</p></details>
+  <div class="note"><b>Credit.</b> unslop is made by <b>Damir Sokolovsky</b> (<a href="https://x.com/heydamir">@heydamir</a>), who started the Unslopping series on X, and it is shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Repo: <a href="https://github.com/heydamir/unslop">github.com/heydamir/unslop</a>. I didn't change the skill. This guide only shows how I used it.</div>
+
+  <h2>The 26 tells <em>on one page</em></h2>
+  <p>I ran unslop on a page Claude built from one sentence, and the audit found 26 tells. This is that list, in plain words, grouped by what you see. Tap every one you can spot on your own page. Your page may have 6 of them or all 26, and unslop finds them for you and says where each one lives in your code.</p>
+  <div class="tells" id="tells">
+    <p class="tally" id="tally" aria-live="polite">Tap the ones you see on your page</p>
+
+    <h3>Color and surfaces<span>7</span></h3>
+    <ul>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Gradient text.</b> The headline or logo fades from purple to blue to pink.<span class="fix">one solid text color</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Glowing buttons.</b> Gradient fills and a purple glow under buttons, number badges and tags.<span class="fix">flat fills, no glow</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Color fog.</b> Soft purple washes behind the hero and the signup box.<span class="fix">a plain background</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Blue-purple greys.</b> The greys lean violet, in three light tints that look the same.<span class="fix">one neutral ramp and three text roles</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Neon mint.</b> A bright mint green on scores, ticks and the form message.<span class="fix">drop it, keep one accent for one thing</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Purple everywhere.</b> The accent color shows on labels, arrows, and every hover and focus border.<span class="fix">use the accent once or twice per screen</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Glass header.</b> A blurry, see-through bar at the top.<span class="fix">a solid bar with a thin line</span></span></label></li>
+    </ul>
+
+    <h3>Type<span>4</span></h3>
+    <ul>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Everything bold.</b> Logo, prices and every heading at weight 700 to 800.<span class="fix">weights 400 to 600, let size do the work</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>SHOUTING LABELS.</b> Small uppercase labels with wide spacing, and uppercase captions.<span class="fix">normal sentence case</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Squeezed small text.</b> Tight letter spacing on small text, and nine odd text sizes.<span class="fix">normal spacing and a short scale of sizes</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>A font nobody picked.</b> The browser's default system font.<span class="fix">choose one family that fits the product (my page got IBM Plex Sans)</span></span></label></li>
+    </ul>
+
+    <h3>Icons, emoji and shapes<span>2</span></h3>
+    <ul>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Emoji as icons.</b> Six emoji for the features, plus text ticks and "+" signs.<span class="fix">one line-icon set, one size</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Pills everywhere.</b> Every button, badge, score and input is a full pill shape.<span class="fix">corner radius that fits the size of each thing</span></span></label></li>
+    </ul>
+
+    <h3>Spacing<span>2</span></h3>
+    <ul>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Random gaps.</b> Spaces of 14, 6, 7 and 30 pixels that follow no grid.<span class="fix">everything on a 4 pixel grid</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Cards that don't match.</b> Cards in one row with different padding inside.<span class="fix">one padding for every card in a row</span></span></label></li>
+    </ul>
+
+    <h3>Copy<span>5</span></h3>
+    <ul>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>The pill above the headline.</b> A small badge like "AI-powered video repurposing".<span class="fix">delete it</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Claims nobody checked.</b> "Viral clips in minutes" (the page's own FAQ said otherwise), "30 languages", "never train on your videos".<span class="fix">ask the owner, keep what's true in a quiet way, delete the rest</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Headings that fit any product.</b> "Everything you need to clip faster", "Simple plans that grow with you".<span class="fix">say what this product does and for whom</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Mixed-up button words.</b> Three labels for one action ("Get started free", "Start for free", "Start free"), and a form that answers "Thanks!".<span class="fix">one label per action and a calm form message</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Full stops on short lines.</b> Captions, labels and short notes ending with a period.<span class="fix">periods only on real paragraphs</span></span></label></li>
+    </ul>
+
+    <h3>Layout and details<span>6</span></h3>
+    <ul>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Everything centered.</b> A hero stacked in the middle, and every section heading centered too.<span class="fix">left-align long headlines, put text over a large product view</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>An empty hero picture.</b> A gradient box with made-up score pills inside.<span class="fix">show the real product (on my page, a marked transcript and three clips)</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Three identical cards.</b> An emoji, a bold title and a vague line, three times in a row.<span class="fix">vary the sizes, write concrete lines, make one card wide</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>The shouting plan.</b> The featured price plan has a purple border, a gradient wash and a gradient tag.<span class="fix">a quiet outline or one small marker</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>Hover lift.</b> Buttons and cards jump up and grow a colored border when you point at them.<span class="fix">a small color change, and a tiny press effect</span></span></label></li>
+      <li><label class="tell"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span class="txt"><b>No menu on a phone.</b> The nav links disappear on small screens and nothing replaces them.<span class="fix">add a menu button</span></span></label></li>
+    </ul>
+  </div>
+
+  <h2>The test: <em>one sentence</em></h2>
+  <p>To keep the test fair I didn't pick a bad site. I gave Claude (Sonnet) one sentence and changed nothing it built:</p>
+  <pre id="prompt">Build a landing page for my AI app that turns long videos into viral short clips.</pre>
+  <button class="btn copy" data-copy="prompt">Copy the prompt</button>
+  <p>ClipForge is a made-up app, and Claude picked the name. The page came back purple, glowing and gradient (left). Then I ran <code>/unslop</code> on it (right):</p>
+  <div class="ba">
+    <figure class="before"><img src="before-phone.jpg" alt="The page Claude built from one sentence, on a phone: purple background, gradient headline, glowing buttons." width="600" height="1066" loading="lazy"><figcaption>Before: one sentence</figcaption></figure>
+    <figure class="after"><img src="after-phone.jpg" alt="The same page after unslop, on a phone: graphite background, plain headline, flat buttons, a yellow-marked transcript." width="600" height="1066" loading="lazy"><figcaption>After: unslop</figcaption></figure>
+  </div>
+  <ul class="clean">
+    <li><b>26 tells found.</b> The verdict was heavy slop, so it ran the full process.</li>
+    <li><b>It asked first.</b> It stopped after the audit and wrote its direction: a cutting room, a printed transcript marked with a yellow marker under a desk lamp. I approved it as written.</li>
+    <li><b>It asked about the claims.</b> "In minutes", "30 languages", "we don't train on your videos" and the Hook scores can't be checked from the page. It's a demo for a made-up app, so I confirmed them and they stayed.</li>
+    <li><b>The headline and every claim stayed the same.</b> The copy that changed: the pill badge, the generic headings, the button labels and the "Thanks!".</li>
+    <li><b>The run took about 37 minutes of Claude time</b> on my PC. The page went from 582 to 622 lines of HTML.</li>
+  </ul>
+  <details><summary>What each of the 9 passes changed on my page</summary>
+    <ol class="passes">
+      <li><b>Spacing:</b> everything on the 4 px grid, and one padding for the cards in a row.</li>
+      <li><b>Color:</b> the violet gradients, glows, washes and glass went. One warm graphite ramp, with the marker yellow only on the marked sentence, the selected clip and the focus ring.</li>
+      <li><b>Icons:</b> six emoji, text ticks and "+" signs became one line-icon set.</li>
+      <li><b>Copy:</b> the pill badge went, three button labels became one, "Thanks!" was fixed, the generic headings became specific ones.</li>
+      <li><b>Type:</b> IBM Plex Sans with Plex Mono for timecodes, weights 400 to 600, no uppercase labels.</li>
+      <li><b>Layout:</b> a left-aligned hero over a wide product view, and a menu button for phones.</li>
+      <li><b>Details:</b> corner radius by size, quiet hover and focus states.</li>
+      <li><b>Visuals:</b> the hero view became a marked transcript, a timeline and three clips with timecodes.</li>
+      <li><b>Motion:</b> one easing curve, no lift on hover, a tiny press effect.</li>
+    </ol></details>
+  <div class="note"><b>Not perfect.</b> No image tool was connected, so there is no generated hero picture and the three clip cards are plain surfaces. The hero is left-aligned with an empty right third, and that's the part I'm least sure about. Treat the result as a strong first pass and open it on your own phone before you ship it.</div>
+
+  <section class="system" id="community">
+    <h2>Your page looks designed now. Next, bring people <em>to it</em>.</h2>
+    <p>A page that no longer looks AI-made still needs visitors, and they come from a reel that gets watched to the end. I don't build mine by hand anymore: Claude Code runs my content every day, from the morning idea list to the edit, the posting and the DMs. Even the DM that sent you here went out by itself. Under a minute:</p>
+    <video class="vid wide" src="../shared/system-video-169.mp4" poster="../shared/system-poster-169.jpg" controls playsinline preload="none"></video>
+    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone, made with the methods taught inside.</p>
+    <a class="bigbtn" style="margin-top:20px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=unslop&amp;utm_content=video">Join AI Virality Creators &rarr;</a>
+    <p class="price">Today it's $9/month. Only a few spots left, then it goes up to $27/month.</p>
+
+    <h2>What you get inside</h2>
+    <div class="benefits">
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg><h3>A path for complete beginners</h3><p>START HERE takes you from zero to your first consistent AI character, lesson by lesson. Then Go Viral: 8 short lessons and cheat sheets for Reels and TikTok.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5l2 4M14 5l2 4"/></svg><h3>Every reel I post, taken apart</h3><p>The prompts, the edit choices and what each shot cost in credits. You copy what already worked instead of guessing.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg><h3>Claude Code, in plain English</h3><p>Master Claude Code: real builds with every file included. Claude writes the code; you say what you want and approve each step.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4zM9 8V5h6v3M4 13h16"/></svg><h3>30+ courses on today's tools</h3><p>Kling 3.0, Veo 3.1, Nano Banana Pro, ElevenLabs voices, UGC and cinematic ads, prompt systems, 4K upscaling.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.5V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3.5Z"/></svg><h3>Feedback from me</h3><p>Post your video in the community. I read it and reply myself, and other members add their notes.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><h3>From skill to client work</h3><p>Modules on finding your first clients, pricing what you make and delivering it like a pro.</p></div>
+    </div>
+
+    <h2>Your first week</h2>
+    <ol class="week">
+      <li><b>Day 1.</b> Join, introduce yourself and say what you want to make. I point you to the module that fits.</li>
+      <li><b>Days 2–4.</b> Build your first AI character in START HERE, one short lesson a night. (Here for Claude Code? Start Master Claude Code instead.)</li>
+      <li><b>Days 5–6.</b> Open a reel breakdown and copy its structure for your own idea.</li>
+      <li><b>Day 7.</b> Post your first video in the community and get feedback on it.</li>
+    </ol>
+
+    <div class="join">
+      <h3>Stop saving tutorials. Start posting.</h3>
+      <p>AI Virality Creators is my Skool community. Everything above is in one place, in order, and I answer you myself.</p>
+      <ul>
+        <li><b>Go Viral:</b> 8 short lessons and cheat sheets for the Reel or TikTok that sends people to your page.</li><li><b>Master Claude Code:</b> the same Claude Code you just used, with real builds and every file included.</li>
+        <li><b>30+ step-by-step courses</b> and the breakdown of every reel, with prompts and credit costs.</li>
+        <li><b>Personal feedback</b> on what you post, next to 125+ creators building the same skills.</li>
+      </ul>
+      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=unslop">Join AI Virality Creators &rarr;</a>
+      <p class="price">Today it's $9/month. Only a few spots left, then it goes up to $27/month.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Before you join</h2>
+      <details><summary>I'm a complete beginner. Is this too advanced?</summary>
+        <p>Not at all. START HERE assumes zero experience and goes in order: your first image, your first video, then a character that looks the same in every shot. If you can type a sentence, you can follow it.</p></details>
+      <details><summary>I can't code. Do I need to?</summary>
+        <p>You don't need to. For the Claude Code lessons you describe what you want in plain English, Claude writes the code, and you approve each step. Every lesson shows the exact clicks.</p></details>
+      <details><summary>Do I need a Skool account? Can I use it on my phone?</summary>
+        <p>Skool is the app the community lives in. Signing up is free and takes about a minute when you join, and it works in the Skool phone app or any browser. Watching lessons and posting work fine on a phone; Claude Code itself runs on a computer.</p></details>
+      <details><summary>I don't have much time.</summary>
+        <p>The lessons are short and numbered, so you always know which one is next. One lesson an evening keeps you moving, and the community keeps you posting.</p></details>
+      <details><summary>Can't I learn all of this free on YouTube?</summary>
+        <p>You can start there, and free guides like this one are made for exactly that. What you won't find for free: the right order, my real project files, the credit cost of every shot, and someone who looks at your video and tells you what to fix.</p></details>
+      <details><summary>AI tools change every month. Won't it be outdated?</summary>
+        <p>New tools get their own modules: Kling 3.0, Veo 3.1 and Nano Banana Pro are already in. The breakdowns teach how a reel is built, and that carries over to whatever tool comes next.</p></details>
+      <details><summary>AI credits get expensive. What will I spend?</summary>
+        <p>Every breakdown shows what each shot cost, so you know before you start. A lot of what I teach costs 0 credits, like the guide you're reading now.</p></details>
+      <details><summary>Will I get lost in a big group?</summary>
+        <p>It's around 125 people, small enough that new posts get answered. I reply myself, and members comment on each other's work.</p></details>
+      <details><summary>Is the person in the video real?</summary>
+        <p>The presenter is my AI clone, built with the same methods taught inside. I say so every time. The community is run by me, and I answer you myself.</p></details>
+      <details><summary>Will this make me money?</summary>
+        <p>I can't promise income. You get the skill, finished videos to show, and modules on finding clients and pricing your work. What you earn with them is up to you.</p></details>
+      <details><summary>Is it only about video?</summary>
+        <p>Video is the core. Master Claude Code is the second part: real builds with every file included, starting with the Night Shift experiment. Prompting, voices and client work are in there too.</p></details>
+      <details><summary>What if it's not for me?</summary>
+        <p>Cancel anytime in your Skool settings. You also have the guarantee: publish your first AI video within 30 days of joining, and if you can't, message me for a refund. The full terms are on the About page.</p></details>
+    </div>
+    <a class="bigbtn" style="margin-top:22px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=unslop&amp;utm_content=faq">Join AI Virality Creators &rarr;</a>
+    <p class="price">Today it's $9/month. Only a few spots left, then it goes up to $27/month.</p>
+  </section>
+
+
+  <h2>If something goes wrong</h2>
+  <ul class="clean">
+    <li><b><code>/unslop</code> doesn't show up.</b> Check that the file <code>~/.claude/skills/unslop/SKILL.md</code> exists (not one folder deeper), then restart Claude Code.</li>
+    <li><b>It stops and asks questions.</b> That is on purpose. Answer in the chat, or say "go" if you're happy with its direction.</li>
+    <li><b>The story video script stops on Windows with "chromium is undefined".</b> That happened on my PC. Tell Claude: <i>"Run an unchanged copy of story.mjs from a folder where Playwright is installed."</i> The skill's own file stays untouched.</li>
+  </ul>
+
+  <footer>unslop is by Damir Sokolovsky (<a href="https://x.com/heydamir">@heydamir</a>), CC BY 4.0, <a href="https://github.com/heydamir/unslop">github.com/heydamir/unslop</a>. ClipForge is a made-up app. Not affiliated with Anthropic or with unslop's author. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=unslop&amp;utm_content=footer">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+<div class="sticky"><span>AI Virality Creators · 125+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=unslop&amp;utm_content=sticky">Join the community &rarr;</a></div>
+<script>
+(function () {
+  var boxes = [].slice.call(document.querySelectorAll("#tells input[type=checkbox]"));
+  var out = document.getElementById("tally");
+  function update() {
+    var n = boxes.filter(function (b) { return b.checked; }).length;
+    out.innerHTML = n ? "Ticked <b>" + n + "</b> of 26 on your page" : "Tap the ones you see on your page";
+  }
+  boxes.forEach(function (b) { b.addEventListener("change", update); });
+})();
+</script>
+</body>
+</html>

@@ -31,6 +31,12 @@ PAGES = {
         P="On their own, the 5 skills wait for you to type. This is the system I run on top of them every day: it brings me ideas and script drafts each morning, edits in plain English, schedules the posts and answers the DMs. Even the DM that sent you here went out by itself. You never write code, and I approve every step:",
         SPECIAL_LI="<li><b>Master Claude Code:</b> real builds with every file included, starting with the Night Shift experiment.</li>",
     ),
+    "unslop": dict(
+        CAMPAIGN="unslop",
+        H2="Your page looks designed now. Next, bring people <em>to it</em>.",
+        P="A page that no longer looks AI-made still needs visitors, and they come from a reel that gets watched to the end. I don't build mine by hand anymore: Claude Code runs my content every day, from the morning idea list to the edit, the posting and the DMs. Even the DM that sent you here went out by itself. Under a minute:",
+        SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons and cheat sheets for the Reel or TikTok that sends people to your page.</li><li><b>Master Claude Code:</b> the same Claude Code you just used, with real builds and every file included.</li>",
+    ),
 }
 
 community = io.open(os.path.join(B, "community.html"), encoding="utf-8").read()
