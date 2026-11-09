@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<!-- PRICE VERIFIED LIVE 2026-11-05 on the Skool About page: $9/month, 127 members, $27/month from 130 members -->
+<title>Let Claude cut your first draft: the 3-step setup (free)</title>
+<meta name="description" content="A free setup that lets Claude Code pick the best moments from your footage and cut a first draft. 3 steps, one starter prompt and 3 mistakes from my own tests.">
+<meta property="og:title" content="Let Claude cut your first draft: the 3-step setup">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/claude-edit/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Serif:ital@1&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+<script src="../shared/copy.js" defer></script>
+<script src="../shared/motion.js" defer></script>
+<style>
+.watch { margin: 0 0 16px; text-align: center; }
+.cut-note { color: var(--muted); font-size: 14px; margin: 14px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="A tweet saying a vlog was fully edited by Claude Code, a red stamp that reads REAL?, and the presenter, my AI clone, looking at the camera." width="1280" height="720"></div>
+  <p class="watch"><a class="btn" href="https://www.youtube.com/@clone.creatives">Watch the episode on YouTube</a></p>
+  <h1>Let Claude cut your first draft: the 3-step setup</h1>
+  <p class="sub">Claude Code can pick the best moments from your footage and cut a first draft. You still make it good. This is the setup I would copy tonight.</p>
+  <div class="chips"><span class="chip hot">Free guide · 0 credits</span><span class="chip">3 steps</span><span class="chip">1 starter prompt</span><span class="chip">asks before it cuts</span></div>
+  <div class="note">On your phone? <b>Send yourself this link</b> and open it on your computer. Claude Code doesn't run on a phone.</div>
+
+  <h2>What you need</h2>
+  <ul class="clean">
+    <li><b>Claude Code</b> (it needs a paid Claude plan).</li>
+    <li><b>Your clips</b> in one folder.</li>
+    <li><b>A transcript with a time on every word.</b> Whisper makes one, and many editors export captions.</li>
+    <li><b>ffmpeg</b>, the free tool that does the cutting. Check with <code>ffmpeg -version</code>.</li>
+  </ul>
+
+  <h2>The 3 steps</h2>
+  <ol class="steps">
+    <li><h3>Put it all in one folder</h3>Clips and transcript together. Open Claude Code inside that folder.</li>
+    <li><h3>Ask for the 10 best moments, then the cut</h3>Claude reads the transcript, lists moments with timestamps, writes a cut list and cuts it with ffmpeg. Paste the starter prompt below and read the plan before it cuts anything.</li>
+    <li><h3>Spend about 20 minutes making it yours</h3>Fix the pacing, the joke and the hook. Claude does the boring part. Taste is still yours. Tell it what's wrong in one sentence and let it change only that.</li>
+  </ol>
+
+  <h2>Starter prompt</h2>
+  <pre id="prompt">You are my video editor. This folder has my clips and a transcript with word-level timestamps ([transcript file]).
+
+1. Read the whole transcript.
+2. Find the 10 best moments for a [length, e.g. 60-second] [format, e.g. vertical Short] about [topic]. For each one give the start and end time, the exact words, and one line on why it works.
+3. Put them in the order that tells the strongest story, with a hook in the first [3] seconds.
+4. Write a cut list (clip, start, end) and cut it with ffmpeg into [output file].
+
+Tell me if any line in the transcript looks wrong, like words on a silent part. Cut long pauses and mistakes. Don't add music or text.
+
+Show me the plan and the cut list before you cut anything.</pre>
+  <button class="btn copy" data-copy="prompt">Copy the prompt</button>
+  <p class="small">Swap: [transcript file], [length], [format], [topic], [3] seconds, [output file]. I haven't run this exact wording as-is, so treat it as a starting point.</p>
+  <p class="cut-note">The kind of cut list Claude wrote for my own vlog test (shortened):</p>
+  <pre>clip 1: 0.0 to 12.1 s    strongest opener, calm, eye contact
+clip 2: 13.1 to 26.3 s   a different take, a natural jump cut
+clip 3: 0.45 to 16.15 s  big energy, cut before a 2 s pause</pre>
+
+  <section class="system" id="community">
+    <h2>Claude can cut the draft. Learn what to keep.</h2>
+    <p>Claude can pick moments and cut them. It can't tell you which cut makes people stay, and that was my 20 minutes on the Short. I learn that by taking my own reels apart, and every one is inside my community. Claude Code also runs my content every day, from the morning idea list to the edit, the posting and the DMs. Under a minute:</p>
+    <video class="vid wide" src="../shared/system-video-169.mp4" poster="../shared/system-poster-169.jpg" controls playsinline preload="none"></video>
+    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone, made with the methods taught inside.</p>
+    <a class="bigbtn" style="margin-top:20px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=guide&amp;utm_medium=guide&amp;utm_campaign=claude-edit&amp;utm_content=video">Join AI Virality Creators &rarr;</a>
+    <p class="price">Today it's $9/month. Only a few spots left, then it goes up to $27/month.</p>
+
+    <h2>What you get inside</h2>
+    <div class="benefits">
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5l2 4M14 5l2 4"/></svg><h3>Every reel I post, taken apart</h3><p>The prompts, the edit choices and what each shot cost in credits. You see why a cut works before you copy it.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg><h3>Go Viral</h3><p>8 short lessons and cheat sheets for the Reel or TikTok people watch to the end.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg><h3>Master Claude Code</h3><p>The same Claude Code you just used: real builds with every file included. You say what you want and approve each step.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4zM9 8V5h6v3M4 13h16"/></svg><h3>START HERE, for complete beginners</h3><p>From zero to your first consistent AI character, lesson by lesson. Plus 30+ courses on today's tools.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.5V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3.5Z"/></svg><h3>A reply on your own edit</h3><p>Post your cut in the community. I read it and reply myself, and other members add their notes.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><h3>From skill to client work</h3><p>Modules on finding your first clients, pricing what you make and delivering it like a pro.</p></div>
+    </div>
+
+    <h2>Your first week</h2>
+    <ol class="week">
+      <li><b>Day 1.</b> Join, introduce yourself and say what you want to make. I point you to the module that fits.</li>
+      <li><b>Days 2–4.</b> Here for Claude Code? Start Master Claude Code. New to AI video? Start with START HERE, one short lesson a night.</li>
+      <li><b>Days 5–6.</b> Open a reel breakdown and see how the cuts are chosen. Copy that structure for your own footage.</li>
+      <li><b>Day 7.</b> Post your first cut in the community and get feedback on it.</li>
+    </ol>
+
+    <div class="join">
+      <h3>Stop re-cutting. Start posting.</h3>
+      <p>AI Virality Creators is my Skool community. Everything above is in one place, in order, and I answer you myself.</p>
+      <ul>
+        <li><b>Every reel taken apart,</b> with prompts, edit choices and credit costs.</li>
+        <li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>
+        <li><b>Master Claude Code:</b> real builds with every file included.</li>
+        <li><b>Personal feedback</b> on what you post, next to 125+ creators building the same skills.</li>
+      </ul>
+      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=guide&amp;utm_medium=guide&amp;utm_campaign=claude-edit">Join AI Virality Creators &rarr;</a>
+      <p class="price">Today it's $9/month. Only a few spots left, then it goes up to $27/month.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Before you join</h2>
+      <details><summary>I'm a complete beginner. Is this too advanced?</summary>
+        <p>Not at all. START HERE assumes zero experience and goes in order: your first image, your first video, then a character that looks the same in every shot. If you can type a sentence, you can follow it.</p></details>
+      <details><summary>I can't code. Do I need to?</summary>
+        <p>You don't need to. For the Claude Code lessons you describe what you want in plain English, Claude writes the code, and you approve each step. Every lesson shows the exact clicks.</p></details>
+      <details><summary>Do I need a Skool account? Can I use it on my phone?</summary>
+        <p>Skool is the app the community lives in. Signing up is free and takes about a minute when you join, and it works in the Skool phone app or any browser. Watching lessons and posting work fine on a phone; Claude Code itself runs on a computer.</p></details>
+      <details><summary>I don't have much time.</summary>
+        <p>The lessons are short and numbered, so you always know which one is next. One lesson an evening keeps you moving, and the community keeps you posting.</p></details>
+      <details><summary>Can't I learn all of this free on YouTube?</summary>
+        <p>You can start there, and free guides like this one are made for exactly that. What you won't find for free: the right order, my real project files, the credit cost of every shot, and someone who looks at your video and tells you what to fix.</p></details>
+      <details><summary>AI tools change every month. Won't it be outdated?</summary>
+        <p>New tools get their own modules: Kling 3.0, Veo 3.1 and Nano Banana Pro are already in. The breakdowns teach how a reel is built, and that carries over to whatever tool comes next.</p></details>
+      <details><summary>AI credits get expensive. What will I spend?</summary>
+        <p>Every breakdown shows what each shot cost, so you know before you start. A lot of what I teach costs 0 credits, like the guide you're reading now.</p></details>
+      <details><summary>Will I get lost in a big group?</summary>
+        <p>It's around 125 people, small enough that new posts get answered. I reply myself, and members comment on each other's work.</p></details>
+      <details><summary>Is the person in the video real?</summary>
+        <p>The presenter is my AI clone, built with the same methods taught inside. I say so every time. The community is run by me, and I answer you myself.</p></details>
+      <details><summary>Will this make me money?</summary>
+        <p>I can't promise income. You get the skill, finished videos to show, and modules on finding clients and pricing your work. What you earn with them is up to you.</p></details>
+      <details><summary>Is it only about video?</summary>
+        <p>Video is the core. Master Claude Code is the second part: real builds with every file included. Prompting, voices and client work are in there too.</p></details>
+      <details><summary>What if it's not for me?</summary>
+        <p>Cancel anytime in your Skool settings. You also have the guarantee: publish your first AI video within 30 days of joining, and if you can't, message me for a refund. The full terms are on the About page.</p></details>
+    </div>
+    <a class="bigbtn" style="margin-top:22px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=guide&amp;utm_medium=guide&amp;utm_campaign=claude-edit&amp;utm_content=faq">Join AI Virality Creators &rarr;</a>
+    <p class="price">Today it's $9/month. Only a few spots left, then it goes up to $27/month.</p>
+  </section>
+
+  <h2>3 mistakes to skip (from my own tests)</h2>
+    <ul class="clean">
+    <li><b>Footage with no variety.</b> My vlog test turned 4 minutes of raw footage into a 59-second vlog in about 15 minutes, with zero human input. It was the same chair in front of the same wall. Claude can't invent variety you didn't shoot, so film a few places and angles.</li>
+    <li><b>Trusting the transcript.</b> Whisper "heard" "peace out" on a clip where nothing was said. Read the transcript first, and ask Claude to flag lines that sit on silence.</li>
+    <li><b>Expecting a finished Short.</b> I turned my 14-minute episode into a 55-second Short in about 6 minutes. The pauses were a bit long, the text was generic and half the frame was empty. It needed about 20 minutes of a human.</li>
+  </ul>
+
+  <footer>Not affiliated with Anthropic. The presenter in the community video is my AI clone. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=guide&amp;utm_medium=guide&amp;utm_campaign=claude-edit&amp;utm_content=footer">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+<div class="sticky"><span>AI Virality Creators · 125+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=guide&amp;utm_medium=guide&amp;utm_campaign=claude-edit&amp;utm_content=sticky">Join the community &rarr;</a></div>
+</body>
+</html>
