@@ -100,6 +100,40 @@ details p{margin-top:12px;color:var(--mute);font-size:16px;max-width:720px}
 footer{background:var(--bg);border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{text-decoration:none}footer a:hover{color:var(--text)}
+.svc em{display:block;margin-top:12px;font-style:normal;font-size:13px;color:#c9c8c2;border-top:1px dashed var(--line);padding-top:10px}
+.svc em b{color:var(--acc);font-weight:600}
+.ask{margin-top:34px;color:#c9c8c2;font-size:17px}
+.pk{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pk article{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px 32px;display:flex;flex-direction:column}
+.pk small{color:var(--acc);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.pk h3{font-family:"DM Serif Display",serif;font-weight:400;font-size:28px;line-height:1.1;margin:12px 0 12px}
+.pk p{color:var(--mute);font-size:15px}
+.pk ul{list-style:none;margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line)}
+.pk li{font-size:14.5px;color:#c9c8c2;padding-left:16px;position:relative;margin-bottom:7px}
+.pk li:before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;background:var(--acc);border-radius:50%}
+.pf{margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pf a{display:flex;flex-direction:column;gap:8px;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;transition:border-color .25s,transform .25s}
+.pf a:hover{border-color:#ffffff40;transform:translateY(-3px)}
+.pf b{font-size:17px;font-weight:600}.pf span{color:var(--mute);font-size:14.5px;flex:1}
+.pf i{font-style:normal;color:var(--acc);font-size:13.5px;font-weight:600}
+.why{margin-top:54px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.why div{padding:26px 22px 8px 0}.why div+div{padding-left:22px;border-left:1px solid var(--line)}
+.why h3{font-size:17px;margin-bottom:8px}.why p{font-size:15px;color:var(--mute)}
+.printonly{display:none}
+@media (max-width:980px){.pk{grid-template-columns:1fr}.pf,.why{grid-template-columns:repeat(2,1fr)}.why div:nth-child(n){padding-left:0;border-left:0}.why div:nth-child(2n){padding-left:22px;border-left:1px solid var(--line)}}
+@media (max-width:640px){.pf,.why{grid-template-columns:1fr}.why div:nth-child(n){padding-left:0;border-left:0}}
+@media print{
+ main{display:flex;flex-direction:column}
+ header.hero{order:1}.printlink{order:2}.pstrip{order:3}#story{order:4}.proof{order:5}#services{order:6}#work{order:7}#proof{order:8}#start{order:9}#process{order:10}#faq{order:11}#contact{order:12}
+ .pk li{color:#2b3038}.pk p,.why p,.pf span,.steps p,.facts span,.proof span{color:#4a525c}.chips{gap:5px;margin-top:5mm}.chips i{font-size:7.6pt;padding:2px 9px;background:#fff}
+ #contact{break-inside:avoid}.lead{break-after:avoid}.svc,.pf,.pk,.work,.steps,.faq{break-before:avoid}
+ .pk,.pf,.why{margin-top:5mm;gap:4mm}.pk{grid-template-columns:repeat(3,1fr)!important}.pf{grid-template-columns:repeat(4,1fr)!important}.why{grid-template-columns:repeat(4,1fr)!important}
+ .pk article{padding:5mm 4.5mm;background:var(--panel);break-inside:avoid}.pk h3{font-size:14pt}.pk p,.pk li{font-size:8.6pt}.pk ul{margin-top:3mm;padding-top:3mm}
+ .pf a{padding:4mm;background:var(--panel);break-inside:avoid}.pf b{font-size:9.5pt}.pf span{font-size:8.2pt}.pf i{font-size:8pt;color:#b8341f}
+ .why div:nth-child(n){padding:4mm 3mm 0!important;border-left:1px solid var(--line)!important}.why div:first-child{padding-left:0!important;border-left:0!important}.why h3{font-size:9.5pt}.why p{font-size:8.3pt}
+ .svc em{font-size:7.8pt;margin-top:2mm;padding-top:2mm;color:#3a414a}.ask{font-size:9.5pt;margin-top:4mm;color:#2b3038}
+ #proof{background:#fff!important}
+}
 /* reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
@@ -153,7 +187,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
 
 <nav>
   <a class="logo" href="#top">Alexis Similie</a>
-  <div class="links"><a href="#services">What I do</a><a href="#work">Work</a><a href="#story">Story</a><a href="#process">Process</a><a class="btn p" href="#contact">Hire me</a></div>
+  <div class="links"><a href="#services">What I do</a><a href="#work">Work</a><a href="#proof">Proof</a><a href="#story">Story</a><a href="#start">Work together</a><a class="btn p" href="#contact">Hire me</a></div>
 </nav>
 
 <main id="top">
@@ -162,7 +196,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
       <div class="copy">
         <div class="eyebrow">Alexis Similie · Freelance builder · Romania</div>
         <h1>Websites, apps and automations that work while you run your business.</h1>
-        <p class="sub">I design and build with AI as my daily tool, so your project moves fast and looks custom made. You talk to one person, from the first message to the final files.</p>
+        <p class="sub">I am a Romanian freelancer who has worked only with AI for three years. I take a business goal from idea to finished result: design, code, content, ads and the automations behind them. You talk to one expert, from the first message to the final files.</p>
         <div class="cta"><a class="btn p" href="#work">See my work</a><a class="btn g" href="#contact">Hire me on Upwork</a></div>
       </div>
     </div>
@@ -175,23 +209,28 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
     <div class="s"><b>3 years</b><span>building with AI full-time, since ChatGPT arrived</span></div>
     <div class="s"><b>9</b><span>demo websites made for local businesses</span></div>
     <div class="s"><b>12</b><span>video effects published free as open source</span></div>
-    <div class="s"><b>1</b><span>community where I teach people to use AI</span></div>
+    <div class="s"><b>1</b><span>software product published on Gumroad</span></div>
   </div></div>
 
   <section class="blk" id="services"><div class="wrap">
     <div class="kicker rv">What I can do for you</div>
-    <h2 class="rv">One person, eight ways to make your business run better.</h2>
-    <p class="lead rv">Tell me the result you want. I choose the tools and handle the technical part.</p>
+    <h2 class="rv">If AI can do it, I can build it for you.</h2>
+    <p class="lead rv">Tell me the result you want. I choose the tools, do the technical work and hand you something finished.</p>
     <div class="svc">
-      <article class="rv"><small>01</small><h3>Websites for local businesses</h3><p>A site that makes a barber shop, guesthouse or bakery look as good online as it does in person, with booking and WhatsApp buttons built in.</p></article>
-      <article class="rv"><small>02</small><h3>3D and interactive sites</h3><p>A 3D hero scene, scroll animation or product view that gives visitors a reason to stay and remember you.</p></article>
-      <article class="rv"><small>03</small><h3>Mobile and web apps</h3><p>From idea to a working app, including the steps to publish it on the App Store.</p></article>
-      <article class="rv"><small>04</small><h3>Business automation</h3><p>Email follow-ups, calendar and call booking, reports and forecasts connected, so repeat work runs by itself.</p></article>
-      <article class="rv"><small>05</small><h3>Meta ads and ad creative</h3><p>Ad strategy, product ads and UGC-style videos, plus a testing plan so you learn what sells.</p></article>
-      <article class="rv"><small>06</small><h3>Video and AI characters</h3><p>Short videos and consistent AI characters or presenters for your brand, made without a film crew.</p></article>
-      <article class="rv"><small>07</small><h3>Social media strategy</h3><p>Content plans built on how Instagram, TikTok and YouTube decide what to show, then turned into scripts and a posting routine.</p></article>
-      <article class="rv"><small>08</small><h3>AI for your team</h3><p>I set up tools like Claude Code and ChatGPT to take over repetitive work, and show your team how to use them.</p></article>
+      <article class="rv"><small>01</small><h3>Websites for local businesses</h3><p>A site that makes a barber shop, guesthouse or bakery look as good online as it does in person, with booking and WhatsApp buttons built in.</p><em><b>You get:</b> a live site, mobile ready, with your photos and prices.</em></article>
+      <article class="rv"><small>02</small><h3>3D and interactive sites</h3><p>A 3D hero scene, scroll animation or product view that gives visitors a reason to stay and remember you.</p><em><b>You get:</b> a site that stands out from template sites.</em></article>
+      <article class="rv"><small>03</small><h3>Mobile and web apps</h3><p>From idea to a working app, including the steps to publish it on the App Store.</p><em><b>You get:</b> a tested app and the source code.</em></article>
+      <article class="rv"><small>04</small><h3>Business automation</h3><p>Email follow-ups, calendar and call booking, lead routing, reports and forecasts connected, so repeat work runs by itself.</p><em><b>You get:</b> hours back every week.</em></article>
+      <article class="rv"><small>05</small><h3>Meta ads and ad creative</h3><p>Ad strategy, product ads and UGC-style videos, plus a testing plan so you learn what sells.</p><em><b>You get:</b> ready-to-run ads and a clear test plan.</em></article>
+      <article class="rv"><small>06</small><h3>AI video and characters</h3><p>Short videos, product films and consistent AI characters or presenters for your brand, made without a film crew.</p><em><b>You get:</b> finished videos in the formats each platform needs.</em></article>
+      <article class="rv"><small>07</small><h3>Social media strategy</h3><p>Content plans built on how Instagram, TikTok and YouTube decide what to show, turned into scripts and a posting routine.</p><em><b>You get:</b> a plan you can follow every week.</em></article>
+      <article class="rv"><small>08</small><h3>AI for your team</h3><p>I set up tools like Claude Code and ChatGPT to take over repetitive work, and show your team how to use them.</p><em><b>You get:</b> a working setup and a short training.</em></article>
+      <article class="rv"><small>09</small><h3>AI assistants and chatbots</h3><p>Assistants that answer customer questions, handle Instagram and WhatsApp messages and book appointments, trained on your own information.</p><em><b>You get:</b> an assistant that works around the clock.</em></article>
+      <article class="rv"><small>10</small><h3>Branding and design</h3><p>Logos, colour and font systems, social templates, thumbnails, presentations and documents that look like one brand.</p><em><b>You get:</b> a brand kit you can reuse.</em></article>
+      <article class="rv"><small>11</small><h3>Landing pages, funnels and copy</h3><p>Pages and email sequences that explain your offer clearly and lead people to one action, written in plain language.</p><em><b>You get:</b> the pages, the copy and the follow-up emails.</em></article>
+      <article class="rv"><small>12</small><h3>Research and custom tools</h3><p>Market and competitor research, dashboards, scripts and custom assistants built for one specific job in your business.</p><em><b>You get:</b> an answer or a tool, not a long report.</em></article>
     </div>
+    <p class="ask rv">Do not see your idea here? Send it anyway. Most of what I build started as a request that did not fit a list.</p>
   </div></section>
 
   <section class="blk" id="work" style="background:#0a0c0e"><div class="wrap">
@@ -209,6 +248,24 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
     <p class="note2 rv">Also built: a guesthouse site with a moving night sky, a mountain-view guesthouse, a pastry shop with online cake orders, and open-source tools for video. Ask me for more examples.</p>
   </div></section>
 
+    <section class="blk" id="proof"><div class="wrap">
+    <div class="kicker rv">Proof you can check</div>
+    <h2 class="rv">Real things, public links, no screenshots of testimonials.</h2>
+    <p class="lead rv">I am building my client reviews on Upwork. Until they arrive, you can open the work and judge it yourself.</p>
+    <div class="pf">
+      <a class="rv" target="_blank" rel="noopener" href="https://github.com/cloneaisystem-cell/claude-video-effects"><b>Open-source code</b><span>12 video effects driven by plain English, free to read and use. Public on GitHub.</span><i>Open the repository →</i></a>
+      <a class="rv" target="_blank" rel="noopener" href="https://clonecreatives.gumroad.com/l/clone-studio-pack"><b>A product I built and sell</b><span>Clone Studio Pack: skills that let Claude Code edit videos, with a written refund promise.</span><i>See it on Gumroad →</i></a>
+      <a class="rv" target="_blank" rel="noopener" href="https://instagram.com/clone.creatives"><b>Content I publish</b><span>AI characters, story reels and tutorials on Instagram, made with the same tools I use for clients.</span><i>Open @clone.creatives →</i></a>
+      <a class="rv" href="#work"><b>Websites you can watch</b><span>Nine demo sites for local businesses, six of them with a walkthrough video.</span><i>Jump to the work →</i></a>
+    </div>
+    <div class="why">
+      <div class="rv"><h3>One person, full stack</h3><p>Design, code, content, ads and automation in one place. No hand-offs between five freelancers.</p></div>
+      <div class="rv"><h3>A plan before the work</h3><p>You see what I will build and a first look before the main work starts.</p></div>
+      <div class="rv"><h3>Everything documented</h3><p>You receive the files, the prompts and a short guide, so you are never locked in.</p></div>
+      <div class="rv"><h3>I teach what I do</h3><p>I run a community where I explain these tools, so I can explain them to you too.</p></div>
+    </div>
+  </div></section>
+
   <section class="blk" id="story"><div class="wrap story">
     <div>
       <div class="kicker rv">My story</div>
@@ -216,16 +273,28 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
       <div class="facts rv">
         <div><span>Based in</span>Romania</div>
         <div><span>Languages</span>Romanian, English</div>
+        <div><span>Time zone</span>Romania (EET), overlaps Europe and the US morning</div>
         <div><span>Focus since</span>2023</div>
         <div><span>Best fit</span>Small businesses, creators, startups</div>
       </div>
     </div>
     <div class="txt">
-      <p class="rv">When ChatGPT arrived, I decided to spend my working time finding out what AI can really build, not just what it can talk about.</p>
-      <p class="rv">Three years later it is still all I do. I began with text and code, then added design, 3D, video, ads and automation as each one became good enough for real client work. Since then I have built websites for local businesses, apps, ad creatives, and automated email and calendar workflows.</p>
+      <p class="rv">Three years ago, when ChatGPT arrived, I made a decision: I would find out what AI can really build for people who run real businesses.</p>
+      <p class="rv">Three years later it is still all I do. I began with text and code, then added design, 3D, video, ads and automation as each one became good enough for client work. I have built websites for local businesses, apps, ad creatives, and automated email and calendar workflows.</p>
+      <p class="rv">Today I use AI to write and design, to code and test, to shoot and edit video, to make ads and to automate the boring parts. Where one tool ends, I connect the next one. You get one finished result from one person.</p>
       <p class="rv">I also run an online community where I teach other people to use these tools. Teaching changed how I work. When you explain every step to someone else, your process stops depending on luck. It becomes clear, repeatable and written down.</p>
-      <p class="rv">That is what you get as a client: a plan you can read, work you can see early, and files and notes you keep. I am not a big agency, and that is the point. You work with me directly.</p>
+      <p class="rv">As a client, you get a plan you can read, work you can see early, and files and notes you keep. I am not a big agency, and that is the point. You work with me directly.</p>
       <div class="chips rv"><i>Claude Code</i><i>Claude API</i><i>MCP integrations</i><i>ChatGPT</i><i>Gemini</i><i>Prompt engineering</i><i>Python</i><i>JavaScript</i><i>TypeScript</i><i>Node.js</i><i>three.js</i><i>Playwright testing</i><i>GitHub</i><i>App Store publishing</i><i>Meta Ads</i><i>Ad creative and UGC ads</i><i>Social media algorithms</i><i>Email marketing</i><i>Calendar and CRM automation</i><i>Reporting and forecasting</i><i>ManyChat</i><i>n8n</i><i>Notion</i><i>Gumroad</i><i>Skool</i><i>Metricool</i><i>Remotion</i><i>HyperFrames</i><i>FFmpeg</i><i>Higgsfield</i><i>Kling</i><i>Seedance</i><i>Veo</i><i>ElevenLabs</i><i>HeyGen</i></div>
+    </div>
+  </div></section>
+
+  <section class="blk" id="start"><div class="wrap">
+    <div class="kicker rv">Ways to work together</div>
+    <h2 class="rv">Pick the size that fits. Price is agreed first.</h2>
+    <div class="pk">
+      <article class="rv"><small>Quick win</small><h3>One focused task</h3><p>A landing page, an automation, a set of ad creatives or a short video. Small, clear and fast.</p><ul><li>Fixed scope and price</li><li>Delivered in days</li><li>Good first project to test working together</li></ul></article>
+      <article class="rv"><small>Full project</small><h3>Plan to launch</h3><p>A website, app or system built from first idea to launch, with milestones you can follow.</p><ul><li>Plan and first look before the main work</li><li>Feedback rounds built in</li><li>Source files and guide at the end</li></ul></article>
+      <article class="rv"><small>Monthly partner</small><h3>Ongoing help</h3><p>Content, ad testing, automations and updates every month, with a set amount of work agreed up front.</p><ul><li>Steady pace, one point of contact</li><li>Monthly summary of what was done</li><li>Change or stop at any time</li></ul></article>
     </div>
   </div></section>
 
@@ -240,7 +309,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
     </div>
   </div></section>
 
-  <section class="blk"><div class="wrap">
+  <section class="blk" id="faq"><div class="wrap">
     <div class="kicker rv">Good to know</div>
     <h2 class="rv">Questions clients ask before hiring.</h2>
     <div class="faq">
@@ -248,6 +317,9 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
       <details class="rv"><summary>Do you use AI for everything?</summary><p>I use AI to work faster and try more ideas, and I check every result myself. You get work that is reviewed by a person who is responsible for it.</p></details>
       <details class="rv"><summary>Can I see how you work before I hire you?</summary><p>Yes. Open the walkthroughs above, or send me a short brief and I will tell you how I would approach it.</p></details>
       <details class="rv"><summary>What do I receive at the end?</summary><p>The finished project, the source files, and a short written guide on how it works and how to change it.</p></details>
+      <details class="rv"><summary>How does pricing work?</summary><p>After a short chat about your goal, I send a fixed price and a plan. You know the cost before I start, so there are no hourly surprises.</p></details>
+      <details class="rv"><summary>How long does a project take?</summary><p>Small tasks take days. Bigger projects are split into milestones, and I give you a date for each one before we begin.</p></details>
+      <details class="rv"><summary>Can you keep my project private?</summary><p>Yes. I sign an NDA on request and I do not share your files, photos or business details.</p></details>
     </div>
   </div></section>
 
