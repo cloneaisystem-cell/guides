@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Connect Claude to your Instagram: free setup, 4 fixes and my prompts</title>
+<meta name="description" content="Connect Claude Code to your own Instagram with a free MCP server. Official Graph API, no password. The 7 steps, the 4 fixes I needed and my comment-reply prompts.">
+<meta property="og:title" content="Connect Claude to your Instagram: free setup, 4 fixes and my prompts">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Serif:ital@1&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+<script src="../shared/copy.js" defer></script>
+<script src="../shared/motion.js" defer></script>
+<style>
+.watch { margin: 0 0 16px; text-align: center; }
+.slot { display: block; border: 1px dashed #4a3029; border-radius: 16px; padding: 28px 16px; color: var(--muted); font-size: 15px; background: var(--panel); }
+</style>
+</head>
+<body>
+<main>
+  <!-- EP05_YOUTUBE_ID -->
+  <!-- TODO: after the upload, replace the placeholder below with a "Watch the episode on YouTube" button (same as claude-edit) using the real link -->
+  <p class="watch"><span class="slot">The YouTube episode goes here after upload.</span></p>
+  <h1>Connect Claude to your Instagram: <em>free setup</em>, 4 fixes and my prompts</h1>
+  <p class="sub">Connect Claude Code to your own Instagram with the free MCP server mcpware/instagram-mcp: MIT license, 23 tools, the official Instagram Graph API and no password. Claude reads your comments and drafts replies. You approve before anything is posted.</p>
+  <div class="chips"><span class="chip hot">Free guide · 0 credits</span><span class="chip">official API</span><span class="chip">no password</span><span class="chip">23 tools</span></div>
+  <div class="note">On your phone? <b>Send yourself this link</b> and open it on your computer. Claude Code doesn't run on a phone.</div>
+
+  <div class="note"><b>Never use a repo that asks for your Instagram password.</b> Meta's terms forbid automated logins with a password, and in my assessment that can get your account banned. This setup uses Meta's official API with a token instead. Your password stays with Instagram.</div>
+
+  <h2>What you need</h2>
+  <ul class="clean">
+    <li><b>Claude Code</b> (it needs a paid Claude plan).</li>
+    <li><b>An Instagram professional account</b> (Business or Creator) linked to a Facebook Page.</li>
+    <li><b>Python and git</b> on your computer. Check with <code>python --version</code> and <code>git --version</code>.</li>
+  </ul>
+
+  <h2>The 7 steps</h2>
+  <ol class="steps">
+    <li><h3>Link your account to a Facebook Page</h3>In Instagram, switch to a professional account and connect it to a Facebook Page. Meta needs this link for the API.</li>
+    <li><h3>Register as a developer</h3>Go to <a href="https://developers.facebook.com">developers.facebook.com</a> and register with the same Facebook login.</li>
+    <li><h3>Create an app</h3>Click <b>Create app</b>. <b>The name can't contain "Instagram".</b> Meta rejects it, and some other brand words too. Pick something like "My Social Agent".</li>
+    <li><h3>Choose the use case</h3>Pick <b>Manage messaging &amp; content on Instagram</b>. Open it and add the content and messaging permissions, including comments and insights. If you see "Something went wrong", press OK and try again. It took me two tries.</li>
+    <li><h3>Get your token</h3>Open the Graph API Explorer, pick your app and a User Token, and add these 8 permissions:
+      <pre id="perms">instagram_basic
+instagram_content_publish
+instagram_manage_comments
+instagram_manage_insights
+instagram_manage_messages
+pages_show_list
+pages_read_engagement
+business_management</pre>
+      <button class="btn copy" data-copy="perms">Copy the 8 permissions</button>
+      <p>Click <b>Generate Access Token</b> and approve. Then open Meta's Access Token Debugger, paste the token and click <b>Extend Access Token</b>. The new token lasts about 60 days. <b>Keep the token private.</b> Never post it or paste it in a chat.</p></li>
+    <li><h3>Install the server</h3>In a terminal:
+      <pre id="install">git clone https://github.com/mcpware/instagram-mcp
+cd instagram-mcp
+python -m venv .venv
+.venv/Scripts/activate        # Mac/Linux: source .venv/bin/activate
+pip install -r requirements.txt</pre>
+      <button class="btn copy" data-copy="install">Copy the install lines</button>
+      <p>Then create a file named <code>.env</code> in that folder. Use placeholders like these and paste your own values:</p>
+      <pre id="env">INSTAGRAM_ACCESS_TOKEN=paste_your_token_here
+INSTAGRAM_BUSINESS_ACCOUNT_ID=paste_your_instagram_account_id_here
+FACEBOOK_APP_ID=paste_your_app_id_here
+FACEBOOK_APP_SECRET=paste_your_app_secret_here</pre>
+      <p class="small">Never share this file or commit it to git. The server needs all four lines to start.</p></li>
+    <li><h3>Add it to Claude Code and restart</h3>In your project folder, add the server to <code>.mcp.json</code>:
+      <pre id="mcp">{
+  "mcpServers": {
+    "instagram": {
+      "command": "/path/to/instagram-mcp/.venv/bin/python",
+      "args": ["-m", "src.instagram_mcp_server"],
+      "cwd": "/path/to/instagram-mcp"
+    }
+  }
+}</pre>
+      <button class="btn copy" data-copy="mcp">Copy the config</button>
+      <p>On Windows the python path is <code>.venv\Scripts\python.exe</code>. If your setup ignores <code>cwd</code>, point <code>command</code> at a tiny launcher script that goes into the folder and runs the same <code>python -m src.instagram_mcp_server</code> line. Then restart Claude Code and check that the <code>instagram</code> server shows up.</p></li>
+  </ol>
+
+  <section class="system" id="community">
+    <h2>Connected is the easy part. Making it work on your account is next.</h2>
+    <p>The setup has a few spots where Meta's screens fail or confuse you. Inside AI Virality Creators on Skool I help you connect it to your own account, and you get my exact comment prompts and the fixed setup. I also run my whole content system with Claude Code, and I show how.</p>
+    <a class="bigbtn" style="margin-top:20px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?el=guide-claude-instagram">Join AI Virality Creators &rarr;</a>
+  </section>
+
+  <h2>The 4 fixes I needed</h2>
+  <p>The repo needed four small changes before it worked for me. Tell Claude Code to make them, or edit the files yourself.</p>
+  <h3>1. The server crashes on start</h3>
+  <p>Problem: the newest <code>mcp</code> library (version 2) breaks it with <code>'Server' object has no attribute 'list_tools'</code>. Fix: pin it in <code>requirements.txt</code>, then reinstall.</p>
+  <pre>mcp&lt;2</pre>
+  <h3>2. Your token prints in the logs</h3>
+  <p>Problem: the <code>httpx</code> library logs every request URL, and the URL contains your token. Fix: right after the logging setup in <code>src/instagram_mcp_server.py</code>, turn those loggers down.</p>
+  <pre>logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)</pre>
+  <h3>3. Messages fail with "An unknown error has occurred."</h3>
+  <p>Problem: the DM endpoints need the Page token, not your user token. Fix: fetch the Page token once and use it for the messaging calls.</p>
+  <pre>GET /me/accounts?fields=id,access_token,instagram_business_account</pre>
+  <p>Take the <code>access_token</code> of the Page whose <code>instagram_business_account</code> is yours, and send it with every DM request.</p>
+  <h3>4. Reading a conversation errors out</h3>
+  <p>Problem: the messages field is built with a double closing brace, <code>messages{...}}</code>, which is a syntax error. The message model also expects text but gets objects. Fix, in <code>src/instagram_client.py</code> and <code>src/models/instagram_models.py</code>:</p>
+  <pre>params = {"fields": "messages{" + fields + "}", "limit": min(limit, 100)}
+
+from_id: Any = Field(..., alias="from")
+to: Any
+attachments: Optional[Any] = None</pre>
+
+  <h2>My prompts</h2>
+  <p>Step 1. Claude drafts, nothing is posted:</p>
+  <pre id="p1">Read the comments on my most recent reel that has comments. Draft a short, friendly reply to each one in my voice. Don't post anything until I say OK.</pre>
+  <button class="btn copy" data-copy="p1">Copy prompt 1</button>
+  <p>Step 2. You read the drafts, fix what you want, then say:</p>
+  <pre id="p2">OK, post them</pre>
+  <button class="btn copy" data-copy="p2">Copy prompt 2</button>
+  <p>Optional. Check the inbox (it only reads):</p>
+  <pre id="p3">Check my Instagram inbox. Tell me which conversations have a new message and what each one says. Don't reply to anything.</pre>
+  <button class="btn copy" data-copy="p3">Copy prompt 3</button>
+  <p class="small">Treat DMs as private. Claude can see them once you connect the server. Keep write actions (posting, replying, sending DMs, deleting) on "ask me first".</p>
+
+  <h2>Limits to know</h2>
+  <div class="note">
+    <ul class="clean">
+      <li><b>100 API-published posts</b> per 24 hours.</li>
+      <li><b>DMs:</b> you can reply only within about 24 hours after the person wrote to you first.</li>
+      <li><b>5 hashtags max</b> per post.</li>
+      <li><b>Media</b> must be at a public HTTPS URL to be published.</li>
+      <li><b>Your token lasts about 60 days.</b> Then extend it again in the Access Token Debugger.</li>
+    </ul>
+  </div>
+
+  <footer>Not affiliated with Meta, Instagram or Anthropic. mcpware/instagram-mcp is a third-party open-source project (MIT). Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?el=guide-claude-instagram">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+<div class="sticky"><span>AI Virality Creators on Skool</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?el=guide-claude-instagram">Join the community &rarr;</a></div>
+</body>
+</html>
