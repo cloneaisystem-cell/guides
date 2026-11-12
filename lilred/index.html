@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How I made Little Red from the hood: the prompts and the edit (free)</title>
+<meta name="description" content="The 5 steps behind CASE 001: LIL RED: character sheets, start frames, multi-shot Seedance 2.5 clips and the edit on the beat. Copyable prompts and the exact cut times.">
+<meta property="og:title" content="How I made Little Red from the hood: the prompts and the edit">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/lilred/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Serif:ital@1&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+<script src="../shared/copy.js" defer></script>
+<script src="../shared/motion.js" defer></script>
+<style>
+/* page-level additions for this guide (the shared guide.css is untouched) */
+.fbox .vid.tall { width: min(100%, 360px); aspect-ratio: 9 / 16; }
+.rules { margin: 8px 0 0; padding-left: 22px; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.cuts { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+.cuts span { background: var(--panel-2); border: 1px solid #4a3e36; border-radius: 999px; padding: 6px 12px; font: 700 14px/1 ui-monospace, Consolas, monospace; color: var(--cream); }
+.cuts span.hot { background: var(--red); border-color: var(--red); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="A young woman in a red velvet hood grinning with gold teeth in a police booking photo, a wolf in a lace night cap behind her blowing a bubble-gum bubble." width="1280" height="720"></div>
+  <h1>How I made Little Red <em>from the hood</em>: the prompts and the edit</h1>
+  <p class="sub">A 28-second reel: the Big Bad Wolf breaks into Grandma's house to ambush Little Red, but Red runs the neighborhood and Grandma is waiting in the wardrobe. Here are the 5 steps, the prompts I pasted and the exact cut times.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">9 clips, 21 cuts</span><span class="chip">multi-shot: 2-3 shots per clip</span><span class="chip">any editor works</span></div>
+  <div class="fbox"><video class="vid tall" src="lilred.mp4" poster="poster.jpg" controls playsinline preload="none"></video></div>
+  <p class="vid-note">Sound off here. The song is added on Instagram. Everything you see is AI-generated.</p>
+  <div class="note">This is <b>CASE 001</b> of my series <b>Once Upon a Crime</b>: fairy-tale characters as real-world criminals. The famous line of the tale becomes the punchline. Here, "what big teeth you have" turns into her gold grills.</div>
+
+  <h2>What you need</h2>
+  <ul class="clean">
+    <li><b>An image model that does real skin.</b> I used GPT Image 2.5 inside Melius (about 70 credits per image, 80 with a reference).</li>
+    <li><b>Seedance 2.5 for video.</b> Also inside Melius: 6 seconds at 480p Draft cost 752 credits per clip. The whole reel came to about 7,900 Melius credits.</li>
+    <li><b>Any editor.</b> CapCut is fine: hard cuts, a zoom and a song.</li>
+  </ul>
+
+  <h2>5 steps</h2>
+  <ol class="steps">
+    <li><h3>Story: the famous line becomes the ending</h3>Pick the one line everybody knows from the tale and turn it into the last picture. Then build the middle as a trap that flips: the wolf thinks he is the hunter, the girl and her grandma are the real gang.
+      <ol class="rules">
+        <li><b>Hook:</b> two mugshots, the wolf in grandma's nightgown, then Red popping her gum.</li>
+        <li><b>Her world:</b> she walks her street, Grandma nods from the porch with a shotgun on her knees, the basket is full of cash.</li>
+        <li><b>The wolf:</b> stalks her, runs ahead, waits in Grandma's bed.</li>
+        <li><b>"What big...":</b> three macros, eyes, ears, teeth.</li>
+        <li><b>The flip:</b> Grandma steps out of the wardrobe and racks the shotgun. The wolf raises his paws.</li>
+        <li><b>The ending:</b> the getaway, then the mugshot: she grins with gold grills.</li>
+      </ol></li>
+    <li><h3>Character sheets</h3>One sheet per character: front, three-quarter, back, close-up, profile and three expressions on a grey background. Every later image and clip uses these as references, so the faces stay the same. My template (swap the brackets):
+      <pre id="sheet">Photorealistic character reference sheet of the same [WHO: woman about 23, olive skin, light freckles, curly auburn hair], five views on a neutral light-grey studio background:
+1. Full body front, head to feet, neutral stance, holding [A PROP FOR SCALE: a wicker basket with a red-and-white gingham cloth].
+2. Full body three-quarter view left.
+3. Full body rear view.
+4. Head-and-shoulders close-up, straight-on.
+5. Head-and-shoulders 90-degree profile.
+Bottom row: three small head crops with expressions: [calm neutral, crooked smirk, raised eyebrow].
+Wardrobe: [short red velvet hooded cape, white ribbed tank top, loose light-wash jeans, plain white sneakers with no logos, large thin gold hoop earrings].
+Real skin texture: visible pores, uneven skin tone, fine baby hairs, a few flyaway curls, no retouching, no glamorization, no beauty filter.
+Clean soft studio light, key upper left, fill right. Identical identity, proportions and costume in every view. Photoreal, not illustrated. No text, no labels, no logos, no watermark, no extra people.</pre>
+      <button class="btn copy" data-copy="sheet">Copy the template</button>
+      <p>For the wolf I wrote "an anthropomorphic storybook wolf made real, like a high-end practical film creature photographed on set, not CGI-looking, not a mascot costume": upright man's body, a real grey wolf head, clawed hands and a tail, in Grandma's pink nightgown, lace night cap and round glasses.</p></li>
+    <li><h3>Start frames: one per clip, each with a "device"</h3>Every clip starts from a still made from the sheets. Give each scene its own camera look so the reel feels filmed, not generated: police flash, doorbell camera, security camera, dashcam, telephoto through branches. The mugshot:
+      <pre id="mug">Image 1 = identity reference (face, freckles, curly auburn hair, red velvet hooded cape, gold hoop earrings); ignore its background and layout. Photorealistic police booking photograph, vertical 9:16. The same woman from Image 1 stands centred facing the camera in front of a pale grey-green wall with painted black height-chart lines, hood up, holding a black letter-board placard at chest height reading exactly "LIL RED" and below it "CASE 001". She is blowing a large pink bubble-gum bubble, eyes calm, one eyebrow slightly raised. Harsh frontal on-camera flash, hard shadow on the wall, flat dull colours, old compact digital camera, mild noise. Real skin texture: pores, freckles, flyaway curls, slight shine on the nose, no retouching, no beauty filter. No other text, no logos, no watermark, no other people.</pre>
+      <button class="btn copy" data-copy="mug">Copy the prompt</button>
+      <p>Check every still before you animate it: count the people, read the text on the placard, look at the hands.</p></li>
+    <li><h3>Video: multi-shot clips</h3>The viral reels in this niche cut a new shot every 1.6 seconds. Instead of one clip per shot, I asked Seedance 2.5 for <b>2 to 3 shots inside one 6-second clip</b>, with the start frame and the sheets as references. Same light, same faces, three angles. The hook clip:
+      <pre id="multi">ASSET BINDING: Image 1 = the anthropomorphic wolf (upright man's body, real grey wolf head, furry clawed hands, pink floral nightgown, white lace night cap, round wire glasses) holding the placard "B.B. WOLF / CASE 001" in the police booking room. Image 2 = the young woman in the red velvet hood with gold hoop earrings holding the placard "LIL RED / CASE 001".
+SUMMARY: Police booking room, two mugshots back to back: a guilty wolf in grandma's nightgown, then a calm young woman in a red hood. Deadpan comedy.
+STYLE: photoreal vertical 9:16 police booking camera footage, harsh frontal flash, old compact digital camera look, mild noise, real-time speed, no slow motion.
+SHOT 1 [0-3s] medium shot, eye level, static, straight-on, exact framing and look of Image 1: the wolf stands holding the placard; the camera flash fires and the frame flashes white; he blinks, his ears flatten, and with one clawed finger he nervously pushes his round glasses up his snout while glancing sideways, embarrassed. HARD CUT.
+SHOT 2 [3-6s] medium close-up, eye level, static, same grey-green height-chart wall, exact look of Image 2: the young woman in the red velvet hood holds the LIL RED placard and chews gum; she blows a big pink bubble, the flash fires and the bubble pops on her lips; she smirks slowly with one eyebrow raised, totally unbothered.
+CONSISTENCY: placard text stays exactly as in the images, same faces and wardrobe, the wolf keeps real fur and a real wolf head, five fingers per hand, no extra people.
+AUDIO: camera flash pops with capacitor whine, a small nervous whimper from the wolf, gum chewing, bubble pop, quiet room tone; no music, no dialogue, no subtitles.</pre>
+      <button class="btn copy" data-copy="multi">Copy the prompt</button>
+      <ol class="rules">
+        <li><b>Bind every image to one job:</b> "Image 1 = exact first frame", "Image 2 = her identity". Two well-labelled references beat five vague ones.</li>
+        <li><b>Give each shot its own camera line:</b> size, angle, lens feel and one move. End it with HARD CUT.</li>
+        <li><b>One action per shot, ending on something you can see:</b> the bubble pops, the door swings shut.</li>
+        <li><b>Ask for sound but no music:</b> real sounds tied to the action, "no music, no dialogue, no subtitles". The song goes on in the edit.</li>
+        <li><b>Draft at 480p first.</b> You only use 1 to 2 seconds of each shot, so Draft quality holds up after a light upscale.</li>
+      </ol></li>
+    <li><h3>The edit: cut on the beat</h3>Put the clips over the song and cut every shot on a beat, 21 cuts in 28 seconds. The drop lands on the first cut after the two mugshots, and Red's bubble pops right on it. Cut times in seconds:
+      <div class="cuts"><span>1.75</span><span class="hot">3.41 drop</span><span>4.71</span><span>5.36</span><span>6.64</span><span>7.94</span><span>9.43</span><span>10.08</span><span>11.35</span><span>12.65</span><span>13.49</span><span>14.14</span><span>15.42</span><span>16.07</span><span>17.41</span><span>18.85</span><span>20.34</span><span>21.64</span><span>22.29</span><span>23.78</span></div>
+      <pre id="cutlist">1.75, 3.41, 4.71, 5.36, 6.64, 7.94, 9.43, 10.08, 11.35, 12.65, 13.49, 14.14, 15.42, 16.07, 17.41, 18.85, 20.34, 21.64, 22.29, 23.78</pre>
+      <button class="btn copy" data-copy="cutlist">Copy the cut times</button>
+      <ul class="clean">
+        <li><b>Turn the colour down.</b> AI clips come out too saturated. I measured the viral reels and mine: mine had about 1.5 times their saturation, so I cut it by a third and lifted the shadows a little.</li>
+        <li><b>Vary the shot lengths.</b> Short, short, then one longer hold on the biggest moment. All shots at the same length feels like a metronome.</li>
+        <li><b>Snap zooms on the mugshots</b> in your editor, right on the flash.</li>
+        <li><b>End on the face.</b> The last shot looks into the lens and holds for 4 seconds.</li>
+      </ul></li>
+  </ol>
+
+  <section class="system" id="community">
+    <h2>The same reel can get 2,000 views <em>or 2 million</em>.</h2>
+    <p>The story stays the same. The hook, the cover and the caption are what change, and the creators in this niche post several versions of one reel to find the winner. Planning that by hand every week is a lot, so I don't: Claude Code runs my content every day, from the morning idea list to the edit, the posting and the DMs. Even the DM that sent you here went out by itself. Under a minute:</p>
+    <video class="vid wide" src="../shared/system-video-169.mp4" poster="../shared/system-poster-169.jpg" controls playsinline preload="none"></video>
+    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone, made with the methods taught inside.</p>
+    <a class="bigbtn" style="margin-top:20px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=lilred&amp;utm_content=video">Join AI Virality Creators &rarr;</a>
+    <p class="price">Try it free for 7 days. Then $9/month or $67/year, and the price you join at stays yours. It goes up as the group grows.</p>
+
+    <h2>What you get inside</h2>
+    <div class="benefits">
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg><h3>A path for complete beginners</h3><p>START HERE takes you from zero to your first consistent AI character, lesson by lesson. Then Go Viral: 8 short lessons and cheat sheets for Reels and TikTok.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5l2 4M14 5l2 4"/></svg><h3>Every reel I post, taken apart</h3><p>The prompts, the edit choices and what each shot cost in credits. You copy what already worked instead of guessing.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg><h3>Claude Code, in plain English</h3><p>Master Claude Code: real builds with every file included. Claude writes the code; you say what you want and approve each step.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4zM9 8V5h6v3M4 13h16"/></svg><h3>30+ courses on today's tools</h3><p>Kling 3.0, Veo 3.1, Nano Banana Pro, ElevenLabs voices, UGC and cinematic ads, prompt systems, 4K upscaling.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.5V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3.5Z"/></svg><h3>Feedback from me</h3><p>Post your video in the community. I read it and reply myself, and other members add their notes.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><h3>From skill to client work</h3><p>Modules on finding your first clients, pricing what you make and delivering it like a pro.</p></div>
+    </div>
+
+    <h2>Your first week</h2>
+    <ol class="week">
+      <li><b>Day 1.</b> Join, introduce yourself and say what you want to make. I point you to the module that fits.</li>
+      <li><b>Days 2–4.</b> Build your first AI character in START HERE, one short lesson a night. (Here for Claude Code? Start Master Claude Code instead.)</li>
+      <li><b>Days 5–6.</b> Open a reel breakdown and copy its structure for your own idea.</li>
+      <li><b>Day 7.</b> Post your first video in the community and get feedback on it.</li>
+    </ol>
+
+    <div class="join">
+      <h3>Stop saving tutorials. Start posting.</h3>
+      <p>AI Virality Creators is my Skool community. Everything above is in one place, in order, and I answer you myself.</p>
+      <ul>
+        <li><b>The LIL RED breakdown:</b> all 9 video prompts, the 7 start frames, the edit timeline and what every clip cost.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>
+        <li><b>30+ step-by-step courses</b> and the breakdown of every reel, with prompts and credit costs.</li>
+        <li><b>Personal feedback</b> on what you post, next to 125+ creators building the same skills.</li>
+      </ul>
+      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=lilred">Join AI Virality Creators &rarr;</a>
+      <p class="price">Try it free for 7 days. Then $9/month or $67/year, and the price you join at stays yours. It goes up as the group grows.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Before you join</h2>
+      <details><summary>I'm a complete beginner. Is this too advanced?</summary>
+        <p>Not at all. START HERE assumes zero experience and goes in order: your first image, your first video, then a character that looks the same in every shot. If you can type a sentence, you can follow it.</p></details>
+      <details><summary>I can't code. Do I need to?</summary>
+        <p>You don't need to. For the Claude Code lessons you describe what you want in plain English, Claude writes the code, and you approve each step. Every lesson shows the exact clicks.</p></details>
+      <details><summary>Do I need a Skool account? Can I use it on my phone?</summary>
+        <p>Skool is the app the community lives in. Signing up is free and takes about a minute when you join, and it works in the Skool phone app or any browser. Watching lessons and posting work fine on a phone; Claude Code itself runs on a computer.</p></details>
+      <details><summary>I don't have much time.</summary>
+        <p>The lessons are short and numbered, so you always know which one is next. One lesson an evening keeps you moving, and the community keeps you posting.</p></details>
+      <details><summary>Can't I learn all of this free on YouTube?</summary>
+        <p>You can start there, and free guides like this one are made for exactly that. What you won't find for free: the right order, my real project files, the credit cost of every shot, and someone who looks at your video and tells you what to fix.</p></details>
+      <details><summary>AI tools change every month. Won't it be outdated?</summary>
+        <p>New tools get their own modules: Kling 3.0, Veo 3.1 and Nano Banana Pro are already in. The breakdowns teach how a reel is built, and that carries over to whatever tool comes next.</p></details>
+      <details><summary>AI credits get expensive. What will I spend?</summary>
+        <p>Every breakdown shows what each shot cost, so you know before you start. A lot of what I teach costs 0 credits, like the guide you're reading now.</p></details>
+      <details><summary>Will I get lost in a big group?</summary>
+        <p>It's around 125 people, small enough that new posts get answered. I reply myself, and members comment on each other's work.</p></details>
+      <details><summary>Is the person in the video real?</summary>
+        <p>The presenter is my AI clone, built with the same methods taught inside. I say so every time. The community is run by me, and I answer you myself.</p></details>
+      <details><summary>Will this make me money?</summary>
+        <p>I can't promise income. You get the skill, finished videos to show, and modules on finding clients and pricing your work. What you earn with them is up to you.</p></details>
+      <details><summary>Is it only about video?</summary>
+        <p>Video is the core. Master Claude Code is the second part: real builds with every file included, starting with the Night Shift experiment. Prompting, voices and client work are in there too.</p></details>
+      <details><summary>What if it's not for me?</summary>
+        <p>Cancel anytime in your Skool settings. You also have the guarantee: publish your first AI video within 30 days of joining, and if you can't, message me for a refund. The full terms are on the About page.</p></details>
+    </div>
+    <a class="bigbtn" style="margin-top:22px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=lilred&amp;utm_content=faq">Join AI Virality Creators &rarr;</a>
+    <p class="price">Try it free for 7 days. Then $9/month or $67/year, and the price you join at stays yours. It goes up as the group grows.</p>
+  </section>
+
+
+  <h2>Common mistakes</h2>
+  <ul class="clean">
+    <li><b>Four shots in one 6-second clip.</b> Every shot gets 1.5 seconds and the model rushes the action. Two or three shots per clip is the limit.</li>
+    <li><b>Small details on a costume creature.</b> Glasses on a snout or gum on a muzzle can vanish. Keep the gag big and easy to read.</li>
+    <li><b>Continuity slips between clips.</b> In my porch shot Grandma wears a grey cardigan instead of her pink housecoat. Put the sheet of every character in the scene into the references, not only the start frame.</li>
+    <li><b>The first frame is a white flash.</b> If your clip starts on a camera flash, trim it, or the reel opens on a blank frame.</li>
+  </ul>
+
+  <footer>CASE 001: LIL RED is a made-up story. Every character and location was generated with AI; no real person is shown. Original characters, not affiliated with any film, studio or brand. Not affiliated with Melius, OpenAI or ByteDance. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=lilred&amp;utm_content=footer">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+<div class="sticky"><span>AI Virality Creators · 125+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=lilred&amp;utm_content=sticky">Join the community &rarr;</a></div>
+</body>
+</html>
