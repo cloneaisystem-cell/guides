@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>The prompts behind my 3 GTA 5 goodbye reels (free)</title>
+<meta name="description" content="The exact start-frame prompt, the multi-shot Seedance 2.5 video prompt and the cut times behind three AI GTA 5 goodbye reels. Copy and paste.">
+<meta name="theme-color" content="#16110E">
+<meta property="og:title" content="The prompts behind my 3 GTA 5 goodbye reels (free)">
+<meta property="og:description" content="The exact start-frame prompt, the multi-shot Seedance 2.5 video prompt and the cut times behind three AI GTA 5 goodbye reels. Copy and paste.">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/gta/cover.jpg">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Serif:ital@1&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+<script src="../shared/copy.js" defer></script>
+<script src="../shared/motion.js" defer></script>
+<style>
+/* page-level additions for this guide (the shared guide.css is untouched) */
+
+/* ---- hero: three.js golden-hour pier (gta/scene.js); the gradient is the loading state ---- */
+.gta-hero { position: relative; height: 100vh; height: 100svh; min-height: 540px; max-height: 1200px; overflow: hidden; isolation: isolate; color: var(--cream);
+  background: radial-gradient(38vmax 16vmax at 44% 52%, rgba(255,206,130,.85), rgba(240,140,60,0) 70%),
+              linear-gradient(180deg, #2a130f 0%, #5e2618 28%, #b4532a 46%, #f0a35c 52%, #6e3420 53.5%, #2a1a14 72%, #16110E 100%); }
+.gta-hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 1.4s cubic-bezier(.16,1,.3,1); }
+.gta-hero.ready canvas { opacity: 1; }
+.gta-hero.nogl { background: url(t3_poster.jpg) 58% 30% / cover no-repeat, #2a1a14; }
+.gta-hero.nogl canvas { display: none; }
+.gta-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(130% 95% at 50% 38%, transparent 58%, rgba(12,7,5,.5) 100%); }
+.gta-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 60%; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(22,17,14,0) 0%, rgba(22,17,14,.5) 38%, rgba(22,17,14,.9) 74%, #16110E 100%); }
+.hc { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; max-width: 1180px; margin: 0 auto; padding: 0 20px calc(22px + env(safe-area-inset-bottom));
+  transform: translateY(calc(var(--p, 0) * -48px)); opacity: calc(1 - var(--p, 0) * 1.15); }
+.hc h1 { font-size: clamp(40px, 6.4vw, 86px); line-height: .98; max-width: 14ch; margin: 0 0 14px; letter-spacing: -0.015em; text-wrap: balance; text-shadow: 0 2px 26px rgba(12,7,5,.5); }
+.hc .sub { max-width: 37ch; font-size: clamp(16.5px, 1.5vw, 19px); line-height: 1.5; color: #f1e3b8; margin: 0 0 16px; text-wrap: pretty; }
+.hc .chips { margin: 0; }
+.hc .chip { background: rgba(43,36,32,.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.hc .chip.hot { background: var(--red); }
+.cue { display: grid; place-items: center; width: 46px; height: 46px; margin: 20px auto 0; border-radius: 50%; color: var(--cream);
+  border: 1px solid rgba(250,238,196,.32); background: rgba(22,17,14,.35); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: background .2s ease; }
+.cue:hover { background: rgba(163,35,26,.6); }
+.cue svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; animation: bob 2.4s cubic-bezier(.45,0,.55,1) infinite; }
+@keyframes bob { 50% { transform: translateY(4px); } }
+@media (min-width: 900px) {
+  .hc { padding-bottom: 40px; }
+  .cue { position: absolute; right: 24px; bottom: 44px; margin: 0; }
+}
+
+/* ---- reel switcher: three cards on a turntable ---- */
+.reels { position: relative; padding: 46px 0 10px; overflow: hidden; overflow: clip; }
+.reels::before { content: ""; position: absolute; left: 50%; top: 30%; width: 130vw; max-width: 1500px; height: 70%; transform: translateX(-50%); pointer-events: none;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(232,142,64,.14), rgba(163,35,26,.07) 48%, transparent 72%); }
+.rc-stage { --w: min(80vw, 640px); position: relative; width: var(--w); height: calc(var(--w) * .75 + 50px); margin: 0 auto; perspective: 1300px; touch-action: pan-y; }
+.rc { position: absolute; left: 0; top: 0; width: 100%; margin: 0; --sx: 115%;
+  transition: transform 1s cubic-bezier(.16,1,.3,1), filter 1s cubic-bezier(.16,1,.3,1), opacity 1s cubic-bezier(.16,1,.3,1); }
+.rc[data-pos="0"] { transform: translate3d(0,0,0); z-index: 3; }
+.rc[data-pos="-1"] { transform: translate3d(-64%, 0, -300px) rotateY(44deg); z-index: 1; filter: brightness(.48) saturate(.85); --sx: -20%; }
+.rc[data-pos="1"] { transform: translate3d(64%, 0, -300px) rotateY(-44deg); z-index: 1; filter: brightness(.48) saturate(.85); --sx: 140%; }
+.rc[data-pos="0"] { --sx: 50%; }
+.rc-in { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .6s cubic-bezier(.16,1,.3,1); }
+.rc-media { position: relative; aspect-ratio: 4 / 3; border-radius: 18px; overflow: hidden; background: #0d0a08; border: 1px solid #3a3029;
+  box-shadow: 0 34px 60px -18px rgba(0,0,0,.75), 0 12px 24px -12px rgba(163,35,26,.35); }
+.rc-media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rc-media::after { content: ""; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; transition: background-position 1.2s cubic-bezier(.16,1,.3,1), opacity .4s ease;
+  background: linear-gradient(105deg, transparent 38%, rgba(255,214,160,.26) 50%, transparent 62%); background-size: 260% 100%; background-position: var(--sx) 0; }
+.rc.playing .rc-media::after { opacity: 0; }
+.rc .playbtn { transition: opacity .4s ease, transform .15s ease; }
+.rc:not([data-pos="0"]) .playbtn { opacity: 0; pointer-events: none; }
+.rc.playing .playbtn { display: none; }
+.rc-pick { position: absolute; inset: 0; z-index: 4; width: 100%; background: transparent; border: 0; border-radius: 18px; cursor: pointer; padding: 0; }
+.rc[data-pos="0"] .rc-pick { display: none; }
+.rc figcaption { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 14px; font: 800 14px/1.2 "Inter", sans-serif; letter-spacing: .05em; transition: opacity .6s ease; }
+.rc:not([data-pos="0"]) figcaption { opacity: 0; }
+.rc .tag { background: var(--red); color: var(--cream); border-radius: 999px; padding: 5px 9px; font-size: 12px; letter-spacing: .04em; }
+.rc-tabs { display: flex; justify-content: center; gap: 8px; margin: 22px 0 10px; }
+.rc-tabs button { font: 800 13.5px/1 "Inter", sans-serif; color: var(--muted); background: var(--panel); border: 1px solid #3a3029; border-radius: 999px; padding: 0 16px; min-height: 40px; cursor: pointer; transition: background .25s ease, color .25s ease; }
+.rc-tabs button:hover { color: var(--cream); }
+.rc-tabs button[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: var(--cream); }
+.rc-desc { text-align: center; font-size: 17.5px; line-height: 1.45; margin: 4px auto 6px; max-width: 34ch; padding: 0 18px; color: #f1e3b8; min-height: 1.45em; }
+.reels .vid-note { padding: 0 18px; text-wrap: balance; }
+@media (prefers-reduced-motion: reduce) {
+  .rc, .rc-in, .rc-media::after, .hc { transition: none; }
+  .hc { transform: none; opacity: 1; }
+  .cue svg { animation: none; }
+}
+
+/* ---- steps: long prompts scroll inside their box ---- */
+ol.steps pre { max-height: 17em; overflow: auto; }
+.cost { color: var(--muted); }
+</style>
+</head>
+<body>
+<header class="gta-hero" id="gta-hero">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hc">
+    <h1>The prompts behind my <em>GTA goodbye</em> reels</h1>
+    <p class="sub">Copy the frame prompt, the video prompt and the cut times. All three reels were made with them.</p>
+    <div class="chips"><span class="chip hot">Free prompts</span><span class="chip">3 reels</span><span class="chip">Seedance 2.5</span></div>
+    <a class="cue" href="#reels" aria-label="Watch the three reels"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+  </div>
+</header>
+
+<section class="reels" id="reels" aria-label="The three reels">
+  <div class="rc-stage">
+    <figure class="rc" data-pos="1" data-desc="My AI clone switches characters and lands in Vice City.">
+      <div class="rc-in">
+        <div class="rc-media"><video src="t1.mp4" poster="t1_poster.jpg" playsinline preload="none"></video><button class="playbtn" type="button" aria-label="Play LAST SWITCH"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button></div>
+        <figcaption><span class="tag">T1</span>LAST SWITCH</figcaption>
+      </div>
+      <button class="rc-pick" type="button" aria-label="Show T1: LAST SWITCH"></button>
+    </figure>
+    <figure class="rc" data-pos="-1" data-desc="Chop leaves the pier with the new heroes.">
+      <div class="rc-in">
+        <div class="rc-media"><video src="t2.mp4" poster="t2_poster.jpg" playsinline preload="none"></video><button class="playbtn" type="button" aria-label="Play CHOP GOES TO VICE CITY"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button></div>
+        <figcaption><span class="tag">T2</span>CHOP GOES TO VICE CITY</figcaption>
+      </div>
+      <button class="rc-pick" type="button" aria-label="Show T2: CHOP GOES TO VICE CITY"></button>
+    </figure>
+    <figure class="rc" data-pos="0" data-desc="Each character says goodbye to you.">
+      <div class="rc-in">
+        <div class="rc-media"><video src="t3.mp4" poster="t3_poster.jpg" playsinline preload="none"></video><button class="playbtn" type="button" aria-label="Play LAST TIME YOU PRESS START"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button></div>
+        <figcaption><span class="tag">T3</span>LAST TIME YOU PRESS START</figcaption>
+      </div>
+      <button class="rc-pick" type="button" aria-label="Show T3: LAST TIME YOU PRESS START"></button>
+    </figure>
+  </div>
+  <div class="rc-tabs">
+    <button type="button" aria-pressed="false" aria-label="T1: LAST SWITCH">T1</button>
+    <button type="button" aria-pressed="false" aria-label="T2: CHOP GOES TO VICE CITY">T2</button>
+    <button type="button" aria-pressed="true" aria-label="T3: LAST TIME YOU PRESS START">T3</button>
+  </div>
+  <p class="rc-desc" aria-live="polite">Each character says goodbye to you.</p>
+  <p class="vid-note">Sound on. Everything you see is AI-generated, fan-made.</p>
+</section>
+
+<main>
+  <h2>4 steps</h2>
+  <ol class="steps">
+    <li><h3>Use game renders as references</h3>Upload a clean render of each character and tell the model which reference is who, in the frame's own left and right.</li>
+    <li><h3>Make the start frame</h3>One still per scene with GPT Image 2.5 on Dreamina <span class="cost">(11 credits per image)</span>. This is the Michael frame from reel 3:
+      <pre id="frame">REFERENCE ROLES: reference 1 = Michael, exact same face, slicked-back dark hair, grey suit jacket, open white shirt, build and age. Do not change his face.
+Photorealistic cinematic film still, 50mm lens, 4:3. Michael's Rockford Hills mansion at golden-hour sunset. Michael sits on the edge of a white sun lounger beside his turquoise swimming pool, leaning forward, elbows on his knees, a crystal whisky glass with amber whisky held loosely in his right hand at chest height. He looks straight into the camera with a tired, fond half-smile, lips closed, like an old friend saying goodbye. Camera at his seated eye level, about two metres away, medium shot from the knees up, Michael slightly right of centre. Behind him, out of focus: the pool with sparkling reflections, white stone arches, palm trees and the Los Santos skyline. Low warm sun from the right, soft lens flare at the frame edge. Natural skin texture, no text, no logos, no watermark.</pre>
+      <button class="btn copy" data-copy="frame">Copy the frame prompt</button></li>
+    <li><h3>Ask for three shots in one clip</h3>Seedance 2.5 on Dreamina, "any reference" mode: 7 seconds, 3 shots, 259 credits <span class="cost">(37 per second at 720p)</span>. This is the pier clip from reel 3:
+      <pre id="multi">Video style: photorealistic cinematic live-action film, 35mm film look, the last minutes of golden-hour sunset on the wooden Del Perro pier, warm nostalgic haze, natural realistic motion, 24 fps, soft anamorphic flares. Three shots joined by hard cuts, all on the same pier in the same light. Every character looks exactly like his reference: same face, hair, clothes and build.
+REFERENCES: reference 1 = Franklin (left, dark navy shirt over white t-shirt), Michael (right, grey suit) and the Rottweiler Chop (green collar) on the pier; shot 1 starts exactly like this image. reference 2 = Trevor (balding, messy hair at the sides, dirty white t-shirt, jeans).
+TIMELINE:
+Shot 1, 0.0–2.4 s: exactly the framing of reference 1, static camera at chest height. Michael's hand rests on Franklin's shoulder. Franklin looks straight into the lens with a small, brave smile and says at normal speaking volume, every word clear: "See you in Vice City." Michael gives his shoulder a squeeze.
+Hard cut. Shot 2, 2.4–4.4 s: wide shot from behind, camera low on the boardwalk and static: three men and the dog walk slowly away from the camera down the long pier toward the setting sun. From left to right: Franklin with Chop walking beside him, Trevor in the middle, Michael on the right. Long shadows stretch toward the camera, the Ferris wheel glows on the right.
+Hard cut. Shot 3, 4.4–7.0 s: medium shot from the front-back angle on the same pier, the sun right behind Trevor, warm rim light. Trevor stops, turns back toward the camera, raises one hand in a small wave, then looks down and wipes his eye with the back of his hand. Chop, at his feet, turns his head and looks back at the camera. The others are soft and small in the background, still walking away.
+RULES: no other people close to the camera, no text, no subtitles, no music. Sound: soft waves under the pier, wooden boards creaking under steps, gulls far away.</pre>
+      <button class="btn copy" data-copy="multi">Copy the video prompt</button></li>
+    <li><h3>Cut on the beat</h3>Put the clips on the song and cut only on its beat grid. The last word gets a black frame.
+      <pre id="beat">Beat grid: 0.3745 s (measured on See You Again, librosa).
+Land every cut on a multiple of the grid, within 1 frame.
+Last lyric "again" = black frame, cut on the beat at 84.92 s of the track.
+Loudness -14 LUFS, the same level Instagram plays reels at.</pre>
+      <button class="btn copy" data-copy="beat">Copy the cut tip</button></li>
+  </ol>
+
+  <section class="system" id="community">
+    <h2>Next week the trend is gone. <em>The method stays.</em></h2>
+    <p>The GTA 6 wave ends and a new one starts. What carries over is spotting a trend early, keeping one face across every shot and cutting on the beat. I build that in my community and share what works there. Claude Code runs my content every day, even the DM that sent you here. Under a minute:</p>
+    <video class="vid wide" src="../shared/system-video-169.mp4" poster="../shared/system-poster-169.jpg" controls playsinline preload="none"></video>
+    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone, made with the methods taught inside.</p>
+    <a class="bigbtn" style="margin-top:20px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=gta&amp;utm_content=video">Join AI Virality Creators &rarr;</a>
+    <p class="price">Start with a free trial. Then $9/month until the group reaches 150 members; after that it goes up to $27/month.</p>
+
+    <h2>What you get inside</h2>
+    <div class="benefits">
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg><h3>A path for complete beginners</h3><p>START HERE takes you from zero to your first consistent AI character, lesson by lesson. Then Go Viral: 8 short lessons and cheat sheets for Reels and TikTok.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5l2 4M14 5l2 4"/></svg><h3>Every reel I post, taken apart</h3><p>The prompts, the edit choices and what each shot cost in credits. You copy what already worked instead of guessing.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg><h3>Claude Code, in plain English</h3><p>Master Claude Code: real builds with every file included. Claude writes the code; you say what you want and approve each step.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4zM9 8V5h6v3M4 13h16"/></svg><h3>30+ courses on today's tools</h3><p>Kling 3.0, Veo 3.1, Nano Banana Pro, ElevenLabs voices, UGC and cinematic ads, prompt systems, 4K upscaling.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.5V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3.5Z"/></svg><h3>Feedback from me</h3><p>Post your video in the community. I read it and reply myself, and other members add their notes.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><h3>From skill to client work</h3><p>Modules on finding your first clients, pricing what you make and delivering it like a pro.</p></div>
+    </div>
+
+    <h2>Your first week</h2>
+    <ol class="week">
+      <li><b>Day 1.</b> Join, introduce yourself and say what you want to make. I point you to the module that fits.</li>
+      <li><b>Days 2–4.</b> Build your first AI character in START HERE, one short lesson a night. (Here for Claude Code? Start Master Claude Code instead.)</li>
+      <li><b>Days 5–6.</b> Open a reel breakdown and copy its structure for your own idea.</li>
+      <li><b>Day 7.</b> Post your first video in the community and get feedback on it.</li>
+    </ol>
+
+    <div class="join">
+      <h3>Stop saving tutorials. Start posting.</h3>
+      <p>AI Virality Creators is my Skool community. Everything above is in one place, in order, and I answer you myself.</p>
+      <ul>
+        <li><b>START HERE:</b> the first steps, so you know what to do in your first hour.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok, so you pick the next trend on purpose.</li>
+        <li><b>30+ step-by-step courses</b> and the breakdown of every reel, with prompts and credit costs.</li>
+        <li><b>Personal feedback</b> on what you post, next to 125+ creators building the same skills.</li>
+      </ul>
+      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=gta">Join AI Virality Creators &rarr;</a>
+      <p class="price">Start with a free trial. Then $9/month until the group reaches 150 members; after that it goes up to $27/month.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Before you join</h2>
+      <details><summary>I'm a complete beginner. Is this too advanced?</summary>
+        <p>Not at all. START HERE assumes zero experience and goes in order: your first image, your first video, then a character that looks the same in every shot. If you can type a sentence, you can follow it.</p></details>
+      <details><summary>I can't code. Do I need to?</summary>
+        <p>You don't need to. For the Claude Code lessons you describe what you want in plain English, Claude writes the code, and you approve each step. Every lesson shows the exact clicks.</p></details>
+      <details><summary>Do I need a Skool account? Can I use it on my phone?</summary>
+        <p>Skool is the app the community lives in. Signing up is free and takes about a minute when you join, and it works in the Skool phone app or any browser. Watching lessons and posting work fine on a phone; Claude Code itself runs on a computer.</p></details>
+      <details><summary>I don't have much time.</summary>
+        <p>The lessons are short and numbered, so you always know which one is next. One lesson an evening keeps you moving, and the community keeps you posting.</p></details>
+      <details><summary>Can't I learn all of this free on YouTube?</summary>
+        <p>You can start there, and free guides like this one are made for exactly that. What you won't find for free: the right order, my real project files, the credit cost of every shot, and someone who looks at your video and tells you what to fix.</p></details>
+      <details><summary>AI tools change every month. Won't it be outdated?</summary>
+        <p>New tools get their own modules: Kling 3.0, Veo 3.1 and Nano Banana Pro are already in. The breakdowns teach how a reel is built, and that carries over to whatever tool comes next.</p></details>
+      <details><summary>AI credits get expensive. What will I spend?</summary>
+        <p>Every breakdown shows what each shot cost, so you know before you start. A lot of what I teach costs 0 credits, like the guide you're reading now.</p></details>
+      <details><summary>Will I get lost in a big group?</summary>
+        <p>It's around 125 people, small enough that new posts get answered. I reply myself, and members comment on each other's work.</p></details>
+      <details><summary>Is the person in the video real?</summary>
+        <p>The presenter is my AI clone, built with the same methods taught inside. I say so every time. The community is run by me, and I answer you myself.</p></details>
+      <details><summary>Will this make me money?</summary>
+        <p>I can't promise income. You get the skill, finished videos to show, and modules on finding clients and pricing your work. What you earn with them is up to you.</p></details>
+      <details><summary>Is it only about video?</summary>
+        <p>Video is the core. Master Claude Code is the second part: real builds with every file included, starting with the Night Shift experiment. Prompting, voices and client work are in there too.</p></details>
+      <details><summary>What if it's not for me?</summary>
+        <p>Cancel anytime in your Skool settings. You also have the guarantee: publish your first AI video within 30 days of joining, and if you can't, message me for a refund. The full terms are on the About page.</p></details>
+    </div>
+    <a class="bigbtn" style="margin-top:22px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=gta&amp;utm_content=faq">Join AI Virality Creators &rarr;</a>
+    <p class="price">Start with a free trial. Then $9/month until the group reaches 150 members; after that it goes up to $27/month.</p>
+  </section>
+
+
+  <h2>Mistakes I hit</h2>
+  <ul class="clean">
+    <li>Big faces of the GTA 6 heroes got my clip blocked twice. Keep them small in frame and it passes.</li>
+    <li>I edited a 2K frame where the face was 200 px wide. The model kept the old face. Crop in first.</li>
+    <li>A free face-swap gave a soft grey face. Regenerating with good references looked far better.</li>
+  </ul>
+
+  <footer>These reels are fan-made. Every character and place was generated with AI; no real person is shown. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive, Dreamina, OpenAI or ByteDance. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=gta&amp;utm_content=footer">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+<div class="sticky"><span>AI Virality Creators · 125+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=gta&amp;utm_content=sticky">Join the community &rarr;</a></div>
+<script>
+// reel switcher: three cards on a turntable, the front one is the player
+(function () {
+  var hero = document.getElementById("gta-hero");
+  setTimeout(function () { if (!window.__gtaReady) hero.classList.add("nogl"); }, 9000);
+
+  var stage = document.querySelector(".rc-stage");
+  var cards = [].slice.call(stage.querySelectorAll(".rc"));
+  var tabs = [].slice.call(document.querySelectorAll(".rc-tabs button"));
+  var desc = document.querySelector(".rc-desc");
+  var sel = 2;
+
+  function stop(c) { var v = c.querySelector("video"); v.pause(); v.controls = false; c.classList.remove("playing"); }
+  function show(i) {
+    sel = (i + 3) % 3;
+    cards.forEach(function (c, k) {
+      var pos = ((k - sel + 4) % 3) - 1;
+      c.setAttribute("data-pos", pos);
+      if (pos !== 0) { stop(c); c.querySelector(".rc-in").style.cssText = ""; c.style.removeProperty("--sx"); }
+    });
+    tabs.forEach(function (t, k) { t.setAttribute("aria-pressed", k === sel ? "true" : "false"); });
+    desc.textContent = cards[sel].getAttribute("data-desc");
+  }
+  cards.forEach(function (c, k) {
+    var v = c.querySelector("video");
+    c.querySelector(".rc-pick").addEventListener("click", function () { show(k); });
+    c.querySelector(".playbtn").addEventListener("click", function () { v.controls = true; c.classList.add("playing"); v.play(); });
+  });
+  tabs.forEach(function (t, k) { t.addEventListener("click", function () { show(k); }); });
+
+  // swipe on phones, arrow keys everywhere
+  var x0 = null;
+  stage.addEventListener("pointerdown", function (e) { x0 = e.target.tagName === "VIDEO" && e.target.controls ? null : e.clientX; });
+  stage.addEventListener("pointerup", function (e) {
+    if (x0 === null) return;
+    var dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) show(sel + (dx < 0 ? 1 : -1));
+  });
+  document.querySelector(".reels").addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") show(sel + 1);
+    else if (e.key === "ArrowLeft") show(sel - 1);
+  });
+
+  // desktop: the front card leans toward the pointer and the light slides across it
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    stage.addEventListener("pointermove", function (e) {
+      var c = cards[sel], r = c.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+      var inn = c.querySelector(".rc-in");
+      inn.style.setProperty("--ry", (px * 9).toFixed(2) + "deg");
+      inn.style.setProperty("--rx", (py * -7).toFixed(2) + "deg");
+      c.style.setProperty("--sx", (50 - px * 70).toFixed(1) + "%");
+    });
+    stage.addEventListener("pointerleave", function () {
+      var c = cards[sel]; c.querySelector(".rc-in").style.cssText = ""; c.style.removeProperty("--sx");
+    });
+  }
+  show(sel);
+})();
+</script>
+<script type="module" src="scene.js" onerror="document.getElementById('gta-hero').classList.add('nogl')"></script>
+</body>
+</html>
