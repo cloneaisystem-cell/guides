@@ -51,6 +51,12 @@ PAGES = {
         P="The story stays the same. The hook, the cover and the caption are what change, and the creators in this niche post several versions of one reel to find the winner. Planning that by hand every week is a lot, so I don't: Claude Code runs my content every day, from the morning idea list to the edit, the posting and the DMs. Even the DM that sent you here went out by itself. Under a minute:",
         SPECIAL_LI="<li><b>The LIL RED breakdown:</b> all 9 video prompts, the 7 start frames, the edit timeline and what every clip cost.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>",
     ),
+    "robie": dict(
+        CAMPAIGN="robie",
+        H2="Eight prompts are the easy part. <em>The cut is what makes it work.</em>",
+        P="Anyone can paste the same eight prompts. What made this reel hold was what came after: where each shot was cut, which sound sits on which hit, and what I left out of the edit. I write all of that down for every reel. Claude Code runs the rest of my content every day, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>The ROBIE HOODIE breakdown:</b> all 8 video prompts, the start frames, what every clip cost, and the edit and sound-effect recipe.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>",
+    ),
     # gta: 3D hero + reel switcher live in gta/scene.js; PRICE swaps the price line in the community block
     "gta": dict(
         CAMPAIGN="gta",

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How I made Robie Hoodie: the prompts and the edit (free)</title>
+<meta name="description" content="The 5 steps behind CASE 002: ROBIE HOODIE: character sheets, a mugshot start frame, multi-shot Seedance 2.5 prompts and the edit on the beat. Copyable prompts.">
+<meta property="og:title" content="How I made Robie Hoodie: the prompts and the edit">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/robie/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Serif:ital@1&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+<script src="../shared/copy.js" defer></script>
+<script src="../shared/motion.js" defer></script>
+<style>
+/* page-level additions for this guide (the shared guide.css is untouched) */
+.fbox .vid.sq { width: min(100%, 460px); aspect-ratio: 1 / 1; }
+.rules { margin: 8px 0 0; padding-left: 22px; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="Close-up of a lean man in a dark green pointed hood with a thin mustache and goatee, a red feather in the hood seam, holding a police booking placard reading R. HOODIE." width="1280" height="720"></div>
+  <h1>How I made Robie Hoodie: <em>the prompts and the edit</em></h1>
+  <p class="sub">A 28-second reel: Robie Hoodie and his Merry Men rob the richest gated community in town, shoot the money into the doors of the hood, and get arrested like rap stars. Here are the 5 steps and the prompts I pasted.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">8 clips</span><span class="chip">multi-shot Seedance 2.5</span><span class="chip">any editor works</span></div>
+  <div class="fbox"><video class="vid sq" src="robie.mp4" poster="poster.jpg" controls playsinline preload="none"></video></div>
+  <p class="vid-note">No music here. The song is added on Instagram. Everything you see is AI-generated.</p>
+  <div class="note">This is <b>CASE 002</b> of my series <b>Once Upon a Crime</b>: fairy-tale characters as real-world criminals. The old tale's ending becomes the punchline. Here: took from the rich, gave to the poor, kept the grills.</div>
+
+  <h2>What you need</h2>
+  <ul class="clean">
+    <li><b>An image model that does real skin.</b> I used GPT Image 2.5 inside Dreamina: 30 points per image at 2K.</li>
+    <li><b>Seedance 2.5 for video, also in Dreamina.</b> I used the Flash version at 1:1, 720p. It costs 17 points per second, and the 8 clips (62 seconds in total) came to about 1,054 points.</li>
+    <li><b>Any editor.</b> CapCut is fine: hard cuts, white flashes and a song.</li>
+  </ul>
+
+  <h2>5 steps</h2>
+  <ol class="steps">
+    <li><h3>Story: the ending is the grills</h3>Pick one image the viewer will remember and build the reel backward from it. Mine is a smile full of gold grills with a tiny arrowhead on one tooth. Then give the story one thread you can see in every scene. Here it is a <b>long red feather</b>: in his hood, on the arrows, in the sheriff's hat, and at the end behind Grandma's ear.
+      <ol class="rules">
+        <li><b>Hook:</b> a mugshot. Robie holds the placard, a giant stands behind him with his head out of frame.</li>
+        <li><b>The shot:</b> an arrow takes the wig off the rich man and pins it to a palm tree.</li>
+        <li><b>The heist:</b> the vault opens, the giant rips the cash machine out of the wall.</li>
+        <li><b>The chase:</b> a church van, police cars, the sheriff loses his hat to an arrow.</li>
+        <li><b>The give:</b> money rains over the poor street.</li>
+        <li><b>The ending:</b> the arrest, the crowd throws roses, and Robie grins with gold grills.</li>
+      </ol></li>
+    <li><h3>Character sheets</h3>One sheet per character: full body from the front, side and back, two close-ups and three expressions on a grey background. Every later image and clip uses these as references, so the faces stay the same. Robie's sheet (swap the details for your own character):
+      <pre id="sheet">Photorealistic character reference sheet of the same man, five views on a neutral light-grey studio background:
+1. Full body front, head to feet, neutral stance, holding a tall wooden longbow upright beside him (scale prop).
+2. Full body three-quarter view left.
+3. Full body rear view showing the pointed hood and the quiver.
+4. Head-and-shoulders close-up, straight-on, hood up.
+5. Head-and-shoulders 90-degree profile from the right, hood up.
+Bottom row: three small head crops with expressions: deadpan stare, crooked smirk, blowing a kiss.
+Character: man about 28, lean and athletic, light-tan skin, sharp cheekbones, thin pencil mustache and a short pointed goatee, dark brown eyes, short dark hair under the hood. Wardrobe: oversized plain dark forest-green hoodie with a long pointed hood worn up; one long red feather (about 15 cm) tucked into the seam of the hood on HIS RIGHT side only; olive-green cargo pants, knee-high brown leather boots, a wide brown leather belt; a brown leather quiver on his back full of arrows with long red fletching; a thin gold chain with a small gold arrow pendant. Plain fabrics, no logos, no prints, no text on any clothing.
+Real skin texture: visible pores, uneven skin tone, light stubble shadow, no retouching, no glamorization, no beauty filter.
+Clean soft studio light, key upper left, fill right. Identical identity, proportions and costume in every view; the red feather always on the right side of the hood. Photoreal, not illustrated. No text, no labels, no logos, no watermark, no extra people.</pre>
+      <button class="btn copy" data-copy="sheet">Copy the sheet prompt</button>
+      <p>I made the same kind of sheet for the giant, the monk, the rich man, the sheriff and Grandma, and one sheet for the props (arrow, money roll, cash machine, crown, wig, hat). Repeat one small detail on every character so the viewer links them: mine is the red feather.</p></li>
+    <li><h3>Start frames: one per clip</h3>Every clip starts from a still made from the sheets. Give each scene its own camera look so the reel feels filmed: police flash, news helicopter, security camera, handheld paparazzi. The mugshot (Image 1 = Robie's sheet, Image 2 = the giant's sheet):
+      <pre id="frame">Square 1:1 photorealistic police booking photograph. the man from Image 1 stands centred facing the camera in front of a pale grey-green wall with painted black height-chart lines and numbers, hood up, the long red feather on HIS RIGHT side of the hood, holding a black letter placard at chest height reading exactly "R. HOODIE" and below it "CASE 002"; the top of his tall wooden longbow is visible below the placard. Behind him on the same height chart stands the giant from Image 2, so tall that his head is cut off by the top edge of the frame: only his bushy chestnut beard, chest and one big fist resting on Robie's quiver are visible. Robie is deadpan. Harsh frontal on-camera flash, hard shadow on the wall, flat dull colours, old compact digital camera look, mild noise. Real skin texture, no retouching. No other text, no logos, no watermark, no extra people.</pre>
+      <button class="btn copy" data-copy="frame">Copy the start frame prompt</button>
+      <p>Check every still before you animate it: count the people, read the text on the placard, look at the hands. Text only works when it is short and the camera stays still on it.</p></li>
+    <li><h3>Video: multi-shot clips</h3>Instead of one clip per shot, I asked Seedance 2.5 for several shots inside one clip, with the start frame and the character sheets as references. Same light, same faces, new angle after every hard cut. Below are three of the eight prompts. In them, <b>RH_F1, RH_ROBIE, RH_JOHN</b> and the other RH_ names are the names I gave my saved images in Dreamina. Replace them with your own.
+      <p><b>1. The hook: the mugshot</b></p>
+      <pre id="g1">AUDIO POLICY: native production sound only. No music, no BGM, no score, no soundtrack, no instrumental, no melody, no humming, no singing. No dialogue. No subtitles.
+
+STYLE: photoreal police booking footage, square 1:1 frame, harsh frontal on-camera flash, old compact digital camera look, flat dull colours, mild noise, 35 mm lens at 2 m, eye level. Real-time speed, natural pace, no slow motion.
+
+REFERENCES: RH_F1 is the exact first frame: same framing, wall, height chart, placard, light. ROBIE = RH_ROBIE (lean archer, pencil mustache and pointed goatee, dark green hood up, one long red feather on his right side of the hood, longbow, quiver of red-fletched arrows). JOHN = RH_JOHN (giant bearded man in brown leather vest; only his beard, chest and fist are visible, his head stays above the top edge of the frame the whole time).
+
+SHOT 1 [0-3s] locked-off camera, medium shot, exactly as RH_F1. ROBIE already stands still holding the black letter placard at chest height; the placard text stays exactly "R. HOODIE" / "CASE 002", sharp and unchanged; the wooden grip of his longbow is visible below the placard. At 0.5s the booking camera flash fires and the frame flashes white for an instant. ROBIE stays deadpan: face still, one slow blink, lips closed. Behind him JOHN breathes, his beard rises and falls, his gloved fist taps the quiver once. Hard cut.
+
+SHOT 2 [3-6s] Cut to: the camera rushes forward in under half a second from medium shot to a tight close-up of ROBIE's face (a fast zoom-in), then holds steady. Within the first second of this shot ROBIE lifts two fingers to his lips and blows a kiss straight into the lens, then a crooked one-sided smirk. At 5.5s a second white flash.
+
+CONTINUITY: exactly two people, ROBIE in front, JOHN behind; same faces, same wardrobe, the red feather always on ROBIE's right side of the hood; five fingers per hand; same grey-green wall and black height-chart lines; normal human eyes.
+
+AUDIO: booking-camera flash pop with a short capacitor whine at 1s and 5.5s, the soft leather creak of JOHN's glove on the quiver, quiet room tone. No BGM, only ambient and action sounds; no music.
+
+EXCLUDE: subtitles, captions, any new text, watermark, logo, extra people, JOHN's full face, extra fingers, face morphing, slow motion.</pre>
+      <button class="btn copy" data-copy="g1">Copy the hook prompt</button>
+      <p><b>2. The wig shot</b>: macro, then a security camera, then the payoff in slow motion.</p>
+      <pre id="g3">AUDIO POLICY: native production sound only. No music, no BGM, no score, no soundtrack, no instrumental, no melody, no humming, no singing. No dialogue. No subtitles.
+
+STYLE: photoreal cinematic heist comedy, square 1:1, golden sunset. Real-time speed, except the single slow-motion window named in SHOT 3.
+
+REFERENCES: RH_F3 is the first frame (macro of the arrowhead with ROBIE aiming behind it). ROBIE = RH_ROBIE. PRINCE = RH_PRINCE (black slicked-back wig over a completely bald shiny head, gold crown, white silk robe, cigar). VILLA = RH_L2_VILLA (pool terrace, tall champagne-glass pyramid, palm trees, white CCTV camera on a metal pole by the service door). ARROW = RH_PROPS (wooden arrow, steel broadhead, long red feather fletching only at the back end).
+
+SHOT 1 [0-2s] macro 100 mm, locked-off. Focus starts sharp on the steel arrowhead, then slowly shifts back until ROBIE's eye is sharp and the arrowhead blurs (rack focus). He exhales and releases: the arrow leaves the frame, the bowstring snaps forward. Hard cut.
+
+SHOT 2 [2-4s] Cut to: the point of view of the white security camera on the pole, wide lens, greenish security-camera image with compression, no on-screen text or timestamp. An arrow with a long red feather fletching flies straight at the lens and hits it at 3s; the image cracks in a spiderweb pattern and glitches. Hard cut.
+
+SHOT 3 [4-8s] Cut to: wide shot of the pool terrace, eye level, locked-off. PRINCE stands just behind the champagne-glass pyramid with a palm trunk directly behind him. From 4s to 5.5s slow motion: a second red-fletched arrow crosses the frame from right to left through the pyramid, glasses burst into sparkling shards. From 5.5s real-time speed: the arrow snatches PRINCE's black wig off his head and pins it to the palm trunk with a thunk; PRINCE is suddenly bald and shiny, crown tilted; the guests freeze mid-gesture, mouths open. Hold to the end.
+
+CONTINUITY: the arrows always have red fletching at the back end only; PRINCE is the same man before and after the wig is gone; the wig stays pinned on the palm; exactly one PRINCE; five fingers per hand; normal human eyes.
+
+AUDIO: bowstring twang and arrow whoosh at 1.5s; plastic crack and electronic glitch at 3s; crystal shattering 4-5.5s, a wooden thunk at 6s, then two seconds of stunned silence with only pool water lapping. No BGM, only ambient and action sounds; no music.
+
+EXCLUDE: subtitles, text, timestamps, watermark, logos, blood, injury to people, fletching near the arrowhead, face morphing.</pre>
+      <button class="btn copy" data-copy="g3">Copy the wig prompt</button>
+      <p><b>3. The ending: the grills</b></p>
+      <pre id="g8">AUDIO POLICY: native production sound only. No music, no BGM, no score, no soundtrack, no instrumental, no melody, no humming, no singing. No dialogue. No subtitles.
+
+STYLE: photoreal cinematic, square 1:1, evening, red and blue police lights, white paparazzi flashes; real-time speed, no slow motion.
+
+REFERENCES: RH_F8 is the first frame (ROBIE in handcuffs, SHERIFF opening the police car door, cheering crowd, GRANDMA with a red feather in her hair). ROBIE = RH_ROBIE. SHERIFF = RH_SHERIFF (light-tan cowboy hat with a clean arrow hole through the crown). GRANDMA = RH_GRANDMA (one gold tooth, red feather tucked behind her ear). HOOD = RH_L5_HOOD.
+
+SHOT 1 [0-2s] low angle, 24 mm, handheld, the camera walking backward in front of them; motion already under way on frame 1. ROBIE walks calmly in handcuffs; SHERIFF holds the open rear police car door and gestures ROBIE toward it. Hard cut.
+
+SHOT 2 [2-3.5s] Cut to: medium shot of the crowd under bursts of white camera flashes; neighbours throw red roses; GRANDMA in front with the red feather behind her ear waves and grins with her gold tooth; at 3.2s a hand reaches toward the lens and covers it. Hard cut.
+
+SHOT 3 [3.5-8s] Cut to: outside the police car looking in through the closed rear side window, 50 mm, a slow steady push-in toward the glass; clean glass, reflections of flashes and red-blue light only at the edges. [3.5-5s] inside, ROBIE settles back calmly in the seat. [5-7s] he looks straight into the lens and smiles wide, showing a full set of gold grills, the central front tooth shaped as a small triangular arrowhead. [7-8s] he winks once and holds the smile.
+
+CONTINUITY: ROBIE keeps the green hood with the red feather on his right side, hands cuffed in front; the SHERIFF's hat always has the arrow hole; GRANDMA keeps the feather and one gold tooth; five fingers per hand; normal human eyes.
+
+AUDIO: crowd cheering, camera-flash pops, footsteps on wet asphalt 0-3.5s; once the car door is shut the crowd becomes muffled behind the glass, the soft creak of the seat as ROBIE leans back. No BGM, only ambient and action sounds; no music.
+
+EXCLUDE: subtitles, text, logos, watermark, extra Robies, face morphing, slow motion.</pre>
+      <button class="btn copy" data-copy="g8">Copy the ending prompt</button>
+      <ol class="rules">
+        <li><b>Mark every shot with its seconds</b> and close it with "Hard cut". Start the next one with "Cut to:", or the camera drifts instead of cutting.</li>
+        <li><b>One camera move per shot</b>, in plain words: crane up, push-in, locked-off, handheld. Say it in its own sentence, apart from the action.</li>
+        <li><b>Write the audio yourself.</b> Name each sound next to what makes it, and say "no music, no dialogue, no subtitles". The song goes on in the edit.</li>
+        <li><b>Keep shots over 1.5 seconds in the prompt.</b> Shorter ones get rushed or skipped. Generate them a bit longer and trim in the edit.</li>
+        <li><b>List what must not appear</b> at the end: text, logos, extra people, face changes.</li>
+      </ol></li>
+    <li><h3>The edit: cut on the beat, add sound</h3>I measured the edits of four reels in this niche. Almost everything that looks like an effect (push-ins, whips, a hand covering the lens, paparazzi flashes) is already inside the AI clip. The edit itself is small:
+      <ul class="clean">
+        <li><b>Hard cuts on the beat.</b> No dissolves, no fades. Cut a shot as soon as its action has landed.</li>
+        <li><b>White flashes of 2 frames</b> on the last frames of a shot, then a hard cut to the next one. Longer flashes look cheap.</li>
+        <li><b>A contrasty grade.</b> Crush the blacks a little, keep the colour of the light in each scene.</li>
+        <li><b>No added grain and no fake camera shake.</b> I tried both on my first cut, and it looked more like AI. The references have neither.</li>
+        <li><b>Sound.</b> I made 22 sound effects with ElevenLabs: arrows, glass, the vault door, sirens, the camera flash. The music is a song from the Instagram library, started so the drop lands on the flash at 2 seconds.</li>
+        <li><b>The CTA:</b> a small label at the bottom for the last second, away from the face.</li>
+      </ul></li>
+  </ol>
+
+  <section class="system" id="community">
+    <h2>Eight prompts are the easy part. <em>The cut is what makes it work.</em></h2>
+    <p>Anyone can paste the same eight prompts. What made this reel hold was what came after: where each shot was cut, which sound sits on which hit, and what I left out of the edit. I write all of that down for every reel. Claude Code runs the rest of my content every day, even the DM that sent you here. Under a minute:</p>
+    <video class="vid wide" src="../shared/system-video-169.mp4" poster="../shared/system-poster-169.jpg" controls playsinline preload="none"></video>
+    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone, made with the methods taught inside.</p>
+    <a class="bigbtn" style="margin-top:20px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=robie&amp;utm_content=video">Join AI Virality Creators &rarr;</a>
+    <p class="price">Try it free for 7 days. Then $9/month or $67/year, and the price you join at stays yours. It goes up as the group grows.</p>
+
+    <h2>What you get inside</h2>
+    <div class="benefits">
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg><h3>A path for complete beginners</h3><p>START HERE takes you from zero to your first consistent AI character, lesson by lesson. Then Go Viral: 8 short lessons and cheat sheets for Reels and TikTok.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5l2 4M14 5l2 4"/></svg><h3>Every reel I post, taken apart</h3><p>The prompts, the edit choices and what each shot cost in credits. You copy what already worked instead of guessing.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg><h3>Claude Code, in plain English</h3><p>Master Claude Code: real builds with every file included. Claude writes the code; you say what you want and approve each step.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4zM9 8V5h6v3M4 13h16"/></svg><h3>30+ courses on today's tools</h3><p>Kling 3.0, Veo 3.1, Nano Banana Pro, ElevenLabs voices, UGC and cinematic ads, prompt systems, 4K upscaling.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.5V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3.5Z"/></svg><h3>Feedback from me</h3><p>Post your video in the community. I read it and reply myself, and other members add their notes.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><h3>From skill to client work</h3><p>Modules on finding your first clients, pricing what you make and delivering it like a pro.</p></div>
+    </div>
+
+    <h2>Your first week</h2>
+    <ol class="week">
+      <li><b>Day 1.</b> Join, introduce yourself and say what you want to make. I point you to the module that fits.</li>
+      <li><b>Days 2–4.</b> Build your first AI character in START HERE, one short lesson a night. (Here for Claude Code? Start Master Claude Code instead.)</li>
+      <li><b>Days 5–6.</b> Open a reel breakdown and copy its structure for your own idea.</li>
+      <li><b>Day 7.</b> Post your first video in the community and get feedback on it.</li>
+    </ol>
+
+    <div class="join">
+      <h3>Stop saving tutorials. Start posting.</h3>
+      <p>AI Virality Creators is my Skool community. Everything above is in one place, in order, and I answer you myself.</p>
+      <ul>
+        <li><b>The ROBIE HOODIE breakdown:</b> all 8 video prompts, the start frames, what every clip cost, and the edit and sound-effect recipe.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>
+        <li><b>30+ step-by-step courses</b> and the breakdown of every reel, with prompts and credit costs.</li>
+        <li><b>Personal feedback</b> on what you post, next to 125+ creators building the same skills.</li>
+      </ul>
+      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=robie">Join AI Virality Creators &rarr;</a>
+      <p class="price">Try it free for 7 days. Then $9/month or $67/year, and the price you join at stays yours. It goes up as the group grows.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Before you join</h2>
+      <details><summary>I'm a complete beginner. Is this too advanced?</summary>
+        <p>Not at all. START HERE assumes zero experience and goes in order: your first image, your first video, then a character that looks the same in every shot. If you can type a sentence, you can follow it.</p></details>
+      <details><summary>I can't code. Do I need to?</summary>
+        <p>You don't need to. For the Claude Code lessons you describe what you want in plain English, Claude writes the code, and you approve each step. Every lesson shows the exact clicks.</p></details>
+      <details><summary>Do I need a Skool account? Can I use it on my phone?</summary>
+        <p>Skool is the app the community lives in. Signing up is free and takes about a minute when you join, and it works in the Skool phone app or any browser. Watching lessons and posting work fine on a phone; Claude Code itself runs on a computer.</p></details>
+      <details><summary>I don't have much time.</summary>
+        <p>The lessons are short and numbered, so you always know which one is next. One lesson an evening keeps you moving, and the community keeps you posting.</p></details>
+      <details><summary>Can't I learn all of this free on YouTube?</summary>
+        <p>You can start there, and free guides like this one are made for exactly that. What you won't find for free: the right order, my real project files, the credit cost of every shot, and someone who looks at your video and tells you what to fix.</p></details>
+      <details><summary>AI tools change every month. Won't it be outdated?</summary>
+        <p>New tools get their own modules: Kling 3.0, Veo 3.1 and Nano Banana Pro are already in. The breakdowns teach how a reel is built, and that carries over to whatever tool comes next.</p></details>
+      <details><summary>AI credits get expensive. What will I spend?</summary>
+        <p>Every breakdown shows what each shot cost, so you know before you start. A lot of what I teach costs 0 credits, like the guide you're reading now.</p></details>
+      <details><summary>Will I get lost in a big group?</summary>
+        <p>It's around 125 people, small enough that new posts get answered. I reply myself, and members comment on each other's work.</p></details>
+      <details><summary>Is the person in the video real?</summary>
+        <p>The presenter is my AI clone, built with the same methods taught inside. I say so every time. The community is run by me, and I answer you myself.</p></details>
+      <details><summary>Will this make me money?</summary>
+        <p>I can't promise income. You get the skill, finished videos to show, and modules on finding clients and pricing your work. What you earn with them is up to you.</p></details>
+      <details><summary>Is it only about video?</summary>
+        <p>Video is the core. Master Claude Code is the second part: real builds with every file included, starting with the Night Shift experiment. Prompting, voices and client work are in there too.</p></details>
+      <details><summary>What if it's not for me?</summary>
+        <p>Cancel anytime in your Skool settings. You also have the guarantee: publish your first AI video within 30 days of joining, and if you can't, message me for a refund. The full terms are on the About page.</p></details>
+    </div>
+    <a class="bigbtn" style="margin-top:22px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=robie&amp;utm_content=faq">Join AI Virality Creators &rarr;</a>
+    <p class="price">Try it free for 7 days. Then $9/month or $67/year, and the price you join at stays yours. It goes up as the group grows.</p>
+  </section>
+
+
+  <h2>Common mistakes</h2>
+  <ul class="clean">
+    <li><b>Too many shots for one clip.</b> One of my clips holds five shots, so I generated it at 10 seconds and trimmed it in the edit.</li>
+    <li><b>The first frame is a little different.</b> With several references the model only roughly keeps your start frame. Describe the framing again in the prompt.</li>
+    <li><b>A filter rejects one of your images.</b> Dreamina turned down my vault image. I deleted it and described the vault in text instead.</li>
+    <li><b>A character looks like a real person.</b> My first rich man looked like a known public figure, so I remade him from scratch. Check your sheets for this.</li>
+    <li><b>A white flash as the first frame.</b> If your clip opens on a camera flash, trim it, or the reel starts on a blank frame.</li>
+  </ul>
+
+  <footer>CASE 002: ROBIE HOODIE is a made-up story. Every character and location was generated with AI; no real person is shown. Original characters, not affiliated with any film, studio or brand. Not affiliated with Dreamina, ByteDance, OpenAI or ElevenLabs. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=robie&amp;utm_content=footer">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+<div class="sticky"><span>AI Virality Creators · 125+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=robie&amp;utm_content=sticky">Join the community &rarr;</a></div>
+</body>
+</html>
