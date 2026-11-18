@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Claude video-editing pipeline: 4 steps, 3 prompts (free)</title>
+<meta name="description" content="The exact setup from the reel: Claude edits your videos with 4 free tools. Setup, the install prompt, a style prompt and the edit prompt. Copyable.">
+<meta property="og:title" content="The Claude video-editing pipeline: 4 steps, 3 prompts (free)">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/edit-pipeline/cover.jpg">
+{{HEAD}}
+<style>
+.rules { margin: 8px 0 0; padding-left: 22px; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.reel { display: block; width: min(100%, 340px); aspect-ratio: 9 / 16; object-fit: cover; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="A desk with a camera, plants and three phones showing reels, with the words ALL THE TOP CREATORS." width="1280" height="720"></div>
+  <h1>The Claude <em>video-editing pipeline</em></h1>
+  <p class="sub">This is the exact setup from the reel. Claude does the editing; you give it raw footage, a style and plain-English notes. It needs the Claude desktop app on a paid Claude plan (Pro or higher) and about 20 minutes, once.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">4 steps</span><span class="chip">3 copyable prompts</span><span class="chip">4 free tools</span></div>
+  <video class="reel" src="reel.mp4" poster="poster.jpg" controls playsinline preload="none"></video>
+  <p class="vid-note">The reel this guide comes from.</p>
+
+  <h2>The pipeline in 4 steps</h2>
+  <ol class="steps">
+    <li><h3>Setup (once)</h3>
+      <ol class="rules">
+        <li>Download the Claude desktop app (claude.ai/download) and open the <b>Code</b> tab.</li>
+        <li>Make a folder called <b>AI Video Editor</b> with three folders inside: <code>raw-footage</code>, <code>references</code>, <code>exports</code>.</li>
+        <li>New chat in Code, choose <b>Local</b>, then select the AI Video Editor folder.</li>
+      </ol></li>
+    <li><h3>Install the 4 free tools</h3>HyperFrames (motion graphics from HTML), FFmpeg (cuts, audio, export), Whisper (word-level captions) and yt-dlp (downloads reference reels so Claude can study them). Paste this:
+      <pre id="p1">You're my video editor. We work in this folder: raw-footage, references, exports.
+Install and check these 4 free tools, official installs only:
+1. FFmpeg (winget on Windows, Homebrew on Mac)
+2. faster-whisper in a .venv in this folder, for word-level captions
+3. yt-dlp, to download reference reels
+4. HyperFrames (npx hyperframes), for motion graphics; needs Node.js 22+
+Check what's already installed first. Then test each one for real: cut a 3-second test clip, transcribe 5 seconds of audio, render a 2-second HyperFrames title. Show me a table: tool, version, works yes/no.</pre>
+      <button class="btn copy" data-copy="p1">Copy prompt 1</button></li>
+    <li><h3>Teach it your style</h3>Pick 3 to 5 reels from a creator whose editing you love and paste their links:
+      <pre id="p2">Here are reels whose editing I like: [link 1] [link 2] [link 3].
+Download them with yt-dlp into references (for study only).
+Study each one frame by frame and by ear: hook in the first 3 seconds, shot length, cut rhythm, captions (font, size, colour, position, words per line), colours, graphics, transitions, sound effects and music level.
+Write my style to style.md with exact values (seconds, pixels, hex colours, dB). Take inspiration, don't copy their shots, text or logos.
+Show me style.md and ask what to change.</pre>
+      <button class="btn copy" data-copy="p2">Copy prompt 2</button></li>
+    <li><h3>Edit your video</h3>Drop your recording into raw-footage, then paste:
+      <pre id="p3">My new recording is in raw-footage. Edit it with style.md:
+1. Transcribe it with Whisper, word timestamps. Ask me about any word you're unsure of.
+2. Show me a storyboard first: one line per scene with the time, what's on screen and the caption. Wait for my OK.
+3. Then cut the pauses and bad takes, keep the last good take, add word-by-word captions in my style, graphics only where they help, sound effects on the cuts.
+4. Export 1080x1920 to exports as draft-v1.mp4 and write edit-notes.md.
+Check the file yourself before you show me.</pre>
+      <button class="btn copy" data-copy="p3">Copy prompt 3</button>
+      <p>Ask for changes in plain words, like "make the font bigger" or "cut faster in the first 5 seconds". Claude saves draft-v2, draft-v3 and so on.</p></li>
+  </ol>
+
+{{COMMUNITY}}
+
+  <h2>Mistakes to avoid</h2>
+  <ul class="clean">
+    <li><b>Don't skip the storyboard.</b> Fixing a plan is faster than fixing a render.</li>
+    <li><b>Keep reference reels for study only.</b> Take the style, never their shots, text or logos.</li>
+    <li><b>One change request at a time.</b> Then you can tell which one made it better.</li>
+  </ul>
+
+  <footer>Not affiliated with any tool named here. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=edit-pipeline">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>

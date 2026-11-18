@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Clip GTA 6 streams live while you sleep (the whole build, free)</title>
+<meta name="description" content="A free Python clipper that watches a Twitch stream live, spots chat spikes and cuts vertical captioned clips. Download the script or have Claude Code build it.">
+<meta property="og:title" content="Clip GTA 6 streams live while you sleep (the whole build, free)">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/gta-clipper/cover.jpg">
+{{HEAD}}
+<style>
+.rules { margin: 8px 0 0; padding-left: 22px; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.reel { display: block; width: min(100%, 340px); aspect-ratio: 9 / 16; object-fit: cover; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="A synthwave GTA 6 style night scene from the reel." width="1280" height="720"></div>
+  <h1>Clip GTA 6 streams <em>live while you sleep</em></h1>
+  <p class="sub">GTA 6 launches November 19 on PlayStation and Xbox only, with no PC date, so launch week happens on clips. Most clippers wait for the VOD, download the whole night and scan it. This watches the stream live instead and cuts the moments as chat explodes. Tested on a live GTA stream on 18 November.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">live clipping</span><span class="chip">free script</span><span class="chip">any Twitch stream</span></div>
+  <video class="reel" src="reel.mp4" poster="poster.jpg" controls playsinline preload="none"></video>
+  <p class="vid-note">The reel this guide comes from.</p>
+
+  <h2>What it does</h2>
+  <ol class="rules">
+    <li>Streamlink records the stream the second it goes live.</li>
+    <li>Twitch chat is read anonymously: no account, no token.</li>
+    <li>Every 10 seconds it counts chat messages. When chat jumps far above the last 5 minutes, that's a spike.</li>
+    <li>FFmpeg cuts 30 seconds around each spike, cropped to vertical 9:16.</li>
+    <li>faster-whisper writes the captions (an .srt file, or burned in with <code>--burn</code>).</li>
+  </ol>
+
+  <h2>Install it (about 10 minutes, once)</h2>
+  <ol class="steps">
+    <li><h3>Install Python and FFmpeg</h3>Python 3.10 or newer from python.org, then FFmpeg: <code>winget install ffmpeg</code> on Windows, <code>brew install ffmpeg</code> on Mac.</li>
+    <li><h3>Install the two Python tools</h3>
+      <pre id="c1">pip install streamlink faster-whisper</pre>
+      <button class="btn copy" data-copy="c1">Copy the command</button></li>
+    <li><h3>Download the script</h3>Put it in an empty folder.
+      <a class="bigbtn" style="margin-top:14px" href="clip_watcher.py" download="clip_watcher.py">Download clip_watcher.py</a></li>
+    <li><h3>Run it with the streamer's Twitch name</h3>
+      <pre id="c2">python clip_watcher.py STREAMERNAME --burn</pre>
+      <button class="btn copy" data-copy="c2">Copy the command</button>
+      It waits until they go live, then records. Clips land in <code>./clips</code>, the full recording in <code>./recordings</code>. Stop with Ctrl+C.
+      <p class="small">Tuning: <code>--window 30</code> is the clip length, <code>--min 25</code> the minimum messages per 10 seconds, <code>--sigma 2.5</code> how sensitive it is (lower = more clips). On big streamers, raise --min to 60 or more.</p></li>
+  </ol>
+
+  <h2>Or let Claude Code build it for you</h2>
+  <p>Paste this in Claude Code and it writes the tool itself:</p>
+  <pre id="c3">Build me a Python tool called clip_watcher.py that clips a Twitch stream live:
+1. wait until the channel is live, then record it with streamlink to recordings/
+2. read Twitch chat anonymously over IRC (nick justinfan12345, no token)
+3. count chat messages every 10 seconds; mark a spike when the count is above the average of the last 5 minutes by 2.5 standard deviations and above 25
+4. 20 seconds after each spike, cut 30 seconds around it with ffmpeg, cropped to 1080x1920
+5. caption each clip with faster-whisper on CPU (decode audio with ffmpeg) into an .srt, and burn it in when I pass --burn
+Install what's missing, then test it on a channel that's live right now for 3 minutes with low thresholds and show me the clips.</pre>
+      <button class="btn copy" data-copy="c3">Copy the build prompt</button>
+
+{{COMMUNITY}}
+
+  <h2>The honest catch</h2>
+  <ul class="clean">
+    <li><b>It only works while they're live.</b> You can't rewind a stream that already ended, so start it before the stream.</li>
+    <li><b>Your computer has to stay on.</b> It records the whole stream: plan about 1 to 3 GB per hour at 720p.</li>
+    <li><b>The footage belongs to the streamer and Rockstar.</b> Clip streams you have permission to use, and check each platform's rules for re-uploads.</li>
+  </ul>
+
+  <footer>Not affiliated with any tool named here. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=gta-clipper">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>

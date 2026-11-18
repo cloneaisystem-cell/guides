@@ -72,6 +72,27 @@ PAGES = {
         SPECIAL_LI="<li><b>Every reel I post, taken apart:</b> the character sheets, every video prompt, the cut and the credits, so you see the 7 moves on real reels.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>",
         PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
     ),
+    "ig-agent": dict(
+        CAMPAIGN="ig-agent",
+        H2="The skill writes the reel. <em>Someone still has to make it.</em>",
+        P="A script from /ig-reel is the start. Turning it into a reel people watch to the end takes the edit, the hook frame and a cover, and that's what I post every week in my community, with every prompt. Claude Code runs the rest of my content, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons and cheat sheets on hooks, retention and covers, the part the scripts can't do for you.</li><li><b>Every reel I post, taken apart:</b> prompts, edit and what each shot cost.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
+    "edit-pipeline": dict(
+        CAMPAIGN="edit-pipeline",
+        H2="The pipeline edits the video. <em>The hook decides if anyone sees it.</em>",
+        P="Claude can cut, caption and animate anything you feed it. What makes people stop scrolling is the first two seconds, and that's what I break down in my community on every reel I post, with the prompts and the edit. Claude Code runs the rest of my content, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Master Claude Code:</b> real builds with every file included, the same setup you just installed.</li><li><b>Go Viral:</b> 8 short lessons on hooks and retention.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
+    "gta-clipper": dict(
+        CAMPAIGN="gta-clipper",
+        H2="Fifty clips by morning. <em>Now pick the three that blow up.</em>",
+        P="The script finds the loud moments. Picking the ones worth posting, writing the hook line and cutting them so people watch to the end is the part that grows a page, and that's what I share in my community. Claude Code runs the rest of my content, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons on hooks, captions and retention for short clips.</li><li><b>Master Claude Code:</b> real builds with every file, like this clipper.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
 
 }
 

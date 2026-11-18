@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Claude can now run your Instagram (free skill, 10-second setup)</title>
+<meta name="description" content="The Instagram agent skill: 13 free Claude skills by Jake Schincariol for hooks, reels, captions, carousels, DMs and your weekly plan. No signup, no API key. Install in 10 seconds.">
+<meta property="og:title" content="Claude can now run your Instagram (free skill, 10-second setup)">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/ig-agent/cover.jpg">
+{{HEAD}}
+<style>
+.rules { margin: 8px 0 0; padding-left: 22px; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.reel { display: block; width: min(100%, 340px); aspect-ratio: 9 / 16; object-fit: cover; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="Claude and Instagram app icons side by side, with a creator talking to camera below." width="1280" height="720"></div>
+  <h1>Claude can now run <em>your Instagram</em></h1>
+  <p class="sub">It's called the Instagram agent skill: 13 Claude skills, made by Jake Schincariol, free and MIT-licensed, no signup and no API key. It writes; you post. Nothing goes out until you say yes.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">13 skills</span><span class="chip">10-second setup</span><span class="chip">4 copyable prompts</span></div>
+  <video class="reel" src="reel.mp4" poster="poster.jpg" controls playsinline preload="none"></video>
+  <p class="vid-note">The reel this guide comes from.</p>
+
+  <h2>Install it (pick one)</h2>
+  <ol class="steps">
+    <li><h3>Easiest: paste this into Claude</h3>Works in Claude Code or the Claude desktop app (Code tab).
+      <pre id="i1">https://github.com/Jakeschincariol/instagram-agent-skill
+
+Install this skill, then confirm /ig-reel works.</pre>
+      <button class="btn copy" data-copy="i1">Copy the install prompt</button></li>
+    <li><h3>By hand, in a terminal</h3>
+      <pre id="i2">git clone https://github.com/Jakeschincariol/instagram-agent-skill.git
+cp -r instagram-agent-skill/skills/ig-* ~/.claude/skills/</pre>
+      <button class="btn copy" data-copy="i2">Copy the commands</button></li>
+    <li><h3>As a plugin, inside Claude Code</h3>
+      <pre id="i3">/plugin marketplace add Jakeschincariol/instagram-agent-skill
+/plugin install instagram-agent</pre>
+      <button class="btn copy" data-copy="i3">Copy the commands</button></li>
+    <li><h3>Make it sound like you (10 minutes, once)</h3>Send Claude three of your own reels and say this. Every skill reads that file.
+      <pre id="i4">Write my voice.md from these three reels and save it to ~/.claude/instagram/voice.md</pre>
+      <button class="btn copy" data-copy="i4">Copy the voice prompt</button></li>
+  </ol>
+
+{{COMMUNITY}}
+
+  <h2>The 13 skills</h2>
+  <ul class="clean">
+    <li><b>/ig-reel</b> turns one idea into a reel: 3 hooks from 26 formulas, scored, then the script, on-screen text and a timed beat sheet.</li>
+    <li><b>/ig-viral</b> finds what's working in your niche, ranks reels by how far they beat their own account's median and names the formula.</li>
+    <li><b>/ig-caption</b> writes the caption and shows exactly what appears before "... more".</li>
+    <li><b>/ig-carousel</b> makes the cover, the slide copy and the 1080&times;1350 files.</li>
+    <li><b>/ig-story</b> plans the daily story sequence and the DM funnel behind it.</li>
+    <li><b>/ig-profile</b> scores your profile against a 12-part rubric and rewrites the weak parts first.</li>
+    <li><b>/ig-plan</b> plans your week: what, which format, when, and 10 accounts to engage with.</li>
+    <li><b>/ig-human</b> strips AI tells (em dashes, slop words) from any draft.</li>
+    <li><b>/ig-comment</b> writes comments for other people's posts, picked by what the post is.</li>
+    <li><b>/ig-reply</b> sorts the comments under your post and answers them in order.</li>
+    <li><b>/ig-dm</b> writes the keyword delivery, the first message, a collab pitch and two follow-ups.</li>
+    <li><b>/ig-repurpose</b> turns one video or newsletter into a week of posts.</li>
+    <li><b>/ig-audit</b> is a post-mortem on what you already posted.</li>
+  </ul>
+
+  <h2>Your first 15 minutes</h2>
+  <ol class="rules">
+    <li><b>/ig-viral</b> + your niche: the swipe file of what's working this week.</li>
+    <li><b>/ig-reel</b> on the best idea: 3 scored hooks and the beat sheet. Film it.</li>
+    <li><b>/ig-profile</b>: fix the top 3 things it flags.</li>
+  </ol>
+  <div class="note">These skills write, they don't post. You stay in control of your account.</div>
+  <p class="small">Credit: the Instagram agent skill is by Jake Schincariol, MIT license. Source: <a href="https://github.com/Jakeschincariol/instagram-agent-skill">github.com/Jakeschincariol/instagram-agent-skill</a>. I'm not affiliated with the author.</p>
+
+  <footer>Not affiliated with any tool named here. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=ig-agent">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>
