@@ -65,6 +65,14 @@ PAGES = {
         SPECIAL_LI="<li><b>START HERE:</b> the first steps, so you know what to do in your first hour.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok, so you pick the next trend on purpose.</li>",
         PRICE="Start with a free trial. Then $9/month until the group reaches 150 members; after that it goes up to $27/month.",
     ),
+    "ai-video": dict(
+        CAMPAIGN="ai-video",
+        H2="Seven moves get you to good. <em>Ten reels get you to viral.</em>",
+        P="Knowing the checklist is the start. What makes you better fast is posting, seeing where people stop watching and fixing one move at a time. Inside my community I take apart every reel I post, with the prompts, the edit and what each shot cost, and I reply to yours. Claude Code runs the rest of my content every day. Under a minute:",
+        SPECIAL_LI="<li><b>Every reel I post, taken apart:</b> the character sheets, every video prompt, the cut and the credits, so you see the 7 moves on real reels.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
+
 }
 
 # the price sentence inside community.html; a page entry with PRICE replaces it (optional key)

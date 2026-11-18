@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The 7 moves behind viral AI videos: free checklist + my prompts</title>
+<meta name="description" content="The 7 moves from the episode Give Me 9 Minutes and I'll Make You Disgustingly Good at AI Video: character sheet, one action per shot, director prompts, drafts, sound and the edit. Copyable prompts.">
+<meta property="og:title" content="The 7 moves behind viral AI videos: free checklist + my prompts">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/ai-video/cover.jpg">
+{{HEAD}}
+<style>
+.watch { margin: 18px 0 6px; text-align: center; }
+.yt { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid #3a3029; border-radius: 16px; margin: 14px 0 6px; background: #000; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+.rules { margin: 8px 0 0; padding-left: 22px; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="Higgsfield and Instagram logos next to a reel view counter climbing to 96,400,000 views, with the words COPY THIS." width="1280" height="720"></div>
+  <h1>The 7 moves behind <em>viral AI videos</em></h1>
+  <p class="sub">The checklist from my episode "Give Me 9 Minutes and I'll Make You Disgustingly Good at AI Video". Seven moves, the prompts I paste and the three things that make AI video look fake. Copy it tonight.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">7 moves</span><span class="chip">5 copyable prompts</span><span class="chip">any video model</span></div>
+  <iframe class="yt" src="https://www.youtube-nocookie.com/embed/jiyqMS26qKU" title="Give Me 9 Minutes and I'll Make You Disgustingly Good at AI Video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  <p class="watch"><a class="btn" href="https://youtu.be/jiyqMS26qKU">Watch the episode on YouTube</a></p>
+
+  <h2>The 7 moves</h2>
+  <ol class="steps">
+    <li><h3>Start with a character sheet, not a prompt</h3>Type "a red-haired detective" ten times and you get ten different detectives. So make one image of your character first: front, side and back, same outfit, same flat light, plain background. Give them one detail people remember, like a red coat. Every shot after that uses the sheet as its reference, with one face per reference image.
+      <pre id="sheet">Photorealistic character reference sheet of the same person, on a plain light-grey studio background:
+1. Full body front view, head to feet, neutral stance.
+2. Full body side view.
+3. Full body back view.
+4. Head-and-shoulders close-up, straight on.
+5. Head-and-shoulders profile.
+Character: [age, build, face, hair, skin].
+Wardrobe: [outfit], plus one detail people remember: [for example a long red coat].
+Real skin texture with visible pores, no retouching, no beauty filter.
+Flat, even soft light. Same face, body and outfit in every view. No text, no logos, no extra people.</pre>
+      <button class="btn copy" data-copy="sheet">Copy the sheet prompt</button></li>
+    <li><h3>One shot, one action</h3>Ask for five things in one clip and the model does all five badly. Give it one action per shot, then put the shots together in the edit.
+      <ul class="rules">
+        <li><b>A reaction:</b> about 2 seconds.</li>
+        <li><b>Something crossing the frame:</b> 4 to 5 seconds.</li>
+        <li>Much longer than that and, in my experience, the model starts making things up.</li>
+      </ul></li>
+    <li><h3>Talk like a director, not like a poet</h3>Every prompt answers three questions: what does it look like, what is the one thing happening, and where is the camera. Start with the look and name a real camera instead of writing "cinematic". If someone talks, put the exact words in quotes and give a short sentence about 6 seconds, or the model swallows words.
+      <pre id="shot">Video style: iPhone front camera, held at arm's length, handheld with slight shake, no color grading.
+Action: [the ONE thing that happens, for example: she sips her coffee and looks up at the camera].
+Camera: [one move, for example: slow push-in, then a quick snap zoom into her face].
+Everyone in the frame keeps moving: people talk, turn, laugh, check their phones.
+She says: "[exact words, one short sentence]"</pre>
+      <button class="btn copy" data-copy="shot">Copy the shot prompt</button></li>
+    <li><h3>Fix it in the image, then animate</h3>Images are cheap, video is expensive. Make the exact first frame as an image, fix it there, and only then turn it into video with that image as the first frame. Change one thing at a time: the jacket, then the background, then the light. Change five things at once and you usually lose the face. A free image model like Gemini is enough for the sheet and the first frame.
+      <pre id="edit">Keep the person's face, hair, body and outfit exactly the same. Change only [one thing, for example: the background to a rainy night street]. Keep the same framing and light direction.</pre>
+      <button class="btn copy" data-copy="edit">Copy the edit prompt</button></li>
+    <li><h3>Draft first, pay later</h3>Seedance 2.5 has a draft mode: generate at 480p for a fraction of the price, look at the take, and finalize that same take in full HD only when it's right. You pay full price only for the shots you keep. For your most important shot, make a few drafts, not one. The first take is rarely the best. Same rule in any tool: rough and cheap first, then make the winner beautiful.</li>
+    <li><h3>Make everything move, and make it sound real</h3>Frozen people in the background are the first thing viewers notice, so write "everyone keeps moving" into every prompt. Faces too: real people don't hold one expression. Then sound, in three layers: the room, the actions, and one small detail that makes you smile. A good picture with real sound feels real. A perfect picture in silence still feels like AI.</li>
+    <li><h3>Edit it like a reel, not like a movie</h3>
+      <ul class="rules">
+        <li><b>Hook in the first second:</b> you can even open on the ending.</li>
+        <li><b>Something new every couple of seconds:</b> a cut, or a snap zoom on the beat.</li>
+        <li><b>End a little earlier than feels right,</b> so they watch it again.</li>
+        <li><b>Watch it once with the sound off.</b> If it still works, your pictures are strong.</li>
+      </ul>
+      <p>I let Claude cut the first version. My prompt:</p>
+      <pre id="cut">Cut these clips into one vertical reel. Rules: the strongest moment goes in the first second. Something new happens every 1 to 2 seconds: a cut or a quick zoom on the beat. One action per shot, trim any dead frames at the start and end of each clip. End about one second earlier than feels natural. Show me the cut list before you render.</pre>
+      <button class="btn copy" data-copy="cut">Copy the edit prompt</button>
+      <p class="small">Claude does the boring part. Which shots make people laugh is still your call.</p></li>
+  </ol>
+
+  <h2>The 3 things that scream "AI"</h2>
+  <div class="note">
+    <ul class="clean">
+      <li><b>Plastic skin.</b> Ask for matte skin with visible pores.</li>
+      <li><b>The frozen crowd.</b> Everyone in the frame keeps moving.</li>
+      <li><b>The too-perfect camera.</b> Real phones shake a little, refocus and overexpose. Ask for that.</li>
+    </ul>
+  </div>
+  <pre id="tells">Matte skin with visible pores, no retouching. Everyone in the frame keeps moving. Handheld phone camera with slight shake, small refocus and a little overexposure, like a real person filmed it.</pre>
+  <button class="btn copy" data-copy="tells">Copy the 3 fixes</button>
+  <p>One trap: don't chase the newest model every week. A great prompt on an older model beats a lazy prompt on the newest one.</p>
+
+{{COMMUNITY}}
+
+  <h2>The reels in the episode</h2>
+  <p>All made by other creators. Go follow them:</p>
+  <ul class="clean">
+    <li><b>Elsa</b> by <a href="https://www.instagram.com/theaicreatorcommunity/">@theaicreatorcommunity</a>: 3.3M views. The same faces in every scene, handheld camera, snap zooms on the beat.</li>
+    <li><b>Hill Climb Racing POV</b> by <a href="https://www.instagram.com/zuni.hr/">@zuni.hr</a>: 96.4M views. Simple actions, one after another.</li>
+    <li><b>Cinderella</b> by <a href="https://www.instagram.com/tapewarp.ai/">@tapewarp.ai</a>: 2.9M views in under a day. It opens on the ending.</li>
+    <li><b>Cleopatra</b> by <a href="https://www.instagram.com/shlabu/">@shlabu</a>: 4M views. The cold open of the episode.</li>
+  </ul>
+
+  <footer>Not affiliated with any AI tool named here. View counts as seen in October and November 2026. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=youtube&amp;utm_medium=guide&amp;utm_campaign=ai-video">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>

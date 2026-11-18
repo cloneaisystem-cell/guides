@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The 7 moves behind viral AI videos: free checklist + my prompts</title>
+<meta name="description" content="The 7 moves from the episode Give Me 9 Minutes and I'll Make You Disgustingly Good at AI Video: character sheet, one action per shot, director prompts, drafts, sound and the edit. Copyable prompts.">
+<meta property="og:title" content="The 7 moves behind viral AI videos: free checklist + my prompts">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/ai-video/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Serif:ital@1&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/guide.css">
+<script src="../shared/copy.js" defer></script>
+<script src="../shared/motion.js" defer></script>
+<style>
+.watch { margin: 18px 0 6px; text-align: center; }
+.yt { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid #3a3029; border-radius: 16px; margin: 14px 0 6px; background: #000; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+.rules { margin: 8px 0 0; padding-left: 22px; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="Higgsfield and Instagram logos next to a reel view counter climbing to 96,400,000 views, with the words COPY THIS." width="1280" height="720"></div>
+  <h1>The 7 moves behind <em>viral AI videos</em></h1>
+  <p class="sub">The checklist from my episode "Give Me 9 Minutes and I'll Make You Disgustingly Good at AI Video". Seven moves, the prompts I paste and the three things that make AI video look fake. Copy it tonight.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">7 moves</span><span class="chip">5 copyable prompts</span><span class="chip">any video model</span></div>
+  <iframe class="yt" src="https://www.youtube-nocookie.com/embed/jiyqMS26qKU" title="Give Me 9 Minutes and I'll Make You Disgustingly Good at AI Video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  <p class="watch"><a class="btn" href="https://youtu.be/jiyqMS26qKU">Watch the episode on YouTube</a></p>
+
+  <h2>The 7 moves</h2>
+  <ol class="steps">
+    <li><h3>Start with a character sheet, not a prompt</h3>Type "a red-haired detective" ten times and you get ten different detectives. So make one image of your character first: front, side and back, same outfit, same flat light, plain background. Give them one detail people remember, like a red coat. Every shot after that uses the sheet as its reference, with one face per reference image.
+      <pre id="sheet">Photorealistic character reference sheet of the same person, on a plain light-grey studio background:
+1. Full body front view, head to feet, neutral stance.
+2. Full body side view.
+3. Full body back view.
+4. Head-and-shoulders close-up, straight on.
+5. Head-and-shoulders profile.
+Character: [age, build, face, hair, skin].
+Wardrobe: [outfit], plus one detail people remember: [for example a long red coat].
+Real skin texture with visible pores, no retouching, no beauty filter.
+Flat, even soft light. Same face, body and outfit in every view. No text, no logos, no extra people.</pre>
+      <button class="btn copy" data-copy="sheet">Copy the sheet prompt</button></li>
+    <li><h3>One shot, one action</h3>Ask for five things in one clip and the model does all five badly. Give it one action per shot, then put the shots together in the edit.
+      <ul class="rules">
+        <li><b>A reaction:</b> about 2 seconds.</li>
+        <li><b>Something crossing the frame:</b> 4 to 5 seconds.</li>
+        <li>Much longer than that and, in my experience, the model starts making things up.</li>
+      </ul></li>
+    <li><h3>Talk like a director, not like a poet</h3>Every prompt answers three questions: what does it look like, what is the one thing happening, and where is the camera. Start with the look and name a real camera instead of writing "cinematic". If someone talks, put the exact words in quotes and give a short sentence about 6 seconds, or the model swallows words.
+      <pre id="shot">Video style: iPhone front camera, held at arm's length, handheld with slight shake, no color grading.
+Action: [the ONE thing that happens, for example: she sips her coffee and looks up at the camera].
+Camera: [one move, for example: slow push-in, then a quick snap zoom into her face].
+Everyone in the frame keeps moving: people talk, turn, laugh, check their phones.
+She says: "[exact words, one short sentence]"</pre>
+      <button class="btn copy" data-copy="shot">Copy the shot prompt</button></li>
+    <li><h3>Fix it in the image, then animate</h3>Images are cheap, video is expensive. Make the exact first frame as an image, fix it there, and only then turn it into video with that image as the first frame. Change one thing at a time: the jacket, then the background, then the light. Change five things at once and you usually lose the face. A free image model like Gemini is enough for the sheet and the first frame.
+      <pre id="edit">Keep the person's face, hair, body and outfit exactly the same. Change only [one thing, for example: the background to a rainy night street]. Keep the same framing and light direction.</pre>
+      <button class="btn copy" data-copy="edit">Copy the edit prompt</button></li>
+    <li><h3>Draft first, pay later</h3>Seedance 2.5 has a draft mode: generate at 480p for a fraction of the price, look at the take, and finalize that same take in full HD only when it's right. You pay full price only for the shots you keep. For your most important shot, make a few drafts, not one. The first take is rarely the best. Same rule in any tool: rough and cheap first, then make the winner beautiful.</li>
+    <li><h3>Make everything move, and make it sound real</h3>Frozen people in the background are the first thing viewers notice, so write "everyone keeps moving" into every prompt. Faces too: real people don't hold one expression. Then sound, in three layers: the room, the actions, and one small detail that makes you smile. A good picture with real sound feels real. A perfect picture in silence still feels like AI.</li>
+    <li><h3>Edit it like a reel, not like a movie</h3>
+      <ul class="rules">
+        <li><b>Hook in the first second:</b> you can even open on the ending.</li>
+        <li><b>Something new every couple of seconds:</b> a cut, or a snap zoom on the beat.</li>
+        <li><b>End a little earlier than feels right,</b> so they watch it again.</li>
+        <li><b>Watch it once with the sound off.</b> If it still works, your pictures are strong.</li>
+      </ul>
+      <p>I let Claude cut the first version. My prompt:</p>
+      <pre id="cut">Cut these clips into one vertical reel. Rules: the strongest moment goes in the first second. Something new happens every 1 to 2 seconds: a cut or a quick zoom on the beat. One action per shot, trim any dead frames at the start and end of each clip. End about one second earlier than feels natural. Show me the cut list before you render.</pre>
+      <button class="btn copy" data-copy="cut">Copy the edit prompt</button>
+      <p class="small">Claude does the boring part. Which shots make people laugh is still your call.</p></li>
+  </ol>
+
+  <h2>The 3 things that scream "AI"</h2>
+  <div class="note">
+    <ul class="clean">
+      <li><b>Plastic skin.</b> Ask for matte skin with visible pores.</li>
+      <li><b>The frozen crowd.</b> Everyone in the frame keeps moving.</li>
+      <li><b>The too-perfect camera.</b> Real phones shake a little, refocus and overexpose. Ask for that.</li>
+    </ul>
+  </div>
+  <pre id="tells">Matte skin with visible pores, no retouching. Everyone in the frame keeps moving. Handheld phone camera with slight shake, small refocus and a little overexposure, like a real person filmed it.</pre>
+  <button class="btn copy" data-copy="tells">Copy the 3 fixes</button>
+  <p>One trap: don't chase the newest model every week. A great prompt on an older model beats a lazy prompt on the newest one.</p>
+
+  <section class="system" id="community">
+    <h2>Seven moves get you to good. <em>Ten reels get you to viral.</em></h2>
+    <p>Knowing the checklist is the start. What makes you better fast is posting, seeing where people stop watching and fixing one move at a time. Inside my community I take apart every reel I post, with the prompts, the edit and what each shot cost, and I reply to yours. Claude Code runs the rest of my content every day. Under a minute:</p>
+    <video class="vid wide" src="../shared/system-video-169.mp4" poster="../shared/system-poster-169.jpg" controls playsinline preload="none"></video>
+    <p class="vid-note">Under a minute, sound on. The presenter is my AI clone, made with the methods taught inside.</p>
+    <a class="bigbtn" style="margin-top:20px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=youtube&amp;utm_medium=guide&amp;utm_campaign=ai-video&amp;utm_content=video">Join AI Virality Creators &rarr;</a>
+    <p class="price">$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.</p>
+
+    <h2>What you get inside</h2>
+    <div class="benefits">
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg><h3>A path for complete beginners</h3><p>START HERE takes you from zero to your first consistent AI character, lesson by lesson. Then Go Viral: 8 short lessons and cheat sheets for Reels and TikTok.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5l2 4M14 5l2 4"/></svg><h3>Every reel I post, taken apart</h3><p>The prompts, the edit choices and what each shot cost in credits. You copy what already worked instead of guessing.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg><h3>Claude Code, in plain English</h3><p>Master Claude Code: real builds with every file included. Claude writes the code; you say what you want and approve each step.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4zM9 8V5h6v3M4 13h16"/></svg><h3>30+ courses on today's tools</h3><p>Kling 3.0, Veo 3.1, Nano Banana Pro, ElevenLabs voices, UGC and cinematic ads, prompt systems, 4K upscaling.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18.5V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3.5Z"/></svg><h3>Feedback from me</h3><p>Post your video in the community. I read it and reply myself, and other members add their notes.</p></div>
+      <div class="benefit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><h3>From skill to client work</h3><p>Modules on finding your first clients, pricing what you make and delivering it like a pro.</p></div>
+    </div>
+
+    <h2>Your first week</h2>
+    <ol class="week">
+      <li><b>Day 1.</b> Join, introduce yourself and say what you want to make. I point you to the module that fits.</li>
+      <li><b>Days 2–4.</b> Build your first AI character in START HERE, one short lesson a night. (Here for Claude Code? Start Master Claude Code instead.)</li>
+      <li><b>Days 5–6.</b> Open a reel breakdown and copy its structure for your own idea.</li>
+      <li><b>Day 7.</b> Post your first video in the community and get feedback on it.</li>
+    </ol>
+
+    <div class="join">
+      <h3>Stop saving tutorials. Start posting.</h3>
+      <p>AI Virality Creators is my Skool community. Everything above is in one place, in order, and I answer you myself.</p>
+      <ul>
+        <li><b>Every reel I post, taken apart:</b> the character sheets, every video prompt, the cut and the credits, so you see the 7 moves on real reels.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>
+        <li><b>30+ step-by-step courses</b> and the breakdown of every reel, with prompts and credit costs.</li>
+        <li><b>Personal feedback</b> on what you post, next to 125+ creators building the same skills.</li>
+      </ul>
+      <a class="bigbtn" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=youtube&amp;utm_medium=guide&amp;utm_campaign=ai-video">Join AI Virality Creators &rarr;</a>
+      <p class="price">$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.</p>
+    </div>
+
+    <div class="faq">
+      <h2>Before you join</h2>
+      <details><summary>I'm a complete beginner. Is this too advanced?</summary>
+        <p>Not at all. START HERE assumes zero experience and goes in order: your first image, your first video, then a character that looks the same in every shot. If you can type a sentence, you can follow it.</p></details>
+      <details><summary>I can't code. Do I need to?</summary>
+        <p>You don't need to. For the Claude Code lessons you describe what you want in plain English, Claude writes the code, and you approve each step. Every lesson shows the exact clicks.</p></details>
+      <details><summary>Do I need a Skool account? Can I use it on my phone?</summary>
+        <p>Skool is the app the community lives in. Signing up is free and takes about a minute when you join, and it works in the Skool phone app or any browser. Watching lessons and posting work fine on a phone; Claude Code itself runs on a computer.</p></details>
+      <details><summary>I don't have much time.</summary>
+        <p>The lessons are short and numbered, so you always know which one is next. One lesson an evening keeps you moving, and the community keeps you posting.</p></details>
+      <details><summary>Can't I learn all of this free on YouTube?</summary>
+        <p>You can start there, and free guides like this one are made for exactly that. What you won't find for free: the right order, my real project files, the credit cost of every shot, and someone who looks at your video and tells you what to fix.</p></details>
+      <details><summary>AI tools change every month. Won't it be outdated?</summary>
+        <p>New tools get their own modules: Kling 3.0, Veo 3.1 and Nano Banana Pro are already in. The breakdowns teach how a reel is built, and that carries over to whatever tool comes next.</p></details>
+      <details><summary>AI credits get expensive. What will I spend?</summary>
+        <p>Every breakdown shows what each shot cost, so you know before you start. A lot of what I teach costs 0 credits, like the guide you're reading now.</p></details>
+      <details><summary>Will I get lost in a big group?</summary>
+        <p>It's around 125 people, small enough that new posts get answered. I reply myself, and members comment on each other's work.</p></details>
+      <details><summary>Is the person in the video real?</summary>
+        <p>The presenter is my AI clone, built with the same methods taught inside. I say so every time. The community is run by me, and I answer you myself.</p></details>
+      <details><summary>Will this make me money?</summary>
+        <p>I can't promise income. You get the skill, finished videos to show, and modules on finding clients and pricing your work. What you earn with them is up to you.</p></details>
+      <details><summary>Is it only about video?</summary>
+        <p>Video is the core. Master Claude Code is the second part: real builds with every file included, starting with the Night Shift experiment. Prompting, voices and client work are in there too.</p></details>
+      <details><summary>What if it's not for me?</summary>
+        <p>Cancel anytime in your Skool settings. You also have the guarantee: publish your first AI video within 30 days of joining, and if you can't, message me for a refund. The full terms are on the About page.</p></details>
+    </div>
+    <a class="bigbtn" style="margin-top:22px" href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=youtube&amp;utm_medium=guide&amp;utm_campaign=ai-video&amp;utm_content=faq">Join AI Virality Creators &rarr;</a>
+    <p class="price">$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.</p>
+  </section>
+
+
+  <h2>The reels in the episode</h2>
+  <p>All made by other creators. Go follow them:</p>
+  <ul class="clean">
+    <li><b>Elsa</b> by <a href="https://www.instagram.com/theaicreatorcommunity/">@theaicreatorcommunity</a>: 3.3M views. The same faces in every scene, handheld camera, snap zooms on the beat.</li>
+    <li><b>Hill Climb Racing POV</b> by <a href="https://www.instagram.com/zuni.hr/">@zuni.hr</a>: 96.4M views. Simple actions, one after another.</li>
+    <li><b>Cinderella</b> by <a href="https://www.instagram.com/tapewarp.ai/">@tapewarp.ai</a>: 2.9M views in under a day. It opens on the ending.</li>
+    <li><b>Cleopatra</b> by <a href="https://www.instagram.com/shlabu/">@shlabu</a>: 4M views. The cold open of the episode.</li>
+  </ul>
+
+  <footer>Not affiliated with any AI tool named here. View counts as seen in October and November 2026. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=youtube&amp;utm_medium=guide&amp;utm_campaign=ai-video">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+<div class="sticky"><span>AI Virality Creators · 125+ creators</span><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=youtube&amp;utm_medium=guide&amp;utm_campaign=ai-video&amp;utm_content=sticky">Join the community &rarr;</a></div>
+</body>
+</html>
