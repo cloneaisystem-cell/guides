@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ECC: the repo with almost 2x the stars of Claude Code (free)</title>
+<meta name="description" content="ECC gives Claude Code 72 agents, 328 skills and 99 commands that plan, test, review and remember. Free, MIT.">
+<meta property="og:title" content="ECC: the repo with almost 2x the stars of Claude Code (free)">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/ecc/cover.jpg">
+{{HEAD}}
+<style>
+.rules { margin: 8px 0 0; padding-left: 22px; }
+pre, code, .sub, li { overflow-wrap: anywhere; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.reel { display: block; width: min(100%, 340px); aspect-ratio: 9 / 16; object-fit: cover; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="ECC: a star counter at 308 thousand, with the reel&#x27;s hook frame on the right." width="1280" height="720"></div>
+  <h1>The repo with <em>almost 2x the stars of Claude Code</em></h1>
+  <p class="sub">ECC gives Claude Code a coordinated engineering system: 72 agents, 328 skills and 99 commands that plan before they build, test, review from a fresh context and remember what worked. Free and open source (MIT). 10 months old, 308k stars (Claude Code's own repo: 157k).</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">72 agents</span><span class="chip">328 skills</span><span class="chip">308k stars</span></div>
+  <video class="reel" src="reel.mp4" poster="poster.jpg" controls playsinline preload="none"></video>
+  <p class="vid-note">The reel this guide comes from.</p>
+
+  <h2>Install it (pick one)</h2>
+  <ol class="steps">
+    <li><h3>Guided setup</h3>Needs Node.js 18+, Git and Claude Code.
+      <pre id="i1">npx ecc-universal@2.2.3 setup</pre>
+      <button class="btn copy" data-copy="i1">Copy the command</button></li>
+    <li><h3>Or as a plugin, inside Claude Code</h3>
+      <pre id="i2">/plugin marketplace add affaan-m/ECC
+/plugin install ecc@ecc</pre>
+      <button class="btn copy" data-copy="i2">Copy the commands</button></li>
+    <li><h3>Just my two picks</h3>What I actually kept.
+      <pre id="i3">git clone --depth 1 https://github.com/affaan-m/ECC.git
+cp -r ECC/skills/make-interfaces-feel-better ECC/skills/taste-distillation ~/.claude/skills/</pre>
+      <button class="btn copy" data-copy="i3">Copy the commands</button></li>
+  </ol>
+
+{{COMMUNITY}}
+
+  <h2>My two picks</h2>
+  <ul class="clean">
+    <li><b>make-interfaces-feel-better:</b> polish rules for interfaces and motion (nested radius, tabular numbers, quiet exits).</li>
+    <li><b>taste-distillation:</b> measures reference videos into a colour LUT and a cut rhythm; its <code>mint.py</code> runs offline and free.</li>
+  </ul>
+
+  <h2>Use it like this</h2>
+  <ul class="clean">
+    <li><code>/ecc:plan "Add auth"</code> &rarr; planner</li>
+    <li><code>/code-review</code> &rarr; code-reviewer</li>
+    <li><code>/security-scan</code> &rarr; security-reviewer</li>
+  </ul>
+  <div class="note">ECC's README says to install only from the official repo, npm packages and plugin slug; re-uploads may contain malware. Scan anything else with SkillSpector first. <a href="../skillspector/">Here's how.</a></div>
+  <p class="small">Credit: ECC is by affaan-m, MIT license. Source: <a href="https://github.com/affaan-m/ECC">github.com/affaan-m/ECC</a>. I'm not affiliated with the author.</p>
+
+  <footer>Not affiliated with any tool named here. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=ecc">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>

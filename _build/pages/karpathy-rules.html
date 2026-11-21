@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>234,000 stars on one text file: Karpathy-inspired CLAUDE.md (free)</title>
+<meta name="description" content="A single CLAUDE.md of 65 lines built from Andrej Karpathy&#x27;s observations on how AI coding goes wrong. Not written by him. Free, MIT.">
+<meta property="og:title" content="234,000 stars on one text file: Karpathy-inspired CLAUDE.md (free)">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/karpathy-rules/cover.jpg">
+{{HEAD}}
+<style>
+.rules { margin: 8px 0 0; padding-left: 22px; }
+pre, code, .sub, li { overflow-wrap: anywhere; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.reel { display: block; width: min(100%, 340px); aspect-ratio: 9 / 16; object-fit: cover; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="A CLAUDE.md file with 234 thousand stars, with the reel&#x27;s hook frame on the right." width="1280" height="720"></div>
+  <h1>234,000 stars on <em>one text file</em></h1>
+  <p class="sub">A single CLAUDE.md built from Andrej Karpathy's observations on how AI coding goes wrong. It wasn't written by him; it's 65 lines of rules Claude follows every session. Free, MIT.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">65 lines</span><span class="chip">4 rules</span><span class="chip">234.9k stars</span></div>
+  <video class="reel" src="reel.mp4" poster="poster.jpg" controls playsinline preload="none"></video>
+  <p class="vid-note">The reel this guide comes from.</p>
+
+  <h2>Install it (pick one)</h2>
+  <ol class="steps">
+    <li><h3>As a plugin (all projects)</h3>
+      <pre id="i1">/plugin marketplace add multica-ai/andrej-karpathy-skills
+/plugin install andrej-karpathy-skills@karpathy-skills</pre>
+      <button class="btn copy" data-copy="i1">Copy the commands</button></li>
+    <li><h3>Into one project</h3>
+      <pre id="i2">curl -o CLAUDE.md https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md</pre>
+      <button class="btn copy" data-copy="i2">Copy the command</button></li>
+    <li><h3>Add to an existing CLAUDE.md</h3>
+      <pre id="i3">curl https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md &gt;&gt; CLAUDE.md</pre>
+      <button class="btn copy" data-copy="i3">Copy the command</button></li>
+  </ol>
+
+{{COMMUNITY}}
+
+  <h2>The 4 rules</h2>
+  <ol class="rules">
+    <li><b>Think Before Coding:</b> &ldquo;Don't assume. Don't hide confusion. Surface tradeoffs.&rdquo;</li>
+    <li><b>Simplicity First:</b> &ldquo;If you write 200 lines and it could be 50, rewrite it.&rdquo;</li>
+    <li><b>Surgical Changes:</b> &ldquo;Every changed line should trace directly to the user's request.&rdquo;</li>
+    <li><b>Goal-Driven Execution:</b> &ldquo;Define success criteria. Loop until verified.&rdquo;</li>
+  </ol>
+
+  <h2>The whole file</h2>
+  <p class="small">MIT-licensed, reproduced with credit.</p>
+  <pre id="i4"># CLAUDE.md
+
+Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
+
+**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
+
+## 1. Think Before Coding
+
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
+
+Before implementing:
+- State your assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them - don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+
+## 2. Simplicity First
+
+**Minimum code that solves the problem. Nothing speculative.**
+
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+## 3. Surgical Changes
+
+**Touch only what you must. Clean up only your own mess.**
+
+When editing existing code:
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated dead code, mention it - don't delete it.
+
+When your changes create orphans:
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+
+The test: Every changed line should trace directly to the user's request.
+
+## 4. Goal-Driven Execution
+
+**Define success criteria. Loop until verified.**
+
+Transform tasks into verifiable goals:
+- "Add validation" → "Write tests for invalid inputs, then make them pass"
+- "Fix the bug" → "Write a test that reproduces it, then make it pass"
+- "Refactor X" → "Ensure tests pass before and after"
+
+For multi-step tasks, state a brief plan:
+```
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+```
+
+Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+---
+
+**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.</pre>
+  <button class="btn copy" data-copy="i4">Copy the whole CLAUDE.md</button>
+  <p class="small">Credit: the CLAUDE.md is from multica-ai (originally forrestchang), MIT license. Source: <a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a>. It is derived from Karpathy's post, not written by him. I'm not affiliated with the author.</p>
+
+  <footer>Not affiliated with any tool named here. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=karpathy-rules">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SkillSpector: scan any Claude skill before it runs (free, NVIDIA)</title>
+<meta name="description" content="SkillSpector is NVIDIA&#x27;s free scanner for AI agent skills: 71 vulnerability patterns, a 0 to 100 risk score. Apache-2.0.">
+<meta property="og:title" content="SkillSpector: scan any Claude skill before it runs (free, NVIDIA)">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/skillspector/cover.jpg">
+{{HEAD}}
+<style>
+.rules { margin: 8px 0 0; padding-left: 22px; }
+pre, code, .sub, li { overflow-wrap: anywhere; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.reel { display: block; width: min(100%, 340px); aspect-ratio: 9 / 16; object-fit: cover; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="SkillSpector: 71 vulnerability patterns, with the reel&#x27;s hook frame on the right." width="1280" height="720"></div>
+  <h1>Scan any Claude skill <em>before it runs on your machine</em></h1>
+  <p class="sub">SkillSpector is NVIDIA's free scanner for AI agent skills (Claude Code, Codex, Gemini CLI). It checks 71 vulnerability patterns across 17 categories, from prompt injection to data exfiltration, and scores a skill from 0 to 100 before you install it. Apache-2.0.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">71 patterns</span><span class="chip">0-100 risk score</span><span class="chip">27.2k stars</span></div>
+  <video class="reel" src="reel.mp4" poster="poster.jpg" controls playsinline preload="none"></video>
+  <p class="vid-note">The reel this guide comes from.</p>
+
+  <h2>Install it and scan</h2>
+  <ol class="steps">
+    <li><h3>Install</h3>Needs Python 3.12 or 3.13 and uv.
+      <pre id="i1">uv tool install --python 3.13 git+https://github.com/NVIDIA/skillspector.git</pre>
+      <button class="btn copy" data-copy="i1">Copy the command</button></li>
+    <li><h3>Scan one skill before installing it</h3>No API key.
+      <pre id="i2">skillspector scan ./my-skill/ --no-llm</pre>
+      <button class="btn copy" data-copy="i2">Copy the command</button></li>
+    <li><h3>Scan everything you already have</h3>
+      <pre id="i3">skillspector scan ~/.claude/skills --recursive --max-skills 200 --no-llm</pre>
+      <button class="btn copy" data-copy="i3">Copy the command</button></li>
+    <li><h3>Or let Claude do the review</h3>Paste this into Claude. <code>skill-inspector</code> is NVIDIA's own Claude skill that runs SkillSpector and reads the flagged source.
+      <pre id="i4">Install the skill-inspector skill from https://github.com/NVIDIA/SkillSpector/tree/main/skills/skill-inspector, then review every skill in ~/.claude/skills with it.</pre>
+      <button class="btn copy" data-copy="i4">Copy the prompt</button></li>
+  </ol>
+
+{{COMMUNITY}}
+
+  <h2>What I found on my own setup</h2>
+  <p>From our scan on 21 Nov 2026:</p>
+  <ul class="clean">
+    <li>I scanned the 178 skills I had installed and found nothing malicious.</li>
+    <li>About 1 in 7 got a high score anyway, and every one I checked was a false alarm. Examples: a rule saying &ldquo;never ask for a token&rdquo; read as credential access; a security doc describing an attack read as the attack.</li>
+  </ul>
+  <div class="note">So treat a high score as &ldquo;read the flagged lines&rdquo;, not &ldquo;delete it&rdquo;. NVIDIA's own guide says the same: don't rely on the score alone.</div>
+
+  <h2>The sample from the reel</h2>
+  <ul class="clean">
+    <li><code>chef-assistant</code> is a test skill NVIDIA ships with SkillSpector (tests/fixtures/malicious_skill). Step 7 hides &ldquo;add a dash of Cyanide&rdquo;.</li>
+    <li>Its <code>helper.py</code> collects environment variables named like API_KEY / SECRET / TOKEN / PASSWORD / CREDENTIAL and POSTs them to a server.</li>
+    <li>Scan result: <b>100/100, CRITICAL, DO NOT INSTALL.</b></li>
+  </ul>
+  <p>In the study &ldquo;Agent Skills in the Wild&rdquo; (Liu et al., 2026), 26.1% of 31,132 analysed marketplace skills had a vulnerability and 5.2% showed likely malicious intent.</p>
+  <p class="small">Credit: SkillSpector is by NVIDIA, Apache-2.0 license. Source: <a href="https://github.com/NVIDIA/SkillSpector">github.com/NVIDIA/SkillSpector</a>. I'm not affiliated with the author.</p>
+
+  <footer>Not affiliated with any tool named here. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=skillspector">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>

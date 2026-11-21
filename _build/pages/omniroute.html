@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>OmniRoute: free AI tokens inside Claude Code (read the fine print)</title>
+<meta name="description" content="OmniRoute is a free, MIT-licensed gateway: one local address in front of 150+ free tiers, switching to the next provider when one runs out.">
+<meta property="og:title" content="OmniRoute: free AI tokens inside Claude Code (read the fine print)">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/omniroute/cover.jpg">
+{{HEAD}}
+<style>
+.rules { margin: 8px 0 0; padding-left: 22px; }
+pre, code, .sub, li { overflow-wrap: anywhere; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.reel { display: block; width: min(100%, 340px); aspect-ratio: 9 / 16; object-fit: cover; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="OmniRoute: 150 plus free tiers, with the reel&#x27;s hook frame on the right." width="1280" height="720"></div>
+  <h1>Free AI tokens inside Claude Code. <em>Read the fine print first.</em></h1>
+  <p class="sub">OmniRoute is a free, MIT-licensed gateway: one local address in front of 150+ free tiers, switching to the next provider when one runs out. 89.4k stars.</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">150+ free tiers</span><span class="chip">auto-fallback</span><span class="chip">89.4k stars</span></div>
+  <video class="reel" src="reel.mp4" poster="poster.jpg" controls playsinline preload="none"></video>
+  <p class="vid-note">The reel this guide comes from.</p>
+
+  <h2>Set it up</h2>
+  <ol class="steps">
+    <li><h3>Install and start it</h3>This starts the local gateway and dashboard.
+      <pre id="i1">npm install -g omniroute
+omniroute</pre>
+      <button class="btn copy" data-copy="i1">Copy the commands</button></li>
+    <li><h3>Connect providers in the dashboard</h3>Use your own accounts (Dashboard &rarr; Providers). Read each provider's terms; OmniRoute flags 12 as &ldquo;avoid&rdquo;.</li>
+    <li><h3>Run Claude Code through it</h3>The README's example is <code>omniroute run claude --model openai/gpt-5.4</code>. Or point any tool at <code>http://localhost:20128/v1</code>.
+      <pre id="i3">omniroute run claude --model &lt;provider/model&gt;</pre>
+      <button class="btn copy" data-copy="i3">Copy the command</button></li>
+  </ol>
+
+{{COMMUNITY}}
+
+  <h2>The fine print</h2>
+  <p>From the README:</p>
+  <ul class="clean">
+    <li>&ldquo;~1.62B tokens/month&rdquo; is an estimated total across third-party free tiers, &ldquo;not a token grant from OmniRoute&rdquo;.</li>
+    <li>You bring your own provider accounts.</li>
+    <li>Mistral alone is 1B of it (about 62%), then Nara 210M, LLM7 150M, xKiro 150M, Groq 30M.</li>
+    <li>Your prompts and code go to whichever provider answers.</li>
+  </ul>
+  <div class="note">My advice: fine for side projects and learning. For client or company code, check each provider's terms first.</div>
+  <p class="small">Credit: OmniRoute is by cheaper-inference, MIT license. Source: <a href="https://github.com/cheaper-inference/OmniRoute">github.com/cheaper-inference/OmniRoute</a>. I'm not affiliated with the author.</p>
+
+  <footer>Not affiliated with any tool named here. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=omniroute">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>

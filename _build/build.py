@@ -93,7 +93,48 @@ PAGES = {
         SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons on hooks, captions and retention for short clips.</li><li><b>Master Claude Code:</b> real builds with every file, like this clipper.</li>",
         PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
     ),
-
+    "game-studios": dict(
+        CAMPAIGN="game-studios",
+        H2="Your first game exists now. <em>Next, get people to play it.</em>",
+        P="A playable prototype is the start. Getting strangers to try it comes from a short clip people watch to the end, and that's the part I share in my community, with the prompts and the edit behind every reel I post. Claude Code runs the rest of my content, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons on hooks and retention, so the clip of your game gets watched.</li><li><b>Master Claude Code:</b> real builds with every file included.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
+    "skillspector": dict(
+        CAMPAIGN="skillspector",
+        H2="Your skills are scanned. <em>Now run ones you understand.</em>",
+        P="A scanner tells you what not to install. The safer setup is fewer skills you can read, built around your own work. That's how I run my content on Claude Code every day, from the morning idea list to the edit, the posting and the DMs, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Master Claude Code:</b> real builds with every file included, so you know what each skill does before it runs.</li><li><b>Every reel I post, taken apart:</b> prompts, edit and what each shot cost.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
+    "ecc": dict(
+        CAMPAIGN="ecc",
+        H2="328 skills is a library. <em>Your setup should fit your work.</em>",
+        P="I didn't install all of ECC; I kept the two that make my videos better. What you keep depends on what you make, and in my community I show the exact setup that runs my content every day, from ideas to the edit and the posting, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Master Claude Code:</b> real builds with every file included, including how I wire skills into one system.</li><li><b>Go Viral:</b> 8 short lessons on hooks and retention.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
+    "karpathy-rules": dict(
+        CAMPAIGN="karpathy-rules",
+        H2="The rules make Claude code better. <em>Your content needs rules too.</em>",
+        P="These 65 lines stop Claude from overbuilding. My videos run on rules like that: a hook in the first two seconds, a payoff before people leave, one idea per reel. They live in the system that runs my content every day, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons and cheat sheets, the rulebook for Reels and TikTok.</li><li><b>Master Claude Code:</b> real builds with every file included, CLAUDE.md files too.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
+    "omniroute": dict(
+        CAMPAIGN="omniroute",
+        H2="Tokens are getting cheap. <em>Attention isn't.</em>",
+        P="When the model costs nothing, what limits you is whether anyone sees what you build. That's what I work on every week in my community, with every prompt and edit behind my reels. Claude Code runs the rest of my content, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Go Viral:</b> 8 short lessons on hooks, captions and retention.</li><li><b>Every reel I post, taken apart:</b> prompts, edit and what each shot cost.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
+    "pocock-skills": dict(
+        CAMPAIGN="pocock-skills",
+        H2="These skills fix your code. <em>Mine run my content week.</em>",
+        P="Matt's skills make Claude a better engineer. I use the same idea for content: skills that bring me ideas each morning, write the scripts, edit, schedule and answer the DMs, even the DM that sent you here. Under a minute:",
+        SPECIAL_LI="<li><b>Master Claude Code:</b> real builds with every file included, the skill system behind my content.</li><li><b>Go Viral:</b> 8 short lessons and cheat sheets for Reels and TikTok.</li>",
+        PRICE="$9/month until the group reaches 150 members, then $27/month. The price you join at stays yours.",
+    ),
 }
 
 # the price sentence inside community.html; a page entry with PRICE replaces it (optional key)

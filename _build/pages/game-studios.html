@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Claude Code Game Studios: describe a game, get a playable one (free)</title>
+<meta name="description" content="Claude Code Game Studios: 49 AI agents and 75 workflow skills that turn Claude Code into a game studio. Describe a game, get a playable browser game. Free, MIT.">
+<meta property="og:title" content="Claude Code Game Studios: describe a game, get a playable one (free)">
+<meta property="og:image" content="https://cloneaisystem-cell.github.io/guides/game-studios/cover.jpg">
+{{HEAD}}
+<style>
+.rules { margin: 8px 0 0; padding-left: 22px; }
+pre, code, .sub, li { overflow-wrap: anywhere; }
+.rules li { margin: 7px 0; font-size: 15.5px; line-height: 1.5; }
+.reel { display: block; width: min(100%, 340px); aspect-ratio: 9 / 16; object-fit: cover; margin: 14px auto 6px; border-radius: 16px; background: #000; border: 1px solid #3a3029; box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero"><img src="cover.jpg" alt="Claude Code Game Studios: 49 agents, with the reel&#x27;s hook frame on the right." width="1280" height="720"></div>
+  <h1>Claude Code can't make GTA 6. <em>This gives it a game studio.</em></h1>
+  <p class="sub">Claude Code Game Studios turns Claude Code into a game studio: 49 AI agents, 75 workflow skills, set up like a real studio. Describe a game and it asks a few questions, writes a one-page brief and builds a playable browser game. Free and open source (MIT).</p>
+  <div class="chips"><span class="chip hot">Free guide</span><span class="chip">49 agents</span><span class="chip">75 skills</span><span class="chip">40.5k stars</span></div>
+  <video class="reel" src="reel.mp4" poster="poster.jpg" controls playsinline preload="none"></video>
+  <p class="vid-note">The reel this guide comes from.</p>
+  <h2>What you need first</h2>
+  <ul class="clean">
+    <li>Git</li>
+    <li>Claude Code</li>
+    <li>Python 3</li>
+    <li>Bash (on Windows it comes with Git for Windows)</li>
+    <li>Chrome, Edge or Chromium, so <code>/prototype</code> can play-test the game</li>
+    <li>Node.js and jq are recommended</li>
+  </ul>
+
+  <h2>Install it and make your first game</h2>
+  <ol class="steps">
+    <li><h3>Clone the repo</h3>
+      <pre id="i1">git clone https://github.com/Donchitos/Claude-Code-Game-Studios.git my-game
+cd my-game</pre>
+      <button class="btn copy" data-copy="i1">Copy the commands</button></li>
+    <li><h3>Open Claude Code in that root folder</h3>Starting in a subfolder skips the hooks.
+      <pre id="i2">claude</pre>
+      <button class="btn copy" data-copy="i2">Copy the command</button></li>
+    <li><h3>Describe your game</h3>Or use /start if you have no idea yet.
+      <pre id="i3">/prototype a fishing game where the rare fish only bite at dusk</pre>
+      <button class="btn copy" data-copy="i3">Copy the prompt</button></li>
+  </ol>
+
+{{COMMUNITY}}
+
+  <h2>What happens next</h2>
+  <ul class="clean">
+    <li>It asks you a few questions.</li>
+    <li>It writes <code>design/game-brief.md</code>. Read it before you say Build it.</li>
+    <li>It builds a browser game in <code>prototypes/&amp;lt;name&amp;gt;/</code>.</li>
+    <li>Scripted key presses check that it opens and responds.</li>
+    <li>You get a handover card that ends &ldquo;Not yet played by a person&rdquo;, so you play-test it.</li>
+    <li>Then change it by asking, share it on itch.io, or grow it into a Vite + TypeScript project.</li>
+  </ul>
+  <div class="note">It won't build GTA 6. It's a fast, honest start for small browser games; the engine route (Godot, Unity, Unreal) exists but the README says it hasn't had the same testing yet.</div>
+  <p class="small">Credit: Claude Code Game Studios is by Donchitos, MIT license. Source: <a href="https://github.com/Donchitos/Claude-Code-Game-Studios">github.com/Donchitos/Claude-Code-Game-Studios</a>. I'm not affiliated with the author.</p>
+
+  <footer>Not affiliated with any tool named here. Questions? DM @clone.creatives<br><a href="https://www.skool.com/cloneai-the-ecosystem-4958/about?utm_source=instagram&amp;utm_medium=guide&amp;utm_campaign=game-studios">AI Virality Creators on Skool &rarr;</a></footer>
+</main>
+{{STICKY}}
+</body>
+</html>
